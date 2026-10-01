@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "What does DBMS stand for?",
+    "options": {
+      "A": "Database Management System",
+      "B": "Data Backup Management Service",
+      "C": "Database Monitoring System",
+      "D": "Data Management Storage"
+    },
+    "correct_answer": "A",
+    "explanation": "DBMS stands for Database Management System, software used to create, store, organize, retrieve, and manage data in databases.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Introduction to DBMS",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a database?",
+    "options": {
+      "A": "A collection of unrelated programs",
+      "B": "An organized collection of related data",
+      "C": "A computer network",
+      "D": "A programming language"
+    },
+    "correct_answer": "B",
+    "explanation": "A database is an organized collection of related data that can be stored, accessed, and managed efficiently.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Introduction to DBMS",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is a major advantage of a DBMS?",
+    "options": {
+      "A": "It eliminates all data",
+      "B": "It increases unnecessary duplication",
+      "C": "It provides controlled and organized data management",
+      "D": "It prevents data sharing"
+    },
+    "correct_answer": "C",
+    "explanation": "A DBMS provides organized storage, controlled access, data sharing, and mechanisms for maintaining data consistency.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Introduction to DBMS",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which component of a DBMS is responsible for defining the structure of a database?",
+    "options": {
+      "A": "DDL",
+      "B": "DML",
+      "C": "DCL",
+      "D": "TCL"
+    },
+    "correct_answer": "A",
+    "explanation": "DDL, or Data Definition Language, is used to define database structures such as tables, schemas, and constraints.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which language is primarily used to retrieve and manipulate data in relational databases?",
+    "options": {
+      "A": "DDL",
+      "B": "DML",
+      "C": "DCL",
+      "D": "HTML"
+    },
+    "correct_answer": "B",
+    "explanation": "DML, or Data Manipulation Language, includes operations such as SELECT, INSERT, UPDATE, and DELETE.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command is used to create a new table?",
+    "options": {
+      "A": "MAKE TABLE",
+      "B": "BUILD TABLE",
+      "C": "CREATE TABLE",
+      "D": "NEW TABLE"
+    },
+    "correct_answer": "C",
+    "explanation": "CREATE TABLE is the SQL DDL command used to define and create a new table.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command is used to remove a table and its definition?",
+    "options": {
+      "A": "DELETE",
+      "B": "DROP",
+      "C": "REMOVE",
+      "D": "CLEAR"
+    },
+    "correct_answer": "B",
+    "explanation": "DROP TABLE removes the table definition and its stored data from the database.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command is used to add a new row to a table?",
+    "options": {
+      "A": "INSERT",
+      "B": "APPEND ROW",
+      "C": "ADD",
+      "D": "UPDATE"
+    },
+    "correct_answer": "A",
+    "explanation": "INSERT is used to add new records or rows to a table.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command is used to modify existing rows?",
+    "options": {
+      "A": "CHANGE",
+      "B": "MODIFY",
+      "C": "UPDATE",
+      "D": "ALTER DATA"
+    },
+    "correct_answer": "C",
+    "explanation": "UPDATE changes values in existing rows that satisfy a specified condition.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command is used to retrieve data from a table?",
+    "options": {
+      "A": "GET",
+      "B": "SELECT",
+      "C": "FETCH TABLE",
+      "D": "READ"
+    },
+    "correct_answer": "B",
+    "explanation": "SELECT is the SQL command used to retrieve data from one or more tables.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL command removes selected rows from a table?",
+    "options": {
+      "A": "DROP",
+      "B": "DELETE",
+      "C": "REMOVE TABLE",
+      "D": "CLEAR TABLE"
+    },
+    "correct_answer": "B",
+    "explanation": "DELETE removes rows that satisfy its WHERE condition, while the table structure remains.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL clause is used to filter rows?",
+    "options": {
+      "A": "ORDER BY",
+      "B": "GROUP BY",
+      "C": "WHERE",
+      "D": "SORT BY"
+    },
+    "correct_answer": "C",
+    "explanation": "WHERE specifies the condition that rows must satisfy to be included in the result.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which clause is used to sort query results?",
+    "options": {
+      "A": "ORDER BY",
+      "B": "SORT",
+      "C": "GROUP BY",
+      "D": "ARRANGE BY"
+    },
+    "correct_answer": "A",
+    "explanation": "ORDER BY sorts the rows returned by a query according to one or more columns.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL clause groups rows having the same values?",
+    "options": {
+      "A": "ORDER BY",
+      "B": "GROUP BY",
+      "C": "WHERE",
+      "D": "HAVING ONLY"
+    },
+    "correct_answer": "B",
+    "explanation": "GROUP BY forms groups of rows with the same values, commonly for aggregate calculations.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which clause is commonly used to filter groups produced by GROUP BY?",
+    "options": {
+      "A": "WHERE",
+      "B": "ORDER BY",
+      "C": "HAVING",
+      "D": "FILTER"
+    },
+    "correct_answer": "C",
+    "explanation": "HAVING applies conditions to groups after grouping and is commonly used with aggregate functions.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which keyword is used to eliminate duplicate rows from a SELECT result?",
+    "options": {
+      "A": "UNIQUE",
+      "B": "DISTINCT",
+      "C": "DIFFERENT",
+      "D": "ONLY"
+    },
+    "correct_answer": "B",
+    "explanation": "DISTINCT removes duplicate combinations of selected column values from the result.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is an aggregate function in SQL?",
+    "options": {
+      "A": "COUNT",
+      "B": "LOWER",
+      "C": "SUBSTRING",
+      "D": "CONCAT"
+    },
+    "correct_answer": "A",
+    "explanation": "COUNT is an aggregate function that calculates the number of rows or non-NULL values depending on its form.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which aggregate function calculates the average of numeric values?",
+    "options": {
+      "A": "TOTAL",
+      "B": "MEAN",
+      "C": "AVG",
+      "D": "AVERAGE_VALUE"
+    },
+    "correct_answer": "C",
+    "explanation": "AVG is the SQL aggregate function used to calculate the average of numeric values.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which aggregate function returns the largest value?",
+    "options": {
+      "A": "TOP",
+      "B": "MAX",
+      "C": "HIGH",
+      "D": "LARGE"
+    },
+    "correct_answer": "B",
+    "explanation": "MAX returns the largest value among the values considered by the aggregate expression.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which aggregate function returns the smallest value?",
+    "options": {
+      "A": "MIN",
+      "B": "LOW",
+      "C": "SMALL",
+      "D": "BOTTOM"
+    },
+    "correct_answer": "A",
+    "explanation": "MIN returns the smallest value among the values considered by the aggregate expression.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL and Database Languages",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a primary key?",
+    "options": {
+      "A": "A key that can contain only NULL values",
+      "B": "An attribute or set of attributes that uniquely identifies each row",
+      "C": "A key used only for sorting",
+      "D": "A duplicate column"
+    },
+    "correct_answer": "B",
+    "explanation": "A primary key uniquely identifies each row in a table and cannot contain NULL values.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Can a primary key contain NULL values?",
+    "options": {
+      "A": "Yes, always",
+      "B": "Yes, if the table is small",
+      "C": "No",
+      "D": "Only in the first row"
+    },
+    "correct_answer": "C",
+    "explanation": "A primary key must uniquely identify every row, so NULL values are not permitted in a primary key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a foreign key used for?",
+    "options": {
+      "A": "To establish a relationship between tables",
+      "B": "To encrypt a table",
+      "C": "To sort rows alphabetically",
+      "D": "To delete duplicate databases"
+    },
+    "correct_answer": "A",
+    "explanation": "A foreign key references a key in another table and helps maintain referential integrity between related tables.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which constraint prevents duplicate values in a column?",
+    "options": {
+      "A": "UNIQUE",
+      "B": "DEFAULT",
+      "C": "CHECK",
+      "D": "NULL"
+    },
+    "correct_answer": "A",
+    "explanation": "The UNIQUE constraint requires values in the constrained column or column combination to be unique.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which constraint prevents NULL values in a column?",
+    "options": {
+      "A": "UNIQUE",
+      "B": "NOT NULL",
+      "C": "CHECK",
+      "D": "DEFAULT"
+    },
+    "correct_answer": "B",
+    "explanation": "NOT NULL requires a value to be supplied for the column rather than allowing NULL.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which constraint specifies a condition that column values must satisfy?",
+    "options": {
+      "A": "CHECK",
+      "B": "UNIQUE",
+      "C": "DEFAULT",
+      "D": "INDEX"
+    },
+    "correct_answer": "A",
+    "explanation": "CHECK defines a condition that inserted or updated values must satisfy.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which constraint supplies a value when no value is explicitly provided?",
+    "options": {
+      "A": "CHECK",
+      "B": "DEFAULT",
+      "C": "UNIQUE",
+      "D": "PRIMARY"
+    },
+    "correct_answer": "B",
+    "explanation": "DEFAULT specifies a value that can be used automatically when an INSERT statement does not provide a value for that column.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a candidate key?",
+    "options": {
+      "A": "Any non-unique attribute",
+      "B": "A minimal superkey that can uniquely identify a tuple",
+      "C": "Only a foreign key",
+      "D": "A key that must contain NULL"
+    },
+    "correct_answer": "B",
+    "explanation": "A candidate key is a minimal set of attributes that uniquely identifies each tuple in a relation.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a superkey?",
+    "options": {
+      "A": "A set of attributes that uniquely identifies a tuple",
+      "B": "Only the primary key",
+      "C": "A key used for encryption",
+      "D": "A duplicate record"
+    },
+    "correct_answer": "A",
+    "explanation": "A superkey is any set of one or more attributes that uniquely identifies tuples; it may contain extra attributes.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a composite key?",
+    "options": {
+      "A": "A key made from more than one attribute",
+      "B": "A key with only NULL values",
+      "C": "A key used only in views",
+      "D": "A key with duplicate values"
+    },
+    "correct_answer": "A",
+    "explanation": "A composite key consists of two or more attributes together used to uniquely identify a row.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In the relational model, a row is also called a:",
+    "options": {
+      "A": "Domain",
+      "B": "Tuple",
+      "C": "Attribute",
+      "D": "Schema"
+    },
+    "correct_answer": "B",
+    "explanation": "A row in a relational table is called a tuple.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In the relational model, a column is also called an:",
+    "options": {
+      "A": "Attribute",
+      "B": "Tuple",
+      "C": "Instance",
+      "D": "Record set"
+    },
+    "correct_answer": "A",
+    "explanation": "A column in a relational table represents an attribute.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a relation in the relational model?",
+    "options": {
+      "A": "A table",
+      "B": "A single value",
+      "C": "A programming function",
+      "D": "A database user"
+    },
+    "correct_answer": "A",
+    "explanation": "A relation is represented as a table consisting of rows (tuples) and columns (attributes).",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is the degree of a relation?",
+    "options": {
+      "A": "Number of rows",
+      "B": "Number of attributes",
+      "C": "Number of keys",
+      "D": "Number of databases"
+    },
+    "correct_answer": "B",
+    "explanation": "The degree of a relation is the number of attributes or columns in the relation.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is the cardinality of a relation?",
+    "options": {
+      "A": "Number of columns",
+      "B": "Number of rows",
+      "C": "Number of keys",
+      "D": "Number of constraints"
+    },
+    "correct_answer": "B",
+    "explanation": "The cardinality of a relation is the number of tuples or rows it contains.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a schema?",
+    "options": {
+      "A": "The actual rows stored at a particular moment",
+      "B": "The logical structure or design of a database",
+      "C": "A backup file only",
+      "D": "A query result"
+    },
+    "correct_answer": "B",
+    "explanation": "A database schema describes the logical structure of the database, including tables, attributes, and relationships.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a database instance?",
+    "options": {
+      "A": "The data stored in the database at a particular point in time",
+      "B": "The database design only",
+      "C": "A primary key",
+      "D": "A query language"
+    },
+    "correct_answer": "A",
+    "explanation": "A database instance is the collection of data stored in the database at a particular moment.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which level of database architecture describes the complete logical structure of the database?",
+    "options": {
+      "A": "External level",
+      "B": "Conceptual level",
+      "C": "Physical level",
+      "D": "User level"
+    },
+    "correct_answer": "B",
+    "explanation": "The conceptual level describes the overall logical structure of the database independently of physical storage details.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which level describes how data is physically stored?",
+    "options": {
+      "A": "External level",
+      "B": "Conceptual level",
+      "C": "Internal level",
+      "D": "View level"
+    },
+    "correct_answer": "C",
+    "explanation": "The internal level describes the physical storage structures and access methods used for the data.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which level provides user-specific views of the database?",
+    "options": {
+      "A": "External level",
+      "B": "Internal level",
+      "C": "Physical level",
+      "D": "Storage level"
+    },
+    "correct_answer": "A",
+    "explanation": "The external level describes different user views or subsets of the database relevant to particular users or applications.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is data independence?",
+    "options": {
+      "A": "Ability to change one schema level without requiring changes at the next higher level",
+      "B": "Ability to delete all data",
+      "C": "Ability to use only one table",
+      "D": "Ability to avoid SQL"
+    },
+    "correct_answer": "A",
+    "explanation": "Data independence allows changes at one schema level to be made without requiring changes to the higher-level schema.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which data independence concerns changes to the internal schema without changing the conceptual schema?",
+    "options": {
+      "A": "Logical data independence",
+      "B": "Physical data independence",
+      "C": "User independence",
+      "D": "Application independence"
+    },
+    "correct_answer": "B",
+    "explanation": "Physical data independence allows physical storage changes without changing the conceptual schema.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which data independence concerns changes to the conceptual schema without changing external views?",
+    "options": {
+      "A": "Physical data independence",
+      "B": "Logical data independence",
+      "C": "Storage independence",
+      "D": "File independence"
+    },
+    "correct_answer": "B",
+    "explanation": "Logical data independence allows changes to the conceptual schema without requiring changes to external views or applications.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which model organizes data using tables and relationships among them?",
+    "options": {
+      "A": "Hierarchical model",
+      "B": "Relational model",
+      "C": "Network cable model",
+      "D": "File model"
+    },
+    "correct_answer": "B",
+    "explanation": "The relational model represents data using relations, commonly implemented as tables, and relationships between them.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Models",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which database model organizes records in a tree-like structure?",
+    "options": {
+      "A": "Relational",
+      "B": "Hierarchical",
+      "C": "Object-relational",
+      "D": "Flat relational"
+    },
+    "correct_answer": "B",
+    "explanation": "The hierarchical model organizes records in a tree structure with parent-child relationships.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Models",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which model represents data using a graph-like structure with records and links?",
+    "options": {
+      "A": "Hierarchical model",
+      "B": "Network model",
+      "C": "Relational model",
+      "D": "Tabular model"
+    },
+    "correct_answer": "B",
+    "explanation": "The network model represents records connected through links and can support more complex relationships than a simple tree.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Models",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is an entity in an ER model?",
+    "options": {
+      "A": "A distinguishable real-world object or concept",
+      "B": "A SQL command",
+      "C": "A database password",
+      "D": "A table constraint"
+    },
+    "correct_answer": "A",
+    "explanation": "An entity represents a distinguishable real-world object or concept about which data is stored.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is an attribute in an ER model?",
+    "options": {
+      "A": "A property that describes an entity",
+      "B": "A database user",
+      "C": "A transaction",
+      "D": "A relationship only"
+    },
+    "correct_answer": "A",
+    "explanation": "An attribute is a property or characteristic used to describe an entity.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does a relationship represent in an ER model?",
+    "options": {
+      "A": "An association among entities",
+      "B": "A database file",
+      "C": "A SQL data type",
+      "D": "A storage block"
+    },
+    "correct_answer": "A",
+    "explanation": "A relationship represents an association between two or more entity sets.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ER-model shape commonly represents an entity set?",
+    "options": {
+      "A": "Rectangle",
+      "B": "Diamond",
+      "C": "Oval",
+      "D": "Triangle"
+    },
+    "correct_answer": "A",
+    "explanation": "In standard ER notation, a rectangle represents an entity set.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ER-model shape commonly represents a relationship?",
+    "options": {
+      "A": "Rectangle",
+      "B": "Diamond",
+      "C": "Oval",
+      "D": "Circle"
+    },
+    "correct_answer": "B",
+    "explanation": "In standard ER notation, a diamond represents a relationship set.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ER-model shape commonly represents an attribute?",
+    "options": {
+      "A": "Oval",
+      "B": "Diamond",
+      "C": "Rectangle",
+      "D": "Hexagon"
+    },
+    "correct_answer": "A",
+    "explanation": "In standard ER notation, an oval represents an attribute.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does a weak entity depend on for its identification?",
+    "options": {
+      "A": "Another entity through an identifying relationship",
+      "B": "A random SQL query",
+      "C": "A view only",
+      "D": "An index only"
+    },
+    "correct_answer": "A",
+    "explanation": "A weak entity does not have a complete key of its own and depends on an identifying entity and relationship for identification.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is normalization mainly used for?",
+    "options": {
+      "A": "Increasing data redundancy",
+      "B": "Reducing redundancy and update anomalies",
+      "C": "Deleting all relationships",
+      "D": "Encrypting data"
+    },
+    "correct_answer": "B",
+    "explanation": "Normalization organizes relations to reduce unnecessary redundancy and avoid insertion, update, and deletion anomalies.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which normal form requires atomic attribute values?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "correct_answer": "A",
+    "explanation": "First Normal Form requires each attribute value to be atomic and avoids repeating groups or non-atomic fields.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which normal form removes partial functional dependencies on a candidate key?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "4NF"
+    },
+    "correct_answer": "B",
+    "explanation": "Second Normal Form requires 1NF and eliminates partial dependency of non-key attributes on part of a composite candidate key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which normal form removes transitive dependencies of non-key attributes on a key?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "4NF"
+    },
+    "correct_answer": "C",
+    "explanation": "Third Normal Form requires 2NF and removes transitive dependencies of non-key attributes on candidate keys.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a functional dependency?",
+    "options": {
+      "A": "A relationship where one attribute set determines another",
+      "B": "A type of index",
+      "C": "A backup operation",
+      "D": "A transaction log"
+    },
+    "correct_answer": "A",
+    "explanation": "A functional dependency X → Y means that the value of X uniquely determines the value of Y.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Functional Dependencies",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a transaction in DBMS?",
+    "options": {
+      "A": "A logical unit of database work",
+      "B": "A database table",
+      "C": "A single column",
+      "D": "A schema diagram"
+    },
+    "correct_answer": "A",
+    "explanation": "A transaction is a logical unit of work that may contain one or more database operations.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ACID property ensures that a transaction is treated as an indivisible unit?",
+    "options": {
+      "A": "Consistency",
+      "B": "Isolation",
+      "C": "Atomicity",
+      "D": "Durability"
+    },
+    "correct_answer": "C",
+    "explanation": "Atomicity means that all operations of a transaction are completed or none of them take effect.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ACID property ensures that a transaction takes the database from one valid state to another?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "correct_answer": "B",
+    "explanation": "Consistency ensures that database constraints and rules remain satisfied before and after a successful transaction.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ACID property deals with concurrent transactions appearing separated from one another?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "correct_answer": "C",
+    "explanation": "Isolation controls how concurrent transactions interact so that intermediate states do not improperly affect other transactions.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which ACID property ensures committed changes survive failures?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "correct_answer": "D",
+    "explanation": "Durability ensures that once a transaction commits, its changes persist even after a system failure.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which command permanently saves a transaction's changes?",
+    "options": {
+      "A": "SAVE",
+      "B": "COMMIT",
+      "C": "STORE",
+      "D": "APPLY"
+    },
+    "correct_answer": "B",
+    "explanation": "COMMIT makes the changes performed by the current transaction permanent.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which command undoes changes made in the current transaction that have not been committed?",
+    "options": {
+      "A": "UNDO",
+      "B": "ROLLBACK",
+      "C": "REVERSE",
+      "D": "CANCEL TABLE"
+    },
+    "correct_answer": "B",
+    "explanation": "ROLLBACK undoes changes made since the beginning of the transaction or since a suitable savepoint.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is concurrency control?",
+    "options": {
+      "A": "Managing simultaneous transactions to maintain correctness",
+      "B": "Creating only one table",
+      "C": "Deleting old records",
+      "D": "Compressing a database"
+    },
+    "correct_answer": "A",
+    "explanation": "Concurrency control coordinates simultaneous transactions so database consistency and isolation are maintained.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a deadlock in a DBMS?",
+    "options": {
+      "A": "A situation where transactions wait indefinitely for resources held by each other",
+      "B": "A successful transaction",
+      "C": "A deleted table",
+      "D": "A backup process"
+    },
+    "correct_answer": "A",
+    "explanation": "A deadlock occurs when transactions wait for resources held by one another, creating a cycle of waiting.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is an index used for in a database?",
+    "options": {
+      "A": "To speed up data retrieval",
+      "B": "To increase every table's row count",
+      "C": "To replace all constraints",
+      "D": "To remove the primary key"
+    },
+    "correct_answer": "A",
+    "explanation": "An index provides an additional access structure that can speed up searches and retrieval of rows.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which index structure is commonly used for range queries in relational databases?",
+    "options": {
+      "A": "B+ tree",
+      "B": "Stack",
+      "C": "Queue",
+      "D": "Linked list only"
+    },
+    "correct_answer": "A",
+    "explanation": "B+ trees are widely used for database indexing because they support efficient equality and range searches.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a view in a relational database?",
+    "options": {
+      "A": "A virtual table based on a query",
+      "B": "A physical hard disk",
+      "C": "A backup copy only",
+      "D": "A primary key"
+    },
+    "correct_answer": "A",
+    "explanation": "A view is a virtual table whose contents are defined by a stored query over one or more tables.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Views",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which operation is normally used to retrieve all columns from a table named Student?",
+    "options": {
+      "A": "SELECT * FROM Student",
+      "B": "GET ALL Student",
+      "C": "READ Student.*",
+      "D": "FETCH Student"
+    },
+    "correct_answer": "A",
+    "explanation": "SELECT * FROM Student retrieves all columns from the Student table in standard SQL syntax.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Suppose a Student table has columns RollNo and Name. Which condition selects students whose RollNo is 10?",
+    "options": {
+      "A": "WHERE RollNo = 10",
+      "B": "HAVING RollNo == 10",
+      "C": "ORDER BY RollNo = 10",
+      "D": "GROUP RollNo = 10"
+    },
+    "correct_answer": "A",
+    "explanation": "The WHERE clause filters individual rows, and equality is expressed with a single equals sign in standard SQL.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Suppose an Employee table has a Salary column. Which query returns the highest salary?",
+    "options": {
+      "A": "SELECT HIGH(Salary) FROM Employee",
+      "B": "SELECT MAX(Salary) FROM Employee",
+      "C": "SELECT TOP(Salary) FROM Employee",
+      "D": "SELECT LARGEST(Salary) FROM Employee"
+    },
+    "correct_answer": "B",
+    "explanation": "MAX is the standard SQL aggregate function for returning the largest value in a column.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Suppose a Student table has a Name column. Which query returns the number of rows in the table?",
+    "options": {
+      "A": "SELECT NUMBER(Name) FROM Student",
+      "B": "SELECT COUNT(*) FROM Student",
+      "C": "SELECT TOTAL(*) FROM Student",
+      "D": "SELECT ROWS FROM Student"
+    },
+    "correct_answer": "B",
+    "explanation": "COUNT(*) counts rows in the result and therefore returns the number of rows in Student.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Suppose Employee(EmpID, Name, DeptID) and Department(DeptID, DeptName) are related by DeptID. Which operation is appropriate to display employee names with department names?",
+    "options": {
+      "A": "JOIN",
+      "B": "DROP",
+      "C": "TRUNCATE",
+      "D": "COMMIT"
+    },
+    "correct_answer": "A",
+    "explanation": "A JOIN can combine Employee and Department rows using their related DeptID values.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Student has RollNo as its primary key. What should happen if an INSERT attempts to add two students with the same RollNo?",
+    "options": {
+      "A": "Both rows must be accepted",
+      "B": "The DBMS should reject the duplicate primary-key value",
+      "C": "The second row automatically becomes a foreign key",
+      "D": "The primary key becomes NULL"
+    },
+    "correct_answer": "B",
+    "explanation": "A primary key must be unique, so inserting another row with the same primary-key value violates the constraint.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A Course table has CourseID as its primary key. Which column in an Enrollment table would commonly reference CourseID?",
+    "options": {
+      "A": "CourseID as a foreign key",
+      "B": "CourseName as a primary key necessarily",
+      "C": "EnrollmentDate as a foreign key necessarily",
+      "D": "StudentName as an index necessarily"
+    },
+    "correct_answer": "A",
+    "explanation": "Enrollment can contain CourseID as a foreign key referencing Course.CourseID to represent the relationship between enrollments and courses.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Employee has Salary values 20000, 30000, and 40000. What does SELECT AVG(Salary) return?",
+    "options": {
+      "A": "20000",
+      "B": "30000",
+      "C": "40000",
+      "D": "90000"
+    },
+    "correct_answer": "B",
+    "explanation": "The average is (20000 + 30000 + 40000) / 3 = 30000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Product contains duplicate category values. Which keyword can return each category only once?",
+    "options": {
+      "A": "DISTINCT",
+      "B": "UNIQUE ROWS",
+      "C": "ONLY",
+      "D": "SINGLE"
+    },
+    "correct_answer": "A",
+    "explanation": "DISTINCT removes duplicate result rows, so SELECT DISTINCT Category can return each category once.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Student has a column Email that must not be missing. Which constraint is appropriate?",
+    "options": {
+      "A": "NOT NULL",
+      "B": "DEFAULT NULL",
+      "C": "DROP",
+      "D": "TRUNCATE"
+    },
+    "correct_answer": "A",
+    "explanation": "NOT NULL requires an Email value to be supplied for each row, subject to the database's constraint rules.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Department has DeptID and DeptName. Which command creates a table with DeptID as its primary key?",
+    "options": {
+      "A": "CREATE TABLE Department (DeptID INT PRIMARY KEY, DeptName VARCHAR(50))",
+      "B": "MAKE Department KEY DeptID",
+      "C": "CREATE Department WITH UNIQUE DeptID ONLY",
+      "D": "TABLE Department PRIMARY DeptID"
+    },
+    "correct_answer": "A",
+    "explanation": "CREATE TABLE defines the table, and PRIMARY KEY on DeptID declares it as the primary key.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Table Creation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A Student table contains Name values 'Anu', 'Amit', and 'Ravi'. Which condition can select names beginning with 'A'?",
+    "options": {
+      "A": "WHERE Name LIKE 'A%'",
+      "B": "WHERE Name = 'A*'",
+      "C": "WHERE Name STARTS 'A'",
+      "D": "WHERE Name LIKE '%A'"
+    },
+    "correct_answer": "A",
+    "explanation": "The LIKE pattern 'A%' matches strings that begin with A followed by zero or more characters.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table Employee contains Department and Salary. Which clause would group employees by Department?",
+    "options": {
+      "A": "GROUP BY Department",
+      "B": "ORDER BY Department ONLY",
+      "C": "WHERE Department GROUP",
+      "D": "SORT GROUP Department"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY Department forms one group for each distinct department value, allowing aggregate functions to be applied per department.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If an Employee table has 5 rows, what does SELECT COUNT(*) FROM Employee return?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "5",
+      "D": "The number of columns"
+    },
+    "correct_answer": "C",
+    "explanation": "COUNT(*) counts all rows in the result, so a five-row table returns 5.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If table A has 3 rows and table B has 4 rows, how many row combinations can a CROSS JOIN produce?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "7",
+      "D": "12"
+    },
+    "correct_answer": "D",
+    "explanation": "A CROSS JOIN forms the Cartesian product, so 3 × 4 = 12 row combinations.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A database has Student(RollNo, Name) and Marks(RollNo, Score). Which column connects the two tables in a typical join?",
+    "options": {
+      "A": "RollNo",
+      "B": "Name only",
+      "C": "Score only",
+      "D": "No column can connect them"
+    },
+    "correct_answer": "A",
+    "explanation": "RollNo appears in both tables and can be used as the joining attribute when it represents the same student identifier.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If a query uses WHERE Salary > 50000, what does the condition do?",
+    "options": {
+      "A": "Selects rows whose Salary is greater than 50000",
+      "B": "Changes salaries to 50000",
+      "C": "Deletes salaries below 50000",
+      "D": "Sorts salaries"
+    },
+    "correct_answer": "A",
+    "explanation": "WHERE Salary > 50000 filters the result to rows whose Salary value is greater than 50000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table contains a nullable Phone column. Which condition finds rows where Phone has no value?",
+    "options": {
+      "A": "WHERE Phone = NULL",
+      "B": "WHERE Phone IS NULL",
+      "C": "WHERE Phone == NULL",
+      "D": "WHERE Phone EMPTY"
+    },
+    "correct_answer": "B",
+    "explanation": "IS NULL is the SQL predicate used to test whether a column contains NULL.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A table has 10 rows and 3 columns. What are its cardinality and degree?",
+    "options": {
+      "A": "Cardinality 3, degree 10",
+      "B": "Cardinality 10, degree 3",
+      "C": "Both are 10",
+      "D": "Both are 3"
+    },
+    "correct_answer": "B",
+    "explanation": "Cardinality is the number of rows (10), while degree is the number of columns or attributes (3).",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement correctly describes SELECT DISTINCT Department FROM Employee?",
+    "options": {
+      "A": "It returns every employee twice",
+      "B": "It returns duplicate department values",
+      "C": "It returns each distinct department value once",
+      "D": "It deletes duplicate departments from the table"
+    },
+    "correct_answer": "C",
+    "explanation": "DISTINCT affects the query result only and removes duplicate department values from the returned result.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which command would you use to add a new column to an existing table in common SQL syntax?",
+    "options": {
+      "A": "ALTER TABLE ... ADD COLUMN",
+      "B": "UPDATE TABLE ... NEW",
+      "C": "INSERT COLUMN",
+      "D": "CREATE COLUMN"
+    },
+    "correct_answer": "A",
+    "explanation": "ALTER TABLE with ADD COLUMN is commonly used to add a column to an existing table, with exact syntax varying by SQL dialect.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Table Modification",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL query returns employees in increasing order of Salary?",
+    "options": {
+      "A": "SELECT * FROM Employee ORDER BY Salary ASC",
+      "B": "SELECT * FROM Employee SORT Salary",
+      "C": "SELECT * FROM Employee GROUP BY Salary ASC",
+      "D": "SELECT * FROM Employee WHERE Salary ASC"
+    },
+    "correct_answer": "A",
+    "explanation": "ORDER BY Salary ASC sorts the result by Salary in ascending order.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Sorting",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL keyword specifies descending order?",
+    "options": {
+      "A": "DOWN",
+      "B": "DESC",
+      "C": "REVERSE",
+      "D": "HIGH"
+    },
+    "correct_answer": "B",
+    "explanation": "DESC specifies descending order in an ORDER BY clause.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Sorting",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If a query uses GROUP BY Department, what does each group generally represent?",
+    "options": {
+      "A": "Rows sharing the same Department value",
+      "B": "All rows in random order",
+      "C": "Only one row from the table",
+      "D": "All columns separately"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY forms groups based on equal values of the specified grouping column or columns.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which clause can be used with COUNT(*) to find departments having more than 5 employees?",
+    "options": {
+      "A": "HAVING COUNT(*) > 5",
+      "B": "WHERE COUNT(*) > 5 only",
+      "C": "ORDER COUNT(*) > 5",
+      "D": "DISTINCT COUNT > 5"
+    },
+    "correct_answer": "A",
+    "explanation": "HAVING filters groups after aggregation, so HAVING COUNT(*) > 5 can select departments with more than five rows.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If Department(DeptID) contains IDs 1, 2, and 3, which table constraint can make Employee.DeptID refer only to valid departments?",
+    "options": {
+      "A": "FOREIGN KEY",
+      "B": "DEFAULT",
+      "C": "CHECK on EmployeeName only",
+      "D": "UNIQUE on EmployeeName"
+    },
+    "correct_answer": "A",
+    "explanation": "A foreign key on Employee.DeptID can reference Department.DeptID and enforce referential integrity.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which query returns the names of employees whose salary is between 30000 and 50000, inclusive, using standard SQL syntax?",
+    "options": {
+      "A": "SELECT Name FROM Employee WHERE Salary BETWEEN 30000 AND 50000",
+      "B": "SELECT Name FROM Employee WHERE Salary RANGE 30000,50000",
+      "C": "SELECT Name FROM Employee WHERE Salary IN 30000 TO 50000",
+      "D": "SELECT Name FROM Employee WHERE Salary FROM 30000 TO 50000"
+    },
+    "correct_answer": "A",
+    "explanation": "BETWEEN tests whether a value lies within the specified inclusive range in standard SQL usage.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SQL operator tests whether a value matches one of several listed values?",
+    "options": {
+      "A": "IN",
+      "B": "AMONG",
+      "C": "ONEOF",
+      "D": "MATCH"
+    },
+    "correct_answer": "A",
+    "explanation": "IN tests whether an expression equals any value in a specified list or subquery result.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement is true about DELETE FROM Student WHERE RollNo = 5?",
+    "options": {
+      "A": "It removes the table",
+      "B": "It removes the row or rows satisfying the condition",
+      "C": "It removes only the column RollNo",
+      "D": "It creates a backup"
+    },
+    "correct_answer": "B",
+    "explanation": "DELETE removes rows that satisfy the WHERE condition while retaining the table definition.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Data Manipulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement is true about DROP TABLE Student?",
+    "options": {
+      "A": "It removes the table definition and its data",
+      "B": "It removes only one row",
+      "C": "It sorts the table",
+      "D": "It creates a view"
+    },
+    "correct_answer": "A",
+    "explanation": "DROP TABLE removes the table object and its stored rows.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Table Definition",
+    "difficulty": "L1"
+  }
+]

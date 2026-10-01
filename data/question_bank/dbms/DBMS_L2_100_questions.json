@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "A Student table has 500 rows. A query uses SELECT COUNT(*) FROM Student WHERE Department = 'CSE'. What does the result represent?",
+    "options": {
+      "A": "The number of columns in Student",
+      "B": "The number of CSE students",
+      "C": "The total number of departments",
+      "D": "The number of NULL values"
+    },
+    "correct_answer": "B",
+    "explanation": "COUNT(*) counts rows that satisfy the WHERE condition, so the result is the number of students whose Department is CSE.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Employee(EmpID, Name, Salary) contains salaries 20000, 30000, 50000 and 70000. What is returned by SELECT MAX(Salary) FROM Employee WHERE Salary < 60000?",
+    "options": {
+      "A": "20000",
+      "B": "30000",
+      "C": "50000",
+      "D": "70000"
+    },
+    "correct_answer": "C",
+    "explanation": "The WHERE clause first excludes 70000, and MAX of the remaining salaries is 50000.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query SELECT Name FROM Employee WHERE Salary > 40000 ORDER BY Name ASC is executed. Which operation happens conceptually before sorting the final result?",
+    "options": {
+      "A": "Filtering rows",
+      "B": "Deleting rows",
+      "C": "Grouping rows",
+      "D": "Creating an index"
+    },
+    "correct_answer": "A",
+    "explanation": "The WHERE predicate filters rows before the resulting rows are ordered by ORDER BY.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Query Processing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "An Employee table has 12 rows. Five rows have DeptID = 10. What does DELETE FROM Employee WHERE DeptID = 10 do?",
+    "options": {
+      "A": "Deletes the table",
+      "B": "Deletes all 12 rows",
+      "C": "Deletes the five matching rows",
+      "D": "Changes DeptID to NULL"
+    },
+    "correct_answer": "C",
+    "explanation": "DELETE removes only rows satisfying the WHERE condition, so the five rows with DeptID 10 are removed.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Data Manipulation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Product table has ProductID as PRIMARY KEY. An INSERT attempts to add a second row with ProductID 25. What should happen?",
+    "options": {
+      "A": "Both rows are accepted",
+      "B": "The DBMS rejects the insert",
+      "C": "ProductID becomes a foreign key",
+      "D": "The old row is automatically deleted"
+    },
+    "correct_answer": "B",
+    "explanation": "A primary key must uniquely identify rows, so a duplicate ProductID violates the primary-key constraint.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(RollNo, Name, DeptID) references Department(DeptID). What is the main reason for defining DeptID as a foreign key?",
+    "options": {
+      "A": "To make every student name unique",
+      "B": "To ensure referenced department values are valid",
+      "C": "To sort students by department",
+      "D": "To make RollNo nullable"
+    },
+    "correct_answer": "B",
+    "explanation": "A foreign key enforces referential integrity by restricting references to valid values in the referenced table, subject to the defined rules.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A column Email is declared UNIQUE but not NOT NULL. What is the main guarantee provided by UNIQUE?",
+    "options": {
+      "A": "Every row must contain an email",
+      "B": "Non-NULL email values cannot be duplicated",
+      "C": "Email must be a primary key",
+      "D": "Email values must be numeric"
+    },
+    "correct_answer": "B",
+    "explanation": "UNIQUE prevents duplicate values for the constrained key, while NULL handling is DBMS-specific; it does not by itself mean NOT NULL.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table has columns A, B, C, and D. A query selects only A and C. In relational algebra, which operation best represents this?",
+    "options": {
+      "A": "Selection",
+      "B": "Projection",
+      "C": "Join",
+      "D": "Union"
+    },
+    "correct_answer": "B",
+    "explanation": "Projection chooses specified attributes or columns from a relation.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Algebra",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table contains 100 rows, of which 30 satisfy Age > 20. What is the cardinality of the relation produced by selection on Age > 20?",
+    "options": {
+      "A": "20",
+      "B": "30",
+      "C": "70",
+      "D": "100"
+    },
+    "correct_answer": "B",
+    "explanation": "Selection keeps only tuples satisfying the predicate, so 30 rows remain.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Algebra",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Relation R has 4 attributes and 60 tuples. What are its degree and cardinality?",
+    "options": {
+      "A": "Degree 60, cardinality 4",
+      "B": "Degree 4, cardinality 60",
+      "C": "Both are 60",
+      "D": "Both are 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Degree is the number of attributes (4), while cardinality is the number of tuples (60).",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Relational Model",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation has a composite candidate key (StudentID, CourseID). Which dependency would violate 2NF if Name depends only on StudentID?",
+    "options": {
+      "A": "StudentID, CourseID → Name",
+      "B": "StudentID → Name",
+      "C": "CourseID → StudentID",
+      "D": "Name → CourseID"
+    },
+    "correct_answer": "B",
+    "explanation": "StudentID → Name is a partial dependency because StudentID is only part of the composite candidate key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation is in 2NF but has StudentID → DeptID and DeptID → DeptName, where StudentID is the key. Which normal form is specifically concerned with removing this transitive dependency?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF only"
+    },
+    "correct_answer": "C",
+    "explanation": "3NF addresses transitive dependencies of non-key attributes on candidate keys.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction transfers ₹500 from Account A to Account B. The debit succeeds but the credit fails before commit. Which ACID property requires the partial transfer to be undone?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Isolation",
+      "C": "Durability",
+      "D": "Indexing"
+    },
+    "correct_answer": "A",
+    "explanation": "Atomicity requires the transaction's operations to be treated as one unit: either all succeed or none take effect.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Transaction T1 updates a row but has not committed. T2 reads that updated value. Which problem can this represent?",
+    "options": {
+      "A": "Dirty read",
+      "B": "Lost index",
+      "C": "Deadlock only",
+      "D": "Phantom-free read"
+    },
+    "correct_answer": "A",
+    "explanation": "A dirty read occurs when a transaction reads data written by another transaction before that transaction commits.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "T1 holds a lock on item A and waits for B. T2 holds B and waits for A. What situation exists?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Deadlock",
+      "C": "Normalization",
+      "D": "Data independence"
+    },
+    "correct_answer": "B",
+    "explanation": "Each transaction waits for a resource held by the other, creating a cycle of waiting known as deadlock.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Two transactions both update the same data item, and one update overwrites the other's result. Which anomaly is most directly involved?",
+    "options": {
+      "A": "Lost update",
+      "B": "Dirty read",
+      "C": "Insertion anomaly",
+      "D": "Transitive dependency"
+    },
+    "correct_answer": "A",
+    "explanation": "A lost update occurs when one concurrent update overwrites another update without proper concurrency control.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction commits successfully, and the system crashes immediately afterward. Which ACID property requires its committed changes to survive recovery?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "correct_answer": "D",
+    "explanation": "Durability means committed transaction effects must persist despite subsequent system failures.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A DBA changes the physical file organization of a database without changing the logical table definitions. Which independence is being exercised?",
+    "options": {
+      "A": "Logical data independence",
+      "B": "Physical data independence",
+      "C": "User independence",
+      "D": "Transaction independence"
+    },
+    "correct_answer": "B",
+    "explanation": "Physical data independence allows changes in physical storage without changing the conceptual schema.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A company changes its conceptual schema but wants existing user views to remain unaffected where possible. Which concept is relevant?",
+    "options": {
+      "A": "Logical data independence",
+      "B": "Physical data independence",
+      "C": "Referential integrity",
+      "D": "Atomicity"
+    },
+    "correct_answer": "A",
+    "explanation": "Logical data independence concerns changes to the conceptual schema without requiring changes to external views.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A view exposes only employee names and departments while hiding salary information. What is a direct benefit of this view?",
+    "options": {
+      "A": "It automatically normalizes the database",
+      "B": "It can restrict what data a user sees",
+      "C": "It guarantees faster queries",
+      "D": "It replaces all base tables"
+    },
+    "correct_answer": "B",
+    "explanation": "Views can present selected data and can help restrict exposure of underlying columns, depending on permissions.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Views",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query joins Employee and Department using Employee.DeptID = Department.DeptID. An employee whose DeptID has no matching department is absent from an INNER JOIN result. Why?",
+    "options": {
+      "A": "INNER JOIN returns only matching rows",
+      "B": "INNER JOIN returns every employee",
+      "C": "The employee is automatically deleted",
+      "D": "The join converts DeptID to NULL"
+    },
+    "correct_answer": "A",
+    "explanation": "An INNER JOIN returns rows satisfying the join condition in both participating tables.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee has 10 rows and Department has 4 rows. If every employee has a matching department, how many rows will an INNER JOIN on DeptID return?",
+    "options": {
+      "A": "Exactly 4",
+      "B": "Exactly 10",
+      "C": "Exactly 14",
+      "D": "At least 40"
+    },
+    "correct_answer": "B",
+    "explanation": "If every employee has one matching department and Department rows are uniquely identified by DeptID, each employee contributes one joined row.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Table A contains 5 rows and table B contains 3 rows. What is the maximum number of rows in A CROSS JOIN B?",
+    "options": {
+      "A": "8",
+      "B": "15",
+      "C": "5",
+      "D": "3"
+    },
+    "correct_answer": "B",
+    "explanation": "A Cartesian product pairs every row of A with every row of B, giving 5 × 3 = 15 combinations.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A B+ tree index exists on Student(RollNo). Which query is most likely to benefit directly from that index?",
+    "options": {
+      "A": "WHERE RollNo = 105",
+      "B": "WHERE Name = 'Ravi' when Name is not indexed",
+      "C": "Printing all rows",
+      "D": "Changing the table name"
+    },
+    "correct_answer": "A",
+    "explanation": "An index on RollNo provides an efficient access path for searches using RollNo.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "An index is added to a frequently searched column. Why might query performance improve?",
+    "options": {
+      "A": "The DBMS can avoid scanning every row in suitable cases",
+      "B": "The table automatically stores fewer rows",
+      "C": "The index removes all constraints",
+      "D": "The query no longer needs SQL"
+    },
+    "correct_answer": "A",
+    "explanation": "An index can provide a faster access path so the DBMS may avoid a full table scan for suitable predicates.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation has repeating groups such as Phone1, Phone2, and Phone3 for one person. Which normalization step is most directly relevant?",
+    "options": {
+      "A": "Move toward 1NF by representing values atomically",
+      "B": "Move directly to 3NF",
+      "C": "Create a foreign key only",
+      "D": "Add more repeating columns"
+    },
+    "correct_answer": "A",
+    "explanation": "1NF requires atomic attribute values and avoids repeating groups; a separate related table is a common design approach.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database designer stores DepartmentName repeatedly for every employee in that department. Which issue is most likely?",
+    "options": {
+      "A": "Data redundancy",
+      "B": "Physical data independence",
+      "C": "Atomicity",
+      "D": "Deadlock"
+    },
+    "correct_answer": "A",
+    "explanation": "Repeated DepartmentName values introduce redundancy and can lead to update and other anomalies.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A department name changes, but hundreds of employee rows contain the old name. Which anomaly can result from this redundant design?",
+    "options": {
+      "A": "Update anomaly",
+      "B": "Insertion anomaly",
+      "C": "Deadlock",
+      "D": "Dirty read"
+    },
+    "correct_answer": "A",
+    "explanation": "When the same fact is duplicated, updating only some copies creates an update anomaly.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A system must store a fact about a new course, but its current table design requires an enrollment row before the course can be represented. Which anomaly is this?",
+    "options": {
+      "A": "Insertion anomaly",
+      "B": "Deletion anomaly",
+      "C": "Lost update",
+      "D": "Dirty read"
+    },
+    "correct_answer": "A",
+    "explanation": "An insertion anomaly occurs when one fact cannot be inserted without supplying unrelated information.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Deleting the last employee in a department also removes the only stored occurrence of that department's name. Which anomaly is this?",
+    "options": {
+      "A": "Deletion anomaly",
+      "B": "Insertion anomaly",
+      "C": "Deadlock",
+      "D": "Phantom read"
+    },
+    "correct_answer": "A",
+    "explanation": "A deletion anomaly occurs when removing one fact unintentionally removes another fact that should have been retained.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database contains Employee(EmpID, Name, DeptID) and Department(DeptID, DeptName). Which design reduces repeated department names?",
+    "options": {
+      "A": "Store DeptName only in Department and reference DeptID from Employee",
+      "B": "Store DeptName in every Employee row",
+      "C": "Remove DeptID from both tables",
+      "D": "Duplicate Department rows for every employee"
+    },
+    "correct_answer": "A",
+    "explanation": "Separating department information and referencing it by DeptID reduces redundancy and supports referential integrity.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query uses GROUP BY Department and COUNT(*). What does COUNT(*) represent for each group?",
+    "options": {
+      "A": "The number of rows belonging to that department",
+      "B": "The number of columns in the table",
+      "C": "The number of databases",
+      "D": "The maximum salary"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY forms department groups, and COUNT(*) counts rows within each group.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query groups employees by Department and uses HAVING COUNT(*) > 5. What does HAVING filter?",
+    "options": {
+      "A": "Individual rows before grouping",
+      "B": "Departments whose groups contain more than five rows",
+      "C": "Columns before SELECT",
+      "D": "Indexes"
+    },
+    "correct_answer": "B",
+    "explanation": "HAVING filters grouped results after aggregation, so only departments with more than five employees remain.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query uses WHERE Salary > 30000 and HAVING AVG(Salary) > 50000. Which statement is correct?",
+    "options": {
+      "A": "WHERE filters rows before grouping; HAVING filters groups after aggregation",
+      "B": "Both clauses always filter after grouping",
+      "C": "WHERE is used only for sorting",
+      "D": "HAVING cannot use aggregate functions"
+    },
+    "correct_answer": "A",
+    "explanation": "WHERE applies to individual rows before grouping, while HAVING applies to groups and can use aggregate results.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table has 100 rows, but 20 rows have NULL in Salary. What is the important distinction between COUNT(*) and COUNT(Salary)?",
+    "options": {
+      "A": "COUNT(*) counts rows; COUNT(Salary) normally counts non-NULL Salary values",
+      "B": "Both always return 20",
+      "C": "COUNT(*) ignores all rows with NULL",
+      "D": "COUNT(Salary) always equals 100"
+    },
+    "correct_answer": "A",
+    "explanation": "COUNT(*) counts rows, whereas COUNT(column) generally counts only non-NULL values of that column.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query must return departments in alphabetical order after calculating employee counts. Which clause should provide the final ordering?",
+    "options": {
+      "A": "ORDER BY",
+      "B": "WHERE",
+      "C": "HAVING",
+      "D": "CHECK"
+    },
+    "correct_answer": "A",
+    "explanation": "ORDER BY controls the ordering of the query result after the relevant filtering/grouping operations.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Sorting",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table contains names 'Anu', 'Amit', 'Ravi', and 'John'. Which predicate selects Anu and Amit but not Ravi?",
+    "options": {
+      "A": "Name LIKE 'A%'",
+      "B": "Name LIKE '%A'",
+      "C": "Name = '%A%'",
+      "D": "Name LIKE '_A%'"
+    },
+    "correct_answer": "A",
+    "explanation": "A% matches strings beginning with A, so Anu and Amit match while Ravi and John do not.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Pattern Matching",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query uses WHERE City IN ('Delhi','Pune','Mysuru'). What does IN accomplish?",
+    "options": {
+      "A": "Checks whether City equals any listed value",
+      "B": "Checks whether City contains all listed values",
+      "C": "Sorts City values",
+      "D": "Creates three new columns"
+    },
+    "correct_answer": "A",
+    "explanation": "IN tests whether an expression matches one of the specified values.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query uses WHERE Salary BETWEEN 30000 AND 50000. What is the usual meaning of BETWEEN in SQL?",
+    "options": {
+      "A": "Values from 30000 through 50000, inclusive",
+      "B": "Only values strictly between them",
+      "C": "Only 30000 and 50000",
+      "D": "Values outside the range"
+    },
+    "correct_answer": "A",
+    "explanation": "BETWEEN is inclusive of both boundary values in standard SQL usage.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction executes UPDATE statements and then ROLLBACK before COMMIT. What should happen to those uncommitted changes?",
+    "options": {
+      "A": "They should be undone",
+      "B": "They become permanent",
+      "C": "The table is dropped",
+      "D": "The database is automatically normalized"
+    },
+    "correct_answer": "A",
+    "explanation": "ROLLBACK reverses changes made in the transaction since the relevant transaction or savepoint.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction uses SAVEPOINT S1, performs more updates, then rolls back to S1. What is the intended effect?",
+    "options": {
+      "A": "Undo changes after S1 while retaining earlier transaction work",
+      "B": "Undo the entire database",
+      "C": "Commit all changes",
+      "D": "Drop S1 and the table"
+    },
+    "correct_answer": "A",
+    "explanation": "A savepoint allows partial rollback to a point within the current transaction rather than necessarily undoing the whole transaction.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A system must prevent one transaction from seeing another transaction's uncommitted changes. Which concurrency-control goal is most relevant?",
+    "options": {
+      "A": "Isolation",
+      "B": "Durability",
+      "C": "Normalization",
+      "D": "Projection"
+    },
+    "correct_answer": "A",
+    "explanation": "Isolation controls the visibility and interaction of concurrent transaction operations so intermediate uncommitted states are not improperly exposed.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction reads the same row twice while another transaction changes and commits that row between the reads. What phenomenon may occur?",
+    "options": {
+      "A": "Non-repeatable read",
+      "B": "Insertion anomaly",
+      "C": "Lost index",
+      "D": "Deadlock necessarily"
+    },
+    "correct_answer": "A",
+    "explanation": "A non-repeatable read occurs when repeated reads of the same row return different committed values because another transaction modified it.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction runs the same condition twice and sees an additional row inserted by another committed transaction. What phenomenon is this?",
+    "options": {
+      "A": "Phantom read",
+      "B": "Dirty read",
+      "C": "Update anomaly",
+      "D": "Partial dependency"
+    },
+    "correct_answer": "A",
+    "explanation": "A phantom read occurs when repeated execution of a range or predicate query returns a changed set of rows due to concurrent inserts or deletes.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A DBMS detects a cycle in its wait-for graph. What does the cycle indicate?",
+    "options": {
+      "A": "A possible deadlock",
+      "B": "A successful commit",
+      "C": "A normalized relation",
+      "D": "A valid foreign key"
+    },
+    "correct_answer": "A",
+    "explanation": "A cycle in the wait-for graph indicates circular waiting among transactions, which is a deadlock condition.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database backup is restored after a disk failure. Which DBMS capability does this primarily support?",
+    "options": {
+      "A": "Recovery",
+      "B": "Normalization",
+      "C": "Projection",
+      "D": "Data modeling"
+    },
+    "correct_answer": "A",
+    "explanation": "Backups provide a source from which lost database data can be restored after failures.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction log records committed changes so they can be reapplied after a crash. Which recovery concept does this support?",
+    "options": {
+      "A": "Redo",
+      "B": "Projection",
+      "C": "Normalization",
+      "D": "Foreign-key enforcement"
+    },
+    "correct_answer": "A",
+    "explanation": "Redo reapplies logged changes when necessary to restore effects of committed transactions during recovery.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction log is used to reverse changes from a transaction that did not commit. Which recovery action is relevant?",
+    "options": {
+      "A": "Undo",
+      "B": "Join",
+      "C": "Projection",
+      "D": "Index scan"
+    },
+    "correct_answer": "A",
+    "explanation": "Undo reverses effects of transactions that should not remain in the recovered database state.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A DBA wants users to access a view but not directly access the underlying table. Which DBMS mechanism can help?",
+    "options": {
+      "A": "Privileges and authorization",
+      "B": "Normalization only",
+      "C": "GROUP BY",
+      "D": "CROSS JOIN"
+    },
+    "correct_answer": "A",
+    "explanation": "Authorization can grant access to a view while restricting direct access to underlying database objects, depending on DBMS security features.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Security",
+    "difficulty": "L2"
+  },
+  {
+    "question": "An application concatenates a username directly into a SQL query. Which defense is most appropriate?",
+    "options": {
+      "A": "Parameterized queries",
+      "B": "Removing the WHERE clause",
+      "C": "Giving users DBA privileges",
+      "D": "Storing passwords in plain text"
+    },
+    "correct_answer": "A",
+    "explanation": "Parameterized queries keep data values separate from SQL code and are a standard defense against SQL injection.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Security",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A user is authenticated successfully but cannot execute DELETE on a table. Which concept explains this?",
+    "options": {
+      "A": "Authorization",
+      "B": "Authentication failure",
+      "C": "Atomicity",
+      "D": "Cardinality"
+    },
+    "correct_answer": "A",
+    "explanation": "Authentication establishes identity; authorization determines which operations the authenticated user is permitted to perform.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Database Security",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A DBMS has a table Employee and a view that selects only EmpID and Name. A user has permission on the view but not Salary. What is the main security benefit?",
+    "options": {
+      "A": "The user can be restricted from directly receiving Salary through that view",
+      "B": "The table automatically loses Salary",
+      "C": "Salary becomes a primary key",
+      "D": "All employees are deleted"
+    },
+    "correct_answer": "A",
+    "explanation": "A restricted view can expose only selected columns, helping limit data visibility when permissions are configured appropriately.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Views",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query repeatedly searches Employee by EmpID, which is unique. Which design choice is likely to help equality searches?",
+    "options": {
+      "A": "An index on EmpID",
+      "B": "Removing EmpID",
+      "C": "Duplicating every row",
+      "D": "Using CROSS JOIN"
+    },
+    "correct_answer": "A",
+    "explanation": "An index on a frequently searched unique column can provide an efficient lookup path.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "An index exists on Salary, but a query calculates a complex expression on Salary for every row. Why might the index not provide as much benefit as a simple equality search?",
+    "options": {
+      "A": "The expression may prevent efficient direct use of the index",
+      "B": "Indexes work only for primary keys",
+      "C": "Indexes delete computed values",
+      "D": "Salary cannot be indexed"
+    },
+    "correct_answer": "A",
+    "explanation": "Whether an index can be used efficiently depends on the predicate and DBMS optimizer; applying expressions can sometimes reduce direct index usability.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A B+ tree index stores key values in sorted order. Which type of query is it particularly suitable for?",
+    "options": {
+      "A": "Range searches such as Salary BETWEEN 30000 AND 50000",
+      "B": "Only random text generation",
+      "C": "Deleting the database",
+      "D": "Changing user passwords"
+    },
+    "correct_answer": "A",
+    "explanation": "B+ trees support ordered traversal, making them well suited to range searches as well as equality searches.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table is frequently queried but rarely updated. Why might an index be attractive?",
+    "options": {
+      "A": "Read performance can improve while update overhead is relatively less significant",
+      "B": "Indexes always reduce storage",
+      "C": "Indexes eliminate the need for backups",
+      "D": "Indexes prevent all NULL values"
+    },
+    "correct_answer": "A",
+    "explanation": "Indexes can speed reads, while maintaining them adds overhead to writes; a read-heavy workload can make that trade-off attractive.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A company wants each employee to belong to exactly one department, while a department can contain many employees. What relationship is this?",
+    "options": {
+      "A": "One-to-many from Department to Employee",
+      "B": "Many-to-many from Department to Employee",
+      "C": "One-to-one only",
+      "D": "Many-to-one from Department to Department"
+    },
+    "correct_answer": "A",
+    "explanation": "One department can be related to many employees, while each employee belongs to one department in this stated model.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Students can enroll in many courses, and each course can have many students. Which relationship is most appropriate?",
+    "options": {
+      "A": "Many-to-many",
+      "B": "One-to-one",
+      "C": "One-to-many only",
+      "D": "No relationship"
+    },
+    "correct_answer": "A",
+    "explanation": "Multiple students can take multiple courses, so the relationship is many-to-many.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A weak entity cannot be uniquely identified by its own attributes alone. What is generally needed?",
+    "options": {
+      "A": "An identifying relationship with an owning entity",
+      "B": "A CROSS JOIN",
+      "C": "A view only",
+      "D": "An ORDER BY clause"
+    },
+    "correct_answer": "A",
+    "explanation": "A weak entity depends on an owner entity and identifying relationship, along with its partial key, for identification.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A designer wants to store multiple phone numbers for each customer without repeating Phone1, Phone2, Phone3 columns. Which approach is more relational?",
+    "options": {
+      "A": "Create a separate CustomerPhone relation linked to Customer",
+      "B": "Add Phone4 and Phone5 columns",
+      "C": "Store all numbers as unrelated rows in Customer",
+      "D": "Delete the Customer key"
+    },
+    "correct_answer": "A",
+    "explanation": "A separate relation can represent multiple phone values per customer while preserving atomic values and avoiding repeating groups.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ER Model",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A candidate key contains attributes StudentID and CourseID. Which statement is true?",
+    "options": {
+      "A": "Both attributes together can uniquely identify a tuple",
+      "B": "Either attribute must always uniquely identify the tuple",
+      "C": "Neither attribute can be part of a key",
+      "D": "The pair must be a foreign key"
+    },
+    "correct_answer": "A",
+    "explanation": "A composite candidate key can use multiple attributes together to provide uniqueness even when neither attribute is unique alone.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation has candidate keys {A,B} and {C}. Which could be selected as the primary key?",
+    "options": {
+      "A": "Only A",
+      "B": "Only B",
+      "C": "Either the candidate key {A,B} or candidate key {C}",
+      "D": "Only A,B,C together"
+    },
+    "correct_answer": "C",
+    "explanation": "A primary key is one candidate key chosen to uniquely identify tuples, so either candidate key could be selected subject to design requirements.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table has a UNIQUE constraint on Email and a separate PRIMARY KEY on UserID. What is the main distinction?",
+    "options": {
+      "A": "UserID identifies each row as the primary key; Email is also required to be unique",
+      "B": "Email must be the primary key",
+      "C": "UserID may duplicate freely",
+      "D": "Neither column can be used for identification"
+    },
+    "correct_answer": "A",
+    "explanation": "A table has one primary-key constraint in the usual relational design, while additional candidate-like attributes can be constrained UNIQUE.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database designer changes only the way table pages are stored on disk. Applications continue using the same tables. Which schema level changed?",
+    "options": {
+      "A": "Internal level",
+      "B": "External level",
+      "C": "Conceptual level",
+      "D": "User level"
+    },
+    "correct_answer": "A",
+    "explanation": "The internal level describes physical storage structures and access methods.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Different users need different subsets of the same database. Which schema level is intended to represent these user-specific views?",
+    "options": {
+      "A": "External level",
+      "B": "Internal level",
+      "C": "Physical level",
+      "D": "Storage level"
+    },
+    "correct_answer": "A",
+    "explanation": "The external level represents user-specific views of the database.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Three-Schema Architecture",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A DBMS stores the same customer address in five tables. Which problem can result if the address changes?",
+    "options": {
+      "A": "Some copies may become inconsistent",
+      "B": "Atomicity is guaranteed",
+      "C": "The database becomes automatically 3NF",
+      "D": "Indexes disappear"
+    },
+    "correct_answer": "A",
+    "explanation": "Redundant copies create the risk that updates are applied to some locations but not others.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation has X → Y and X is a candidate key. What does the dependency indicate?",
+    "options": {
+      "A": "X determines Y for tuples in the relation",
+      "B": "Y must be a primary key",
+      "C": "X must be a foreign key",
+      "D": "X and Y must be identical"
+    },
+    "correct_answer": "A",
+    "explanation": "X → Y means each X value determines a unique Y value in the relation.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Functional Dependencies",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Given A → B and B → C, which dependency can be inferred by transitivity?",
+    "options": {
+      "A": "A → C",
+      "B": "C → A",
+      "C": "B → A",
+      "D": "C → B"
+    },
+    "correct_answer": "A",
+    "explanation": "By transitivity of functional dependencies, if A determines B and B determines C, then A determines C.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Functional Dependencies",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A relation has FD StudentID → StudentName, and StudentID is a candidate key. Is StudentName partially dependent on a composite key if the key is only StudentID?",
+    "options": {
+      "A": "No, because StudentID is the whole key",
+      "B": "Yes, always",
+      "C": "Only if StudentName is NULL",
+      "D": "Only if the table has an index"
+    },
+    "correct_answer": "A",
+    "explanation": "Partial dependency requires dependence on a proper subset of a composite candidate key; StudentID is the entire key here.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database has a table Order(OrderID, CustomerID, CustomerName). If CustomerID → CustomerName and OrderID is the key, what design concern exists?",
+    "options": {
+      "A": "A transitive dependency can occur through CustomerID",
+      "B": "Atomicity is violated",
+      "C": "There must be a deadlock",
+      "D": "The table cannot have a primary key"
+    },
+    "correct_answer": "A",
+    "explanation": "CustomerName depends on CustomerID rather than directly on OrderID, creating a transitive dependency when CustomerID is non-key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query SELECT DISTINCT DeptID FROM Employee is run. If DeptID values are 10, 10, 20, 20, 30, what is returned?",
+    "options": {
+      "A": "10, 20, 30",
+      "B": "10, 10, 20, 20, 30",
+      "C": "5",
+      "D": "20 only"
+    },
+    "correct_answer": "A",
+    "explanation": "DISTINCT removes duplicate result values, leaving each department ID once.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(RollNo, Name, Marks) contains (1,'A',80), (2,'B',65), (3,'C',90). What does SELECT Name FROM Student WHERE Marks >= 80 return?",
+    "options": {
+      "A": "A and C",
+      "B": "B only",
+      "C": "A, B and C",
+      "D": "C only"
+    },
+    "correct_answer": "A",
+    "explanation": "Rows with Marks 80 or above are RollNo 1 and 3, whose names are A and C.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Filtering",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, DeptID, Salary) contains salaries 40000, 50000, 60000 in DeptID 1 and 30000 in DeptID 2. What is AVG(Salary) for DeptID 1?",
+    "options": {
+      "A": "40000",
+      "B": "50000",
+      "C": "55000",
+      "D": "60000"
+    },
+    "correct_answer": "B",
+    "explanation": "For DeptID 1, the average is (40000 + 50000 + 60000) / 3 = 50000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee has DeptID values 1, 1, 2, 3, 3, 3. What does SELECT DeptID, COUNT(*) FROM Employee GROUP BY DeptID produce conceptually?",
+    "options": {
+      "A": "Counts 1→2, 2→1, 3→3",
+      "B": "Only the largest group",
+      "C": "One total count of 6",
+      "D": "Three identical rows"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY creates one group per DeptID and COUNT(*) counts rows in each group.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, DeptID) has rows (1,10), (2,20), (3,10). Department(DeptID, DeptName) has (10,'CSE'), (20,'ECE'). How many rows does an INNER JOIN on DeptID return?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "explanation": "Every employee has a matching department, so all three employee rows produce a matching joined row.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee has rows with DeptID 10, 20, and 30. Department has rows only for 10 and 20. How many Employee rows appear in an INNER JOIN on DeptID?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "0"
+    },
+    "correct_answer": "B",
+    "explanation": "Only employees whose DeptID has a matching Department row appear in the INNER JOIN, so the employees in departments 10 and 20 remain.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee has 3 rows and Department has 4 rows. What is the number of rows produced by a CROSS JOIN?",
+    "options": {
+      "A": "7",
+      "B": "12",
+      "C": "4",
+      "D": "3"
+    },
+    "correct_answer": "B",
+    "explanation": "A CROSS JOIN creates every possible pair, so 3 × 4 = 12 rows.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(RollNo, Name, Marks) contains one row with Marks = NULL. What does SELECT COUNT(Marks) count with respect to that row?",
+    "options": {
+      "A": "It counts the row",
+      "B": "It normally does not count the NULL value",
+      "C": "It converts NULL to zero automatically",
+      "D": "It deletes the row"
+    },
+    "correct_answer": "B",
+    "explanation": "COUNT(column) normally counts only non-NULL values, unlike COUNT(*) which counts rows.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL NULL Handling",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, Salary) has salaries 20000, NULL, and 40000. What is AVG(Salary) normally calculated from?",
+    "options": {
+      "A": "All three values treating NULL as zero",
+      "B": "Only 20000 and 40000",
+      "C": "Only NULL",
+      "D": "No values"
+    },
+    "correct_answer": "B",
+    "explanation": "Aggregate AVG normally ignores NULL values, so the average is calculated from 20000 and 40000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(Name) contains 'Amit', 'Anu', and 'Ravi'. Which query selects Amit and Anu?",
+    "options": {
+      "A": "WHERE Name LIKE 'A%'",
+      "B": "WHERE Name LIKE '%A'",
+      "C": "WHERE Name LIKE '_A%'",
+      "D": "WHERE Name = 'A'"
+    },
+    "correct_answer": "A",
+    "explanation": "A% matches strings beginning with A followed by zero or more characters.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Pattern Matching",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, Salary) contains salaries 25000, 30000, 50000. Which rows satisfy Salary BETWEEN 30000 AND 50000?",
+    "options": {
+      "A": "30000 and 50000",
+      "B": "Only 30000",
+      "C": "Only 50000",
+      "D": "25000 and 30000"
+    },
+    "correct_answer": "A",
+    "explanation": "BETWEEN is inclusive, so both boundary values 30000 and 50000 satisfy the condition.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Filtering",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Student table has 20 rows. What is the effect of SELECT COUNT(*) FROM Student WHERE Marks > 50?",
+    "options": {
+      "A": "It returns the number of students with Marks > 50",
+      "B": "It changes Marks to 50",
+      "C": "It returns 20 regardless of marks",
+      "D": "It deletes students below 50"
+    },
+    "correct_answer": "A",
+    "explanation": "WHERE filters the rows first, and COUNT(*) counts the rows that remain.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, Name, Salary) contains EmpID 101 with Salary 40000. Which query changes only this employee's salary to 45000?",
+    "options": {
+      "A": "UPDATE Employee SET Salary=45000 WHERE EmpID=101",
+      "B": "UPDATE Employee SET Salary=45000",
+      "C": "ALTER Employee SET Salary=45000 WHERE EmpID=101",
+      "D": "INSERT Employee Salary=45000"
+    },
+    "correct_answer": "A",
+    "explanation": "UPDATE changes existing rows, and the WHERE condition restricts the modification to EmpID 101.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Data Manipulation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(RollNo, Name) has RollNo as primary key. What happens if DELETE FROM Student WHERE RollNo=5 is executed when no such row exists?",
+    "options": {
+      "A": "The table is dropped",
+      "B": "No row is deleted; the statement affects zero rows",
+      "C": "All rows are deleted",
+      "D": "A new row is created"
+    },
+    "correct_answer": "B",
+    "explanation": "DELETE affects only rows matching the condition. If none match, zero rows are affected and the table remains.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Data Manipulation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Department(DeptID, DeptName) has DeptID 10='CSE'. Employee has DeptID 10. What does a foreign-key constraint protect against?",
+    "options": {
+      "A": "An Employee row referencing a nonexistent Department 99",
+      "B": "Two employees having the same name",
+      "C": "Employees having NULL names",
+      "D": "Salary being greater than zero"
+    },
+    "correct_answer": "A",
+    "explanation": "A foreign key prevents invalid references to nonexistent parent key values, subject to NULL and referential actions.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Referential Integrity",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, DeptID) has 5 employees in DeptID 10. Which query can return DeptID 10 if it has more than 3 employees?",
+    "options": {
+      "A": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING COUNT(*) > 3",
+      "B": "SELECT DeptID FROM Employee WHERE COUNT(*) > 3",
+      "C": "SELECT DeptID FROM Employee ORDER BY COUNT(*) > 3",
+      "D": "SELECT DeptID FROM Employee CHECK COUNT(*) > 3"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY creates department groups and HAVING filters those groups using the aggregate count.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Student(RollNo, Name, Marks) contains marks 45, 70, 80, 90. What does SELECT MAX(Marks) FROM Student WHERE Marks < 90 return?",
+    "options": {
+      "A": "45",
+      "B": "70",
+      "C": "80",
+      "D": "90"
+    },
+    "correct_answer": "C",
+    "explanation": "The WHERE clause excludes 90, so MAX among 45, 70, and 80 is 80.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, DeptID) has employees 1,2 in Dept 10 and employee 3 in Dept 20. Department has Dept 10 and 20. What does a LEFT JOIN from Employee to Department preserve?",
+    "options": {
+      "A": "All Employee rows, including those without matches",
+      "B": "Only Department rows",
+      "C": "Only matching rows from both",
+      "D": "No rows"
+    },
+    "correct_answer": "A",
+    "explanation": "A LEFT JOIN preserves every row from the left table and supplies matching right-table data when available.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Product(ProductID, Category, Price) has 6 rows. Which query is appropriate to find the average price separately for each category?",
+    "options": {
+      "A": "SELECT Category, AVG(Price) FROM Product GROUP BY Category",
+      "B": "SELECT Category, AVG(Price) FROM Product ORDER BY Category",
+      "C": "SELECT AVG(Category) FROM Product GROUP BY Price",
+      "D": "SELECT Category FROM Product HAVING AVG(Price)"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY Category forms category groups, and AVG(Price) calculates the average within each group.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A database contains Orders(OrderID, CustomerID) and Customers(CustomerID, Name). If one order references CustomerID 7, what must exist for referential integrity if CustomerID is a foreign key?",
+    "options": {
+      "A": "A matching Customer key value 7, unless NULL is permitted and used",
+      "B": "A matching OrderID 7",
+      "C": "A matching Name 7",
+      "D": "Another Orders row with CustomerID 7"
+    },
+    "correct_answer": "A",
+    "explanation": "A foreign key must reference a valid key value in the parent table when it is non-NULL, subject to the database's referential rules.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Referential Integrity",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Student table has RollNo values 1, 2, 3 and names A, B, C. Which result is produced by SELECT Name FROM Student ORDER BY RollNo DESC?",
+    "options": {
+      "A": "A, B, C",
+      "B": "C, B, A",
+      "C": "B, A, C",
+      "D": "C, A, B"
+    },
+    "correct_answer": "B",
+    "explanation": "DESC orders RollNo from highest to lowest, so names appear C, B, A.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Sorting",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Employee has rows (1,10,50000), (2,10,60000), (3,20,40000). Which department has the highest average salary?",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "Both have the same average",
+      "D": "No department"
+    },
+    "correct_answer": "A",
+    "explanation": "Department 10 has average (50000+60000)/2 = 55000, while department 20 has 40000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Student contains duplicate rows for the same Name. Which query returns unique names without changing the underlying table?",
+    "options": {
+      "A": "SELECT DISTINCT Name FROM Student",
+      "B": "DELETE DISTINCT Name FROM Student",
+      "C": "SELECT UNIQUE TABLE Name FROM Student",
+      "D": "DROP DUPLICATES FROM Student"
+    },
+    "correct_answer": "A",
+    "explanation": "DISTINCT removes duplicate values from the query result; it does not modify the stored table.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Employee(EmpID, DeptID) has rows (1,10), (2,10), (3,20). Department(DeptID, DeptName) has only (10,'CSE'). What happens to employee 3 in an INNER JOIN?",
+    "options": {
+      "A": "It appears with NULL department data",
+      "B": "It is excluded because there is no matching Department row",
+      "C": "It is duplicated",
+      "D": "The Department row is created automatically"
+    },
+    "correct_answer": "B",
+    "explanation": "INNER JOIN includes only rows satisfying the join condition in both tables, so employee 3 has no joined result.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Student table has 8 rows. Four rows have NULL in Phone. What does SELECT COUNT(Phone) normally return?",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "0",
+      "D": "12"
+    },
+    "correct_answer": "A",
+    "explanation": "COUNT(Phone) counts non-NULL Phone values, so four non-NULL values are counted.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL NULL Handling",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A query returns departments and their employee counts. To display only departments with at least 10 employees, which construct is most appropriate?",
+    "options": {
+      "A": "HAVING COUNT(*) >= 10",
+      "B": "WHERE COUNT(*) >= 10",
+      "C": "ORDER BY COUNT(*) >= 10",
+      "D": "DISTINCT COUNT(*) >= 10"
+    },
+    "correct_answer": "A",
+    "explanation": "HAVING filters groups after aggregation, making it appropriate for conditions on COUNT(*).",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Account(AccountNo, Balance) has AccountNo as primary key. Which constraint is most appropriate if Balance must never be negative?",
+    "options": {
+      "A": "CHECK (Balance >= 0)",
+      "B": "UNIQUE (Balance)",
+      "C": "FOREIGN KEY (Balance)",
+      "D": "DEFAULT (Balance >= 0)"
+    },
+    "correct_answer": "A",
+    "explanation": "A CHECK constraint can enforce a condition such as Balance >= 0 on inserted and updated values.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Student has Email declared UNIQUE. Two different students attempt to insert the same non-NULL email. What is expected?",
+    "options": {
+      "A": "The second insert violates the UNIQUE constraint",
+      "B": "Both rows must be accepted",
+      "C": "The first student is deleted",
+      "D": "Email becomes NULL automatically"
+    },
+    "correct_answer": "A",
+    "explanation": "A UNIQUE constraint prevents duplicate non-NULL key values, so the duplicate insert is rejected.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Keys and Constraints",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A table Employee has DeptID values 10, 10, 20. Which query returns 10 and 20 in increasing order?",
+    "options": {
+      "A": "SELECT DISTINCT DeptID FROM Employee ORDER BY DeptID ASC",
+      "B": "SELECT DeptID FROM Employee WHERE DISTINCT ORDER",
+      "C": "SELECT UNIQUE DeptID FROM Employee SORT",
+      "D": "SELECT DeptID GROUP ONLY"
+    },
+    "correct_answer": "A",
+    "explanation": "DISTINCT removes duplicates and ORDER BY ASC sorts the resulting department IDs in increasing order.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Sorting",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A transaction updates two rows and then the DBMS crashes before COMMIT. Which property means the incomplete transaction should not leave a partial committed effect after recovery?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Cardinality",
+      "C": "Projection",
+      "D": "Indexing"
+    },
+    "correct_answer": "A",
+    "explanation": "Atomicity requires an incomplete transaction to have all its effects treated as a unit rather than leaving a partial committed result.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Transactions",
+    "difficulty": "L2"
+  }
+]

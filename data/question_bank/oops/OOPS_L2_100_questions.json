@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "A base reference points to a derived object and an overridden method is called. Which mechanism selects the derived implementation?",
+    "options": {
+      "A": "Dynamic dispatch",
+      "B": "Method overloading",
+      "C": "Composition",
+      "D": "Constructor chaining"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic dispatch selects an overridden implementation according to the runtime object type.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class keeps balance private and permits changes only through deposit() and withdraw(). What is the main benefit?",
+    "options": {
+      "A": "Controlled state and invariants",
+      "B": "Multiple inheritance",
+      "C": "Static binding",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Private state plus controlled operations is a standard encapsulation technique.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A service directly creates a concrete database class. What design problem is most apparent?",
+    "options": {
+      "A": "Tight coupling to an implementation",
+      "B": "Low cohesion automatically",
+      "C": "Runtime polymorphism",
+      "D": "Interface segregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Direct construction of a concrete dependency couples the service to that implementation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A subclass provides a compatible implementation of an inherited method. What is this called?",
+    "options": {
+      "A": "Overriding",
+      "B": "Overloading",
+      "C": "Aggregation",
+      "D": "Delegation"
+    },
+    "correct_answer": "A",
+    "explanation": "Overriding provides subtype-specific behavior for inherited operations.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class handles billing, email, persistence, and PDF rendering. Which principle is most clearly at risk?",
+    "options": {
+      "A": "Single Responsibility Principle",
+      "B": "Liskov Substitution Principle",
+      "C": "Interface Segregation Principle",
+      "D": "Dependency Inversion Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "These unrelated responsibilities give the class multiple reasons to change.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Penguin subtype cannot honor a Bird contract requiring fly(). What should be questioned first?",
+    "options": {
+      "A": "The inheritance hierarchy",
+      "B": "The constructor count",
+      "C": "Method overloading",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "If a subtype cannot satisfy the base contract, the inheritance relationship may violate substitutability.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can composition be preferable to inheritance for interchangeable behavior?",
+    "options": {
+      "A": "Collaborators can be replaced without changing the class hierarchy",
+      "B": "Composition always runs faster",
+      "C": "Composition removes every dependency",
+      "D": "Composition prevents polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "Composition lets behavior vary through replaceable collaborating objects.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class needs only three methods from a 15-method interface. What is the best design improvement?",
+    "options": {
+      "A": "Split the interface into focused contracts",
+      "B": "Add more methods to it",
+      "C": "Make all methods static",
+      "D": "Create another superclass"
+    },
+    "correct_answer": "A",
+    "explanation": "Focused interfaces avoid forcing clients to depend on operations they do not need.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which situation indicates high coupling?",
+    "options": {
+      "A": "A class directly depends on many concrete services",
+      "B": "A class has one focused responsibility",
+      "C": "A class hides its fields",
+      "D": "A class uses a small interface"
+    },
+    "correct_answer": "A",
+    "explanation": "Many direct concrete dependencies create strong coupling.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which situation indicates high cohesion?",
+    "options": {
+      "A": "A Payroll class contains closely related payroll operations",
+      "B": "A Utility class handles unrelated subsystems",
+      "C": "A class owns global state",
+      "D": "A service creates every dependency"
+    },
+    "correct_answer": "A",
+    "explanation": "Closely related responsibilities indicate high cohesion.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why is method overloading usually resolved at compile time?",
+    "options": {
+      "A": "The compiler can distinguish the parameter signatures",
+      "B": "The runtime object is always inspected",
+      "C": "Constructors select the method",
+      "D": "The database resolves it"
+    },
+    "correct_answer": "A",
+    "explanation": "Overload resolution normally uses information available from the method signatures at compile time.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why is overriding associated with runtime polymorphism?",
+    "options": {
+      "A": "The runtime object can determine which compatible implementation executes",
+      "B": "The parameter list is changed",
+      "C": "The method is always static",
+      "D": "The class is copied"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic dispatch uses the runtime object's concrete type for an overridden operation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is the key distinction between abstraction and encapsulation?",
+    "options": {
+      "A": "Abstraction hides unnecessary complexity; encapsulation controls access to state",
+      "B": "They are exactly identical",
+      "C": "Abstraction means inheritance only",
+      "D": "Encapsulation applies only to interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction focuses on essential behavior, while encapsulation protects internal representation and state.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Report uses a Printer temporarily during print(). Which relationship is most appropriate?",
+    "options": {
+      "A": "Dependency",
+      "B": "Inheritance",
+      "C": "Composition necessarily",
+      "D": "Overriding"
+    },
+    "correct_answer": "A",
+    "explanation": "Temporary use of another object is commonly modeled as a dependency.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Company strongly owns Department objects whose lifecycle is tied to the company in the model. Which relationship fits?",
+    "options": {
+      "A": "Composition",
+      "B": "Simple association",
+      "C": "Inheritance",
+      "D": "Overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Strong whole-part ownership with lifecycle dependence is composition.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Students can exist independently of a Course and may enroll in many courses. Which relationship is appropriate?",
+    "options": {
+      "A": "Association",
+      "B": "Composition necessarily",
+      "C": "Inheritance",
+      "D": "Overriding"
+    },
+    "correct_answer": "A",
+    "explanation": "Enrollment is a relationship without strong lifecycle ownership.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can returning a mutable internal list weaken encapsulation?",
+    "options": {
+      "A": "Callers can mutate state without the class enforcing its rules",
+      "B": "It creates inheritance",
+      "C": "It prevents object creation",
+      "D": "It makes methods static"
+    },
+    "correct_answer": "A",
+    "explanation": "A returned mutable reference can expose internal state to uncontrolled modification.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A setter rejects negative age values. What does this help preserve?",
+    "options": {
+      "A": "An object invariant",
+      "B": "Multiple inheritance",
+      "C": "Static binding",
+      "D": "Interface segregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Validation during state changes helps maintain conditions that must remain true for valid objects.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design best follows Open/Closed Principle?",
+    "options": {
+      "A": "Add a new strategy implementation without modifying stable client logic",
+      "B": "Edit one huge conditional for every new type",
+      "C": "Modify every caller for each feature",
+      "D": "Expose all internal fields"
+    },
+    "correct_answer": "A",
+    "explanation": "Extension through new implementations reduces modification of stable code.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Several notification implementations satisfy one Notification interface. What benefit does the client gain?",
+    "options": {
+      "A": "It can use different implementations polymorphically",
+      "B": "All implementations must have identical internals",
+      "C": "Objects cannot be replaced",
+      "D": "The interface becomes concrete"
+    },
+    "correct_answer": "A",
+    "explanation": "A common contract allows clients to work with different concrete implementations.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A subtype requires callers to satisfy stricter preconditions than the base type. What concern arises?",
+    "options": {
+      "A": "Liskov Substitution Principle",
+      "B": "Single Responsibility Principle",
+      "C": "Interface Segregation Principle",
+      "D": "Open/Closed Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "Strengthening preconditions can make previously valid base-type calls invalid.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can deep inheritance hierarchies be difficult to maintain?",
+    "options": {
+      "A": "Behavior and dependencies become harder to trace across levels",
+      "B": "They eliminate coupling",
+      "C": "They prevent interfaces",
+      "D": "They remove object state"
+    },
+    "correct_answer": "A",
+    "explanation": "Changes and inherited behavior can propagate through many levels, increasing reasoning complexity.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "When is an abstract class especially useful?",
+    "options": {
+      "A": "When related types share implementation but require specialized behavior",
+      "B": "When unrelated classes need unrelated APIs",
+      "C": "When no common behavior exists",
+      "D": "When a database needs indexing"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstract classes can combine shared implementation with operations specialized by subclasses.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "When is an interface especially useful?",
+    "options": {
+      "A": "When multiple types need to satisfy a common capability contract",
+      "B": "When all types must share implementation state",
+      "C": "When only one concrete class exists",
+      "D": "When no behavior is required"
+    },
+    "correct_answer": "A",
+    "explanation": "Interfaces express common contracts without requiring shared concrete implementation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A service depends on a Logger abstraction and receives FileLogger through its constructor. What principle is supported?",
+    "options": {
+      "A": "Dependency Inversion",
+      "B": "Multiple inheritance",
+      "C": "Method overloading",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "The service depends on an abstraction rather than directly on a concrete logger.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is the main purpose of dependency injection?",
+    "options": {
+      "A": "Supply collaborators externally instead of hard-coding their construction",
+      "B": "Remove every dependency",
+      "C": "Force inheritance",
+      "D": "Replace all constructors"
+    },
+    "correct_answer": "A",
+    "explanation": "Dependency injection makes dependencies explicit and replaceable.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why does dependency injection improve testability?",
+    "options": {
+      "A": "Tests can supply fake or mock implementations",
+      "B": "It removes all methods",
+      "C": "It prevents interfaces",
+      "D": "It guarantees no exceptions"
+    },
+    "correct_answer": "A",
+    "explanation": "External dependencies can be substituted with controlled test doubles.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class creates a database client, logger, mailer, and payment service internally. What is the likely concern?",
+    "options": {
+      "A": "Excessive coupling and construction responsibility",
+      "B": "Perfect cohesion",
+      "C": "Automatic abstraction",
+      "D": "No dependencies"
+    },
+    "correct_answer": "A",
+    "explanation": "The class is tightly coupled to multiple concrete collaborators and also owns their construction.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which approach best supports a service that must work with SQL, NoSQL, and in-memory storage?",
+    "options": {
+      "A": "Depend on a repository abstraction",
+      "B": "Embed all storage code in the service",
+      "C": "Use global database objects",
+      "D": "Create one service per database technology"
+    },
+    "correct_answer": "A",
+    "explanation": "A repository abstraction isolates storage-specific implementations.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is the benefit of a repository abstraction?",
+    "options": {
+      "A": "It hides persistence details behind application-relevant operations",
+      "B": "It eliminates persistence",
+      "C": "It requires inheritance from the database",
+      "D": "It exposes SQL everywhere"
+    },
+    "correct_answer": "A",
+    "explanation": "Repositories encapsulate data-access details behind a stable contract.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class directly manipulates another object's internal fields. What design issue can this indicate?",
+    "options": {
+      "A": "Weak encapsulation and misplaced responsibility",
+      "B": "Interface segregation",
+      "C": "Runtime polymorphism",
+      "D": "Constructor overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Objects should generally control their own state and behavior.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is the Law of Demeter mainly concerned with?",
+    "options": {
+      "A": "Limiting unnecessary knowledge of collaborators and object structure",
+      "B": "Increasing inheritance depth",
+      "C": "Making every field public",
+      "D": "Forcing method overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "The Law of Demeter encourages limited knowledge of an object's collaborators.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can a.b().c().d() style chains be fragile?",
+    "options": {
+      "A": "The caller becomes dependent on several internal relationships",
+      "B": "They guarantee low coupling",
+      "C": "They prevent polymorphism",
+      "D": "They make objects immutable"
+    },
+    "correct_answer": "A",
+    "explanation": "Changes to intermediate relationships can break callers that know too much structure.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What does Tell, Don't Ask encourage?",
+    "options": {
+      "A": "Objects should perform behavior they own rather than expose data for external manipulation",
+      "B": "All data should be public",
+      "C": "Every operation should be static",
+      "D": "Inheritance should replace composition"
+    },
+    "correct_answer": "A",
+    "explanation": "The principle favors behavior being located with the data and rules it belongs to.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Cart class calculates totals using its own items rather than exposing items for another class to calculate. What quality is supported?",
+    "options": {
+      "A": "Cohesion and encapsulation",
+      "B": "Multiple inheritance",
+      "C": "Interface pollution",
+      "D": "Static binding"
+    },
+    "correct_answer": "A",
+    "explanation": "The Cart owns both its state and closely related behavior.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can too many public setters be a design concern?",
+    "options": {
+      "A": "They allow many uncontrolled state transitions",
+      "B": "They prevent inheritance",
+      "C": "They guarantee polymorphism",
+      "D": "They make all objects immutable"
+    },
+    "correct_answer": "A",
+    "explanation": "Unrestricted setters can make it harder to preserve invariants.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design is better for an Order cancellation rule?",
+    "options": {
+      "A": "Order.cancel() validates whether cancellation is allowed",
+      "B": "Any caller directly sets status to CANCELLED",
+      "C": "Status is globally mutable",
+      "D": "Every UI screen changes status"
+    },
+    "correct_answer": "A",
+    "explanation": "The Order object can enforce its own state-transition rules.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is an object invariant?",
+    "options": {
+      "A": "A condition that must remain true for a valid object state",
+      "B": "A constructor signature",
+      "C": "A superclass name",
+      "D": "A method overload"
+    },
+    "correct_answer": "A",
+    "explanation": "Invariants are rules the object must preserve throughout its valid lifetime.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why are immutable objects often easier to reason about?",
+    "options": {
+      "A": "Their state cannot change after construction",
+      "B": "They cannot contain methods",
+      "C": "They always use less memory",
+      "D": "They require inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Immutability removes many mutation-related side effects.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can immutability help an object used as a hash key?",
+    "options": {
+      "A": "Hash/equality-relevant state cannot change after insertion",
+      "B": "The object becomes a singleton",
+      "C": "The object cannot have fields",
+      "D": "Inheritance is prevented"
+    },
+    "correct_answer": "A",
+    "explanation": "Changing hash-relevant state after insertion can make a key difficult to locate.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Two objects contain the same values but are separate instances. What distinction is illustrated?",
+    "options": {
+      "A": "Equality versus identity",
+      "B": "Inheritance versus aggregation",
+      "C": "Overloading versus overriding",
+      "D": "Abstraction versus interface"
+    },
+    "correct_answer": "A",
+    "explanation": "Different objects can have equal logical values while remaining distinct instances.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why should equality for a value object reflect its logical identity?",
+    "options": {
+      "A": "So equivalent values compare consistently",
+      "B": "So every object becomes identical",
+      "C": "To enable inheritance",
+      "D": "To force composition"
+    },
+    "correct_answer": "A",
+    "explanation": "Equality should represent the domain-defined value identity of the object.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A mutable object is used as a hash key and a hash-relevant field changes. What can happen?",
+    "options": {
+      "A": "The entry may no longer be found using the changed key state",
+      "B": "The object becomes immutable",
+      "C": "The map becomes a list",
+      "D": "Inheritance occurs"
+    },
+    "correct_answer": "A",
+    "explanation": "Changing hash-relevant state can make the key's stored bucket inconsistent with its new hash.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a shallow-copy risk when an object contains mutable components?",
+    "options": {
+      "A": "The original and copy may share mutable state",
+      "B": "The copy cannot contain fields",
+      "C": "The original is always destroyed",
+      "D": "The copy becomes a subtype"
+    },
+    "correct_answer": "A",
+    "explanation": "Shallow copying can duplicate references rather than the referenced mutable objects.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "When is deep copying useful?",
+    "options": {
+      "A": "When independent copies of relevant mutable components are required",
+      "B": "When shared state is desired",
+      "C": "When no object is created",
+      "D": "When all methods are static"
+    },
+    "correct_answer": "A",
+    "explanation": "Deep copying creates independent nested mutable state where required.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is delegation?",
+    "options": {
+      "A": "An object asks another object to perform a responsibility",
+      "B": "A class inherits every behavior",
+      "C": "A field becomes public",
+      "D": "A method is automatically overloaded"
+    },
+    "correct_answer": "A",
+    "explanation": "Delegation transfers responsibility for an operation to a collaborator.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can delegation reduce complexity?",
+    "options": {
+      "A": "Specialized collaborators handle focused responsibilities",
+      "B": "It eliminates all dependencies",
+      "C": "It requires no objects",
+      "D": "It prevents reuse"
+    },
+    "correct_answer": "A",
+    "explanation": "Delegation lets each object focus on a smaller responsibility.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class contains a Validator and calls validator.validate(). What does this demonstrate?",
+    "options": {
+      "A": "Composition and delegation",
+      "B": "Multiple inheritance",
+      "C": "Overriding only",
+      "D": "Static binding only"
+    },
+    "correct_answer": "A",
+    "explanation": "The class collaborates with a contained validator and delegates validation work to it.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern encapsulates interchangeable algorithms?",
+    "options": {
+      "A": "Strategy",
+      "B": "Factory",
+      "C": "Observer",
+      "D": "Adapter"
+    },
+    "correct_answer": "A",
+    "explanation": "Strategy defines interchangeable algorithms behind a common interface.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern translates one interface into another expected by clients?",
+    "options": {
+      "A": "Adapter",
+      "B": "Observer",
+      "C": "Builder",
+      "D": "Singleton"
+    },
+    "correct_answer": "A",
+    "explanation": "Adapter converts an existing interface into one required by the client.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern provides a simplified interface over a complex subsystem?",
+    "options": {
+      "A": "Facade",
+      "B": "Strategy",
+      "C": "Observer",
+      "D": "Builder"
+    },
+    "correct_answer": "A",
+    "explanation": "Facade hides subsystem complexity behind a simpler entry point.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern notifies subscribed objects when a subject changes?",
+    "options": {
+      "A": "Observer",
+      "B": "Factory",
+      "C": "Adapter",
+      "D": "Builder"
+    },
+    "correct_answer": "A",
+    "explanation": "Observer models one-to-many notification from a subject to subscribers.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern can add optional behavior by wrapping an object?",
+    "options": {
+      "A": "Decorator",
+      "B": "Factory",
+      "C": "Observer",
+      "D": "Adapter"
+    },
+    "correct_answer": "A",
+    "explanation": "Decorator adds responsibilities through wrapping while preserving a compatible interface.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern centralizes selection of a concrete object during creation?",
+    "options": {
+      "A": "Factory",
+      "B": "Observer",
+      "C": "Strategy",
+      "D": "Decorator"
+    },
+    "correct_answer": "A",
+    "explanation": "Factories can hide creation details and choose an appropriate implementation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which pattern helps construct objects with many optional settings?",
+    "options": {
+      "A": "Builder",
+      "B": "Observer",
+      "C": "Adapter",
+      "D": "Strategy"
+    },
+    "correct_answer": "A",
+    "explanation": "Builder separates complex construction from the final object.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can Singleton create testing difficulties?",
+    "options": {
+      "A": "Shared global state can leak between tests",
+      "B": "Singletons cannot have methods",
+      "C": "Singletons cannot store state",
+      "D": "Singletons prevent interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Shared state can make tests less isolated and introduce hidden dependencies.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a common risk of excessive Singleton usage?",
+    "options": {
+      "A": "Implicit global dependencies",
+      "B": "Guaranteed low coupling",
+      "C": "Automatic immutability",
+      "D": "Better interface segregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Singleton access can hide dependencies and create shared mutable state.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A legacy API has makePayment(), while the application expects pay(). Which pattern fits?",
+    "options": {
+      "A": "Adapter",
+      "B": "Facade",
+      "C": "Observer",
+      "D": "Builder"
+    },
+    "correct_answer": "A",
+    "explanation": "An adapter translates the application's expected operation to the legacy API.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A coffee object is wrapped by Milk and Sugar decorators. What is the key benefit?",
+    "options": {
+      "A": "Behavior can be combined without a subclass for every combination",
+      "B": "All inheritance disappears",
+      "C": "The object becomes immutable",
+      "D": "No interface is needed"
+    },
+    "correct_answer": "A",
+    "explanation": "Decorators allow flexible combinations of additional behavior.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A stock service notifies dashboards and alerts whenever price changes. Which pattern fits?",
+    "options": {
+      "A": "Observer",
+      "B": "Factory",
+      "C": "Adapter",
+      "D": "Builder"
+    },
+    "correct_answer": "A",
+    "explanation": "The stock service is the subject and dashboards/alerts are observers.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A video service hides decoder, buffering, audio, and network coordination behind start(). Which pattern fits?",
+    "options": {
+      "A": "Facade",
+      "B": "Strategy",
+      "C": "Observer",
+      "D": "Decorator"
+    },
+    "correct_answer": "A",
+    "explanation": "The facade exposes a simple operation over a complex subsystem.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can a giant conditional over concrete payment types be a design smell?",
+    "options": {
+      "A": "New payment types require modifying the conditional client",
+      "B": "It guarantees OCP",
+      "C": "It reduces coupling",
+      "D": "It creates immutability"
+    },
+    "correct_answer": "A",
+    "explanation": "Type-based branching often makes extension require changes to existing client logic.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What design can replace a growing payment conditional?",
+    "options": {
+      "A": "A Payment abstraction with separate implementations",
+      "B": "More conditions in the same method",
+      "C": "Global payment variables",
+      "D": "One subclass for every caller"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphic implementations move type-specific behavior behind a common abstraction.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why is a type check followed by a cast often undesirable in polymorphic code?",
+    "options": {
+      "A": "It makes client code depend on concrete types",
+      "B": "It increases abstraction automatically",
+      "C": "It guarantees low coupling",
+      "D": "It prevents implementation changes"
+    },
+    "correct_answer": "A",
+    "explanation": "Frequent casts can indicate that the abstraction is not exposing the required behavior.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A new Shape subtype works through an existing draw() contract without changing the drawing loop. Which principle is supported?",
+    "options": {
+      "A": "Open/Closed Principle",
+      "B": "Singleton",
+      "C": "Interface Segregation only",
+      "D": "Constructor chaining"
+    },
+    "correct_answer": "A",
+    "explanation": "New behavior is added through extension rather than modifying the stable client loop.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A new implementation can be used anywhere the base abstraction is expected. Which principle is relevant?",
+    "options": {
+      "A": "Liskov Substitution Principle",
+      "B": "Single Responsibility Principle",
+      "C": "Builder",
+      "D": "Facade"
+    },
+    "correct_answer": "A",
+    "explanation": "LSP concerns safe substitution of implementations for their base abstraction.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A client uses only send() but depends on a huge interface containing send(), scan(), fax(), and configure(). What is the issue?",
+    "options": {
+      "A": "Interface Segregation Principle",
+      "B": "Liskov Substitution Principle",
+      "C": "Open/Closed Principle",
+      "D": "Singleton"
+    },
+    "correct_answer": "A",
+    "explanation": "The client is forced to depend on operations it does not need.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A high-level service depends on an interface implemented by a low-level database class. Which principle is illustrated?",
+    "options": {
+      "A": "Dependency Inversion Principle",
+      "B": "Single Responsibility Principle",
+      "C": "Decorator",
+      "D": "Observer"
+    },
+    "correct_answer": "A",
+    "explanation": "High-level policy depends on an abstraction rather than directly on infrastructure.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design best separates business rules from persistence?",
+    "options": {
+      "A": "Business logic depends on a repository abstraction",
+      "B": "Business classes execute SQL directly",
+      "C": "UI classes update database tables",
+      "D": "Every domain object opens a connection"
+    },
+    "correct_answer": "A",
+    "explanation": "The repository abstraction isolates persistence details from business logic.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design best separates UI from business logic?",
+    "options": {
+      "A": "UI handles presentation while domain objects handle domain behavior",
+      "B": "Domain objects render widgets directly",
+      "C": "UI classes contain every business rule",
+      "D": "Every domain class depends on the UI framework"
+    },
+    "correct_answer": "A",
+    "explanation": "Separating presentation from domain behavior limits cross-layer coupling.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can framework-specific code be isolated at system boundaries?",
+    "options": {
+      "A": "Core business logic becomes less dependent on framework details",
+      "B": "Frameworks become unnecessary",
+      "C": "Polymorphism disappears",
+      "D": "All dependencies are removed"
+    },
+    "correct_answer": "A",
+    "explanation": "Isolating framework details protects the core from technology-specific changes.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class has one responsibility but ten concrete dependencies. What can be true?",
+    "options": {
+      "A": "It may have good cohesion but high coupling",
+      "B": "It must have low cohesion",
+      "C": "It automatically violates SRP",
+      "D": "It cannot use interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Cohesion concerns responsibilities; coupling concerns dependencies, so the two qualities are independent.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class has one dependency but five unrelated responsibilities. What can be true?",
+    "options": {
+      "A": "It may have low cohesion despite limited coupling",
+      "B": "It must have high cohesion",
+      "C": "It automatically follows SRP",
+      "D": "It has excessive inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Few dependencies do not make unrelated responsibilities cohesive.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why is class size alone insufficient to judge design quality?",
+    "options": {
+      "A": "Responsibilities and dependencies matter more than a fixed method count",
+      "B": "Large classes are always correct",
+      "C": "Small classes are always cohesive",
+      "D": "Every class must have five methods"
+    },
+    "correct_answer": "A",
+    "explanation": "A class can be large yet cohesive or small yet poorly designed.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "When can an abstraction be harmful?",
+    "options": {
+      "A": "When it adds complexity without solving a real variation or boundary problem",
+      "B": "Whenever it hides implementation",
+      "C": "Whenever it has one method",
+      "D": "Whenever polymorphism is used"
+    },
+    "correct_answer": "A",
+    "explanation": "Unnecessary abstraction adds complexity without providing meaningful flexibility or isolation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why is composition over inheritance a guideline rather than an absolute rule?",
+    "options": {
+      "A": "Inheritance is appropriate when a genuine substitutable subtype relationship exists",
+      "B": "Inheritance is always wrong",
+      "C": "Composition cannot use polymorphism",
+      "D": "Inheritance never provides reuse"
+    },
+    "correct_answer": "A",
+    "explanation": "The right choice depends on domain semantics and behavioral substitutability.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Car inherits from Engine only to reuse start(). Why is this poor modeling?",
+    "options": {
+      "A": "Car is not an Engine; composition or delegation better expresses the relationship",
+      "B": "Inheritance cannot reuse behavior",
+      "C": "Engine cannot have methods",
+      "D": "Cars cannot contain objects"
+    },
+    "correct_answer": "A",
+    "explanation": "The concepts have a has-a/use relationship rather than an is-a relationship.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Manager is an Employee and satisfies the Employee contract. Which relationship fits?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Composition",
+      "C": "Aggregation",
+      "D": "Dependency"
+    },
+    "correct_answer": "A",
+    "explanation": "Manager is a specialization of Employee and can be treated as an Employee.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Car contains an Engine and controls its lifecycle. Which relationship fits?",
+    "options": {
+      "A": "Composition",
+      "B": "Inheritance",
+      "C": "Overloading",
+      "D": "Association only"
+    },
+    "correct_answer": "A",
+    "explanation": "Strong ownership and lifecycle control are characteristic of composition.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Playlist references Songs that can exist independently elsewhere. Which relationship fits?",
+    "options": {
+      "A": "Aggregation",
+      "B": "Inheritance",
+      "C": "Overriding",
+      "D": "Composition necessarily"
+    },
+    "correct_answer": "A",
+    "explanation": "The songs have independent lifecycles, making aggregation a reasonable model.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A Student enrolls in a Course and neither owns the other. Which relationship fits?",
+    "options": {
+      "A": "Association",
+      "B": "Composition",
+      "C": "Inheritance",
+      "D": "Overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Association models a relationship without implying ownership.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can protected implementation details increase inheritance coupling?",
+    "options": {
+      "A": "Subclasses become dependent on the base class's internal representation",
+      "B": "Protected members remove inheritance",
+      "C": "Protected members create interfaces",
+      "D": "Protected members eliminate coupling"
+    },
+    "correct_answer": "A",
+    "explanation": "Subclasses relying on protected representation can be affected by base-class internal changes.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a potential benefit of a small public API?",
+    "options": {
+      "A": "Fewer implementation details become dependencies for clients",
+      "B": "It prevents all extension",
+      "C": "It eliminates object state",
+      "D": "It requires inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "A smaller API limits the number of contracts that clients can accidentally depend on.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a leaky abstraction?",
+    "options": {
+      "A": "An abstraction that forces clients to understand underlying implementation details",
+      "B": "An interface with no methods",
+      "C": "A private field",
+      "D": "A subtype with no methods"
+    },
+    "correct_answer": "A",
+    "explanation": "A leaky abstraction fails to hide details that clients should not need to know.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can a leaky repository abstraction be harmful?",
+    "options": {
+      "A": "Clients become dependent on database-specific details",
+      "B": "It guarantees low coupling",
+      "C": "It prevents persistence",
+      "D": "It makes all objects immutable"
+    },
+    "correct_answer": "A",
+    "explanation": "If SQL or provider-specific objects leak through the repository, clients become coupled to infrastructure.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design better supports changing ArrayList to LinkedList internally?",
+    "options": {
+      "A": "Expose a collection abstraction rather than the concrete implementation",
+      "B": "Expose ArrayList publicly",
+      "C": "Require callers to cast",
+      "D": "Return the internal list directly"
+    },
+    "correct_answer": "A",
+    "explanation": "Clients depending on an abstraction are less affected by internal implementation changes.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A method exposes a database connection even though callers only need save(). What is the concern?",
+    "options": {
+      "A": "A persistence implementation detail is leaking through the API",
+      "B": "Perfect encapsulation",
+      "C": "Interface segregation",
+      "D": "Runtime dispatch"
+    },
+    "correct_answer": "A",
+    "explanation": "Exposing the connection forces callers to know an unnecessary implementation detail.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can an intent-focused API improve maintainability?",
+    "options": {
+      "A": "Clients depend on business operations rather than internal representation",
+      "B": "Clients gain access to all fields",
+      "C": "It prevents testing",
+      "D": "It requires inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Intent-focused operations create a more stable abstraction boundary.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class uses a 20-method interface but needs only three operations. What happens if unrelated interface methods change?",
+    "options": {
+      "A": "The class may be affected unnecessarily",
+      "B": "The class becomes immutable",
+      "C": "Polymorphism disappears",
+      "D": "Inheritance is triggered"
+    },
+    "correct_answer": "A",
+    "explanation": "Depending on a broad interface increases exposure to unrelated changes.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why are explicit dependencies useful in code review?",
+    "options": {
+      "A": "They make required collaborators visible",
+      "B": "They eliminate dependencies",
+      "C": "They prevent composition",
+      "D": "They force global state"
+    },
+    "correct_answer": "A",
+    "explanation": "Constructor or method dependencies make collaboration requirements clear.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A class's constructor takes 15 services. What should be investigated?",
+    "options": {
+      "A": "Whether the class has too many responsibilities or coordinates too much",
+      "B": "Whether inheritance is missing",
+      "C": "Whether all fields should be public",
+      "D": "Whether more dependencies should be added"
+    },
+    "correct_answer": "A",
+    "explanation": "A very large dependency list can signal excessive responsibility or coupling.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a common refactoring for a God Object?",
+    "options": {
+      "A": "Split it into smaller components with focused responsibilities",
+      "B": "Add more methods",
+      "C": "Make it a Singleton",
+      "D": "Expose all state"
+    },
+    "correct_answer": "A",
+    "explanation": "Separating responsibilities improves cohesion and reduces complexity.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is a God Object?",
+    "options": {
+      "A": "A class that accumulates too many responsibilities",
+      "B": "A class with one focused responsibility",
+      "C": "A small interface",
+      "D": "An immutable value object"
+    },
+    "correct_answer": "A",
+    "explanation": "A God Object centralizes excessive unrelated behavior and becomes difficult to maintain.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is Feature Envy?",
+    "options": {
+      "A": "A class that relies heavily on another object's data or behavior",
+      "B": "A class with high cohesion",
+      "C": "A small interface",
+      "D": "A factory method"
+    },
+    "correct_answer": "A",
+    "explanation": "Feature Envy is a code smell where behavior may belong closer to the data it uses.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "How can Feature Envy often be reduced?",
+    "options": {
+      "A": "Move behavior closer to the data it primarily uses",
+      "B": "Add more global state",
+      "C": "Increase inheritance depth",
+      "D": "Expose more fields"
+    },
+    "correct_answer": "A",
+    "explanation": "Moving behavior to the appropriate owner can improve cohesion and encapsulation.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "What is the main purpose of refactoring?",
+    "options": {
+      "A": "Improve internal structure while preserving intended external behavior",
+      "B": "Add unrelated features",
+      "C": "Delete tests",
+      "D": "Change every public API"
+    },
+    "correct_answer": "A",
+    "explanation": "Refactoring changes structure without intentionally changing the behavior being preserved.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why are regression tests useful during OOP refactoring?",
+    "options": {
+      "A": "They provide evidence that important behavior still works",
+      "B": "They prevent all future bugs",
+      "C": "They force inheritance",
+      "D": "They remove coupling automatically"
+    },
+    "correct_answer": "A",
+    "explanation": "Tests help detect unintended behavioral changes while structure is modified.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Which design is easiest to unit-test in isolation?",
+    "options": {
+      "A": "A class with explicit replaceable dependencies",
+      "B": "A class with hidden global services",
+      "C": "A class that constructs every external service",
+      "D": "A class with shared mutable static state"
+    },
+    "correct_answer": "A",
+    "explanation": "Replaceable dependencies allow controlled test doubles.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "A service reads system time directly, making tests unpredictable. What can help?",
+    "options": {
+      "A": "Inject a Clock abstraction",
+      "B": "Use a global clock",
+      "C": "Subclass the operating system",
+      "D": "Expose system time publicly"
+    },
+    "correct_answer": "A",
+    "explanation": "A clock abstraction lets tests provide deterministic time.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  },
+  {
+    "question": "Why can shared mutable global state complicate debugging?",
+    "options": {
+      "A": "A change in one place can unexpectedly affect unrelated components",
+      "B": "It guarantees low coupling",
+      "C": "It makes objects immutable",
+      "D": "It prevents collaboration"
+    },
+    "correct_answer": "A",
+    "explanation": "Shared mutable state creates hidden dependencies and side effects.",
+    "category": "Interview/OA",
+    "subject": "OOPS",
+    "topic": "OOP Design and Principles",
+    "difficulty": "L2"
+  }
+]

@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "What is the main purpose of a class in object-oriented programming?",
+    "options": {
+      "A": "To define the structure and behavior of objects",
+      "B": "To store only numbers",
+      "C": "To execute only database queries",
+      "D": "To replace all functions"
+    },
+    "correct_answer": "A",
+    "explanation": "A class is a blueprint that defines data and behavior for objects created from it.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Classes and Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "An object is best described as:",
+    "options": {
+      "A": "A blueprint for a class",
+      "B": "An instance of a class",
+      "C": "A programming language",
+      "D": "A database table"
+    },
+    "correct_answer": "B",
+    "explanation": "An object is a concrete instance created from a class.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Classes and Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP concept bundles data and the methods that operate on that data?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance",
+      "C": "Polymorphism",
+      "D": "Recursion"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation combines related data and behavior and controls access to the internal state.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which concept allows a new class to acquire properties and behavior from an existing class?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Inheritance",
+      "C": "Encapsulation",
+      "D": "Compilation"
+    },
+    "correct_answer": "B",
+    "explanation": "Inheritance allows a derived class to reuse or extend features of a base class.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP concept focuses on exposing essential features while hiding implementation details?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Inheritance",
+      "C": "Overloading",
+      "D": "Instantiation"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction presents essential behavior while hiding unnecessary implementation details.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Abstraction",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which concept allows one interface to represent different underlying forms?",
+    "options": {
+      "A": "Polymorphism",
+      "B": "Encapsulation",
+      "C": "Composition",
+      "D": "Instantiation"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphism allows the same interface or operation to behave differently for different object types.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Polymorphism",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A class is commonly compared to a blueprint because it:",
+    "options": {
+      "A": "Creates a database automatically",
+      "B": "Describes how objects can be structured and behave",
+      "C": "Can exist only at runtime",
+      "D": "Contains only output statements"
+    },
+    "correct_answer": "B",
+    "explanation": "A class specifies the attributes and behavior that its objects can have.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Classes and Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is an example of an object?",
+    "options": {
+      "A": "Car class",
+      "B": "Vehicle concept",
+      "C": "A particular car created from a Car class",
+      "D": "Inheritance"
+    },
+    "correct_answer": "C",
+    "explanation": "A particular car created from the Car class is a concrete object.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Classes and Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Why is encapsulation useful?",
+    "options": {
+      "A": "It prevents every form of reuse",
+      "B": "It helps protect an object's internal state",
+      "C": "It removes the need for objects",
+      "D": "It guarantees faster execution"
+    },
+    "correct_answer": "B",
+    "explanation": "Encapsulation can restrict direct access to internal state and require controlled operations.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In a simple inheritance relationship, the existing class is often called the:",
+    "options": {
+      "A": "Child class",
+      "B": "Derived class",
+      "C": "Base class",
+      "D": "Object instance"
+    },
+    "correct_answer": "C",
+    "explanation": "The class whose features are inherited is commonly called the base or parent class.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "The class that inherits from another class is commonly called the:",
+    "options": {
+      "A": "Base class",
+      "B": "Derived class",
+      "C": "Parent object",
+      "D": "Interface object"
+    },
+    "correct_answer": "B",
+    "explanation": "A derived or child class inherits features from a base or parent class.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which concept is most closely related to 'what an object does' rather than 'how it does it'?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Inheritance",
+      "C": "Object destruction",
+      "D": "Memory allocation"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction emphasizes the essential interface or behavior without requiring users to know implementation details.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Abstraction",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Method overloading generally means:",
+    "options": {
+      "A": "Using the same method name with different parameter lists",
+      "B": "Deleting a method",
+      "C": "Hiding an entire class",
+      "D": "Creating unrelated classes"
+    },
+    "correct_answer": "A",
+    "explanation": "Overloading provides multiple methods with the same name but distinguishable parameter lists.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Overloading and Overriding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Method overriding generally occurs when a subclass:",
+    "options": {
+      "A": "Creates a database",
+      "B": "Provides its own implementation of an inherited method",
+      "C": "Adds a new unrelated class",
+      "D": "Deletes its parent class"
+    },
+    "correct_answer": "B",
+    "explanation": "Overriding occurs when a derived class supplies a replacement implementation for an inherited operation, subject to the language's rules.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Overloading and Overriding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship represents a general 'is-a' relationship?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Composition",
+      "C": "Aggregation",
+      "D": "Association only"
+    },
+    "correct_answer": "A",
+    "explanation": "Inheritance commonly models an 'is-a' relationship, such as a Dog being an Animal.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship commonly represents a 'has-a' relationship?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Composition",
+      "C": "Overriding",
+      "D": "Abstraction"
+    },
+    "correct_answer": "B",
+    "explanation": "Composition is a strong form of has-a relationship in which an object is made from component objects.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Composition",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is association in OOP?",
+    "options": {
+      "A": "A relationship in which objects are connected or interact",
+      "B": "A special type of constructor",
+      "C": "A way to compile code",
+      "D": "A replacement for inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Association describes a general relationship between objects that may interact or know about one another.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Association",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is generally the strongest ownership relationship?",
+    "options": {
+      "A": "Association",
+      "B": "Aggregation",
+      "C": "Composition",
+      "D": "Dependency"
+    },
+    "correct_answer": "C",
+    "explanation": "Composition represents strong whole-part ownership, where the part's lifecycle is typically tied to the whole.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Composition and Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Aggregation is generally considered:",
+    "options": {
+      "A": "A weak whole-part relationship",
+      "B": "A form of method overloading",
+      "C": "A type of constructor",
+      "D": "A primitive data type"
+    },
+    "correct_answer": "A",
+    "explanation": "Aggregation models a whole-part relationship where the contained part can generally exist independently of the whole.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Composition and Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is the purpose of a constructor?",
+    "options": {
+      "A": "To initialize a newly created object",
+      "B": "To permanently delete a class",
+      "C": "To convert every object into a string",
+      "D": "To prevent inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "A constructor is used to establish the initial state of an object when it is created.",
+    "category": "Object Lifecycle",
+    "subject": "OOPS",
+    "topic": "Constructors",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A destructor or equivalent cleanup mechanism is primarily associated with:",
+    "options": {
+      "A": "Object cleanup or resource release",
+      "B": "Method overloading",
+      "C": "Class inheritance",
+      "D": "Variable naming"
+    },
+    "correct_answer": "A",
+    "explanation": "Destructor-like mechanisms are associated with cleanup when an object's lifetime ends, although exact behavior is language-dependent.",
+    "category": "Object Lifecycle",
+    "subject": "OOPS",
+    "topic": "Destructors and Cleanup",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does an access modifier control?",
+    "options": {
+      "A": "How members can be accessed",
+      "B": "How fast a program runs",
+      "C": "The number of classes in a program",
+      "D": "The operating system version"
+    },
+    "correct_answer": "A",
+    "explanation": "Access control determines which code can access a class or its members.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Access Control",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which access level usually allows access from anywhere permitted by the language?",
+    "options": {
+      "A": "Private",
+      "B": "Public",
+      "C": "Protected only",
+      "D": "Internal-only"
+    },
+    "correct_answer": "B",
+    "explanation": "A public member is generally accessible from code outside the defining class, subject to language-specific rules.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Access Control",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A private member is primarily used to:",
+    "options": {
+      "A": "Restrict direct access to the member",
+      "B": "Make every class inherit from it",
+      "C": "Force method overloading",
+      "D": "Create multiple objects automatically"
+    },
+    "correct_answer": "A",
+    "explanation": "Private access restricts direct access to the member from outside its permitted scope.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Access Control",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a getter commonly used for?",
+    "options": {
+      "A": "Reading encapsulated state through a method",
+      "B": "Creating inheritance",
+      "C": "Deleting a class",
+      "D": "Overloading an operator automatically"
+    },
+    "correct_answer": "A",
+    "explanation": "A getter provides controlled access to retrieve an object's internal value.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Getters and Setters",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is a setter commonly used for?",
+    "options": {
+      "A": "Updating encapsulated state through a controlled method",
+      "B": "Creating a subclass automatically",
+      "C": "Changing source code into machine code",
+      "D": "Removing all class methods"
+    },
+    "correct_answer": "A",
+    "explanation": "A setter provides controlled modification of an object's internal state and may validate the new value.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Getters and Setters",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which principle suggests that a class should have a focused responsibility?",
+    "options": {
+      "A": "Single Responsibility Principle",
+      "B": "Inheritance Principle",
+      "C": "Object Creation Principle",
+      "D": "Compilation Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "The Single Responsibility Principle says a class should have one primary reason to change.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In SOLID, the 'O' stands for:",
+    "options": {
+      "A": "Object",
+      "B": "Open/Closed",
+      "C": "Operator",
+      "D": "Overriding"
+    },
+    "correct_answer": "B",
+    "explanation": "The O in SOLID represents the Open/Closed Principle.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "The Open/Closed Principle states that software entities should generally be:",
+    "options": {
+      "A": "Open for extension and closed for modification",
+      "B": "Closed for extension and open for deletion",
+      "C": "Open only to private members",
+      "D": "Modified for every new feature"
+    },
+    "correct_answer": "A",
+    "explanation": "The principle favors extending behavior without repeatedly modifying stable existing code.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is represented by the letter 'L'?",
+    "options": {
+      "A": "Layering Principle",
+      "B": "Liskov Substitution Principle",
+      "C": "Logic Separation Principle",
+      "D": "Locality Principle"
+    },
+    "correct_answer": "B",
+    "explanation": "L stands for the Liskov Substitution Principle.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "The Liskov Substitution Principle is mainly about:",
+    "options": {
+      "A": "Subtypes being usable where their base types are expected",
+      "B": "Making all members private",
+      "C": "Using multiple constructors",
+      "D": "Avoiding all inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "LSP requires that substituting a subtype for its base type should not break expected program behavior.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In SOLID, the 'I' stands for:",
+    "options": {
+      "A": "Inheritance",
+      "B": "Interface Segregation",
+      "C": "Instantiation",
+      "D": "Information"
+    },
+    "correct_answer": "B",
+    "explanation": "I represents the Interface Segregation Principle.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "The Interface Segregation Principle encourages:",
+    "options": {
+      "A": "Small, focused interfaces rather than one large interface",
+      "B": "One huge interface for every class",
+      "C": "Removing all interfaces",
+      "D": "Using inheritance for every relationship"
+    },
+    "correct_answer": "A",
+    "explanation": "Clients should not be forced to depend on methods they do not need, so interfaces should remain focused.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "In SOLID, the 'D' stands for:",
+    "options": {
+      "A": "Data",
+      "B": "Dependency Inversion",
+      "C": "Destruction",
+      "D": "Dynamic"
+    },
+    "correct_answer": "B",
+    "explanation": "D represents the Dependency Inversion Principle.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which design usually reduces direct dependency on a concrete implementation?",
+    "options": {
+      "A": "Programming to an abstraction",
+      "B": "Making every class global",
+      "C": "Removing interfaces",
+      "D": "Using only public fields"
+    },
+    "correct_answer": "A",
+    "explanation": "Depending on abstractions rather than concrete implementations generally reduces coupling.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L1"
+  },
+  {
+    "question": "High cohesion generally means that a class's responsibilities are:",
+    "options": {
+      "A": "Closely related",
+      "B": "Completely unrelated",
+      "C": "All inherited from one class",
+      "D": "Stored in global variables"
+    },
+    "correct_answer": "A",
+    "explanation": "High cohesion means the responsibilities and elements of a module or class are closely related.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Cohesion and Coupling",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Low coupling generally means that classes:",
+    "options": {
+      "A": "Have fewer unnecessary dependencies on each other",
+      "B": "Must all inherit from the same class",
+      "C": "Cannot communicate",
+      "D": "Must contain only one method"
+    },
+    "correct_answer": "A",
+    "explanation": "Low coupling reduces unnecessary dependencies between classes and makes changes easier to isolate.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Cohesion and Coupling",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is generally preferable in maintainable OOP design?",
+    "options": {
+      "A": "High cohesion and low coupling",
+      "B": "Low cohesion and high coupling",
+      "C": "High coupling only",
+      "D": "No classes at all"
+    },
+    "correct_answer": "A",
+    "explanation": "High cohesion keeps responsibilities focused, while low coupling limits unnecessary dependencies.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Cohesion and Coupling",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does dynamic binding mean at a basic level?",
+    "options": {
+      "A": "The implementation used is determined at runtime",
+      "B": "All methods are selected before compilation",
+      "C": "Objects cannot call methods",
+      "D": "Classes cannot inherit"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic binding selects the applicable overridden implementation at runtime in supported polymorphic systems.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Binding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Static binding generally means a method call is resolved:",
+    "options": {
+      "A": "At compile time or before runtime dispatch",
+      "B": "Only after the program terminates",
+      "C": "By a database server",
+      "D": "By a user manually"
+    },
+    "correct_answer": "A",
+    "explanation": "Static or early binding resolves the target operation before runtime execution, subject to language rules.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Binding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which type of polymorphism is commonly associated with method overloading?",
+    "options": {
+      "A": "Compile-time polymorphism",
+      "B": "Runtime polymorphism",
+      "C": "Inheritance-only polymorphism",
+      "D": "Memory polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "Overloading is typically resolved using compile-time information such as method signatures.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Compile-Time Polymorphism",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which type of polymorphism is commonly associated with overriding and virtual dispatch?",
+    "options": {
+      "A": "Compile-time polymorphism",
+      "B": "Runtime polymorphism",
+      "C": "Static data polymorphism",
+      "D": "Constructor polymorphism only"
+    },
+    "correct_answer": "B",
+    "explanation": "Overriding with dynamic dispatch allows the implementation to be selected at runtime.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Runtime Polymorphism",
+    "difficulty": "L1"
+  },
+  {
+    "question": "An abstract class is primarily intended to:",
+    "options": {
+      "A": "Provide a common abstraction that may be incomplete for direct instantiation",
+      "B": "Store only constants",
+      "C": "Prevent all inheritance",
+      "D": "Replace every object"
+    },
+    "correct_answer": "A",
+    "explanation": "An abstract class provides a shared abstraction and may contain operations that subclasses must implement.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Abstract Classes",
+    "difficulty": "L1"
+  },
+  {
+    "question": "An interface primarily defines:",
+    "options": {
+      "A": "A contract that implementing classes agree to follow",
+      "B": "A database schema",
+      "C": "A memory address",
+      "D": "A constructor only"
+    },
+    "correct_answer": "A",
+    "explanation": "An interface commonly specifies a contract of operations that implementing types must support, depending on language features.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Interfaces",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement about an interface is generally correct?",
+    "options": {
+      "A": "It helps define a common contract",
+      "B": "It must always contain object state",
+      "C": "It can never have methods",
+      "D": "It is always a concrete object"
+    },
+    "correct_answer": "A",
+    "explanation": "Interfaces are primarily used to define contracts that different classes can implement.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Interfaces",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If a Dog class inherits from Animal, Dog is a:",
+    "options": {
+      "A": "Base class",
+      "B": "Derived class",
+      "C": "Constructor",
+      "D": "Interface"
+    },
+    "correct_answer": "B",
+    "explanation": "Dog is the derived class because it inherits from Animal.",
+    "category": "Inheritance",
+    "subject": "OOPS",
+    "topic": "Inheritance Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If an Animal class is inherited by Dog, Animal is the:",
+    "options": {
+      "A": "Derived class",
+      "B": "Base class",
+      "C": "Object instance",
+      "D": "Method overload"
+    },
+    "correct_answer": "B",
+    "explanation": "Animal is the base class from which Dog inherits.",
+    "category": "Inheritance",
+    "subject": "OOPS",
+    "topic": "Inheritance Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does reuse through inheritance mean?",
+    "options": {
+      "A": "A subclass can reuse suitable features of its parent class",
+      "B": "An object is copied to a database",
+      "C": "A program uses no classes",
+      "D": "A method is always private"
+    },
+    "correct_answer": "A",
+    "explanation": "Inheritance can allow a derived class to reuse inherited attributes and behavior.",
+    "category": "Inheritance",
+    "subject": "OOPS",
+    "topic": "Inheritance Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP feature allows the same method call to produce different behavior for different object types?",
+    "options": {
+      "A": "Polymorphism",
+      "B": "Encapsulation",
+      "C": "Constructor chaining only",
+      "D": "Composition only"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphism allows a common operation to have type-specific behavior.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Polymorphism Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Suppose Shape has a draw() operation and Circle and Square provide different draw() implementations. This demonstrates:",
+    "options": {
+      "A": "Polymorphism",
+      "B": "Only encapsulation",
+      "C": "Only aggregation",
+      "D": "Data hiding"
+    },
+    "correct_answer": "A",
+    "explanation": "Different shape types providing different implementations of draw() is a basic example of polymorphism.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Polymorphism Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP concept is most directly concerned with hiding internal implementation details?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Inheritance",
+      "C": "Association",
+      "D": "Overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction hides unnecessary implementation details and exposes the essential interface.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Abstraction Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP concept is most directly concerned with restricting access to internal data?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Polymorphism",
+      "C": "Inheritance",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation uses controlled access to protect an object's internal state.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Encapsulation Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A bank account class keeps balance private and provides deposit() and withdraw() methods. This mainly demonstrates:",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Multiple inheritance",
+      "C": "Method overloading only",
+      "D": "Association"
+    },
+    "correct_answer": "A",
+    "explanation": "The private balance is accessed and changed through controlled methods, demonstrating encapsulation.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A Vehicle class has start(), while Car provides a specialized implementation of start(). This is an example of:",
+    "options": {
+      "A": "Method overriding",
+      "B": "Method overloading only",
+      "C": "Aggregation",
+      "D": "Constructor creation"
+    },
+    "correct_answer": "A",
+    "explanation": "Car specializes an inherited operation from Vehicle, which is method overriding when language rules permit it.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Overriding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A Calculator class has add(int,int) and add(int,int,int). This is an example of:",
+    "options": {
+      "A": "Method overloading",
+      "B": "Method overriding",
+      "C": "Composition",
+      "D": "Abstraction only"
+    },
+    "correct_answer": "A",
+    "explanation": "The same method name is used with different parameter lists, which is overloading.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Overloading",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship best describes 'A Car has an Engine'?",
+    "options": {
+      "A": "Composition or aggregation, depending on ownership and lifecycle",
+      "B": "Only inheritance",
+      "C": "Method overriding",
+      "D": "Polymorphism only"
+    },
+    "correct_answer": "A",
+    "explanation": "An engine is a component of a car, so a whole-part relationship is modeled using composition or aggregation depending on lifecycle and ownership.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Class Relationships",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship best describes 'A Manager is an Employee'?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Composition",
+      "C": "Aggregation",
+      "D": "Dependency only"
+    },
+    "correct_answer": "A",
+    "explanation": "Manager is a specialized kind of Employee, so inheritance represents the is-a relationship.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship best describes 'A Student attends a Course'?",
+    "options": {
+      "A": "Association",
+      "B": "Inheritance",
+      "C": "Composition",
+      "D": "Overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Student and Course are related through participation, making association an appropriate general relationship.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Association",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If deleting a whole object should also make its owned component objects no longer meaningful, which relationship is most appropriate?",
+    "options": {
+      "A": "Composition",
+      "B": "Simple association",
+      "C": "Inheritance",
+      "D": "Overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Composition represents strong ownership where component lifetime is typically tied to the whole.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Composition",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is a benefit of using classes?",
+    "options": {
+      "A": "They organize related data and behavior",
+      "B": "They eliminate all bugs",
+      "C": "They guarantee constant execution time",
+      "D": "They remove the need for testing"
+    },
+    "correct_answer": "A",
+    "explanation": "Classes provide a way to organize related state and behavior into reusable abstractions.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Classes and Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement about objects is correct?",
+    "options": {
+      "A": "Objects can have state and behavior",
+      "B": "Objects are always source-code comments",
+      "C": "Objects cannot interact",
+      "D": "Objects are identical to interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Objects represent entities with state and behavior and can interact with other objects.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Objects",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Object state refers to:",
+    "options": {
+      "A": "The current values associated with an object",
+      "B": "The class name only",
+      "C": "The compiler version",
+      "D": "The inheritance diagram only"
+    },
+    "correct_answer": "A",
+    "explanation": "State is represented by the current values of an object's attributes or properties.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Object State and Behavior",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Object behavior refers to:",
+    "options": {
+      "A": "The operations an object can perform",
+      "B": "Only its memory address",
+      "C": "Only its class name",
+      "D": "The number of source files"
+    },
+    "correct_answer": "A",
+    "explanation": "Behavior describes the operations or methods through which an object acts or responds.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Object State and Behavior",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which principle helps prevent external code from directly changing an object's internal state?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance",
+      "C": "Polymorphism",
+      "D": "Association"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation controls access to internal state through defined interfaces or methods.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Data Hiding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Data hiding is closely related to:",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance only",
+      "C": "Overloading only",
+      "D": "Aggregation only"
+    },
+    "correct_answer": "A",
+    "explanation": "Data hiding restricts direct access to internal implementation details and is a key aspect of encapsulation.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Data Hiding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which approach generally makes a class easier to understand?",
+    "options": {
+      "A": "Giving it a small, focused set of responsibilities",
+      "B": "Giving it every responsibility in the system",
+      "C": "Using many unrelated public fields",
+      "D": "Making all methods global"
+    },
+    "correct_answer": "A",
+    "explanation": "Focused responsibilities improve cohesion and make a class easier to understand and maintain.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Cohesion",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which approach generally makes changes easier to isolate?",
+    "options": {
+      "A": "Reducing unnecessary dependencies between classes",
+      "B": "Making every class depend directly on every other class",
+      "C": "Using only global state",
+      "D": "Removing all abstractions"
+    },
+    "correct_answer": "A",
+    "explanation": "Lower coupling means changes in one component are less likely to require changes in unrelated components.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Coupling",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is an object-oriented message commonly understood as?",
+    "options": {
+      "A": "A request for an object to perform an operation",
+      "B": "A compiler warning",
+      "C": "A database password",
+      "D": "A class definition"
+    },
+    "correct_answer": "A",
+    "explanation": "Object interactions can be viewed as sending requests or messages that invoke behavior on objects.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "Object Interaction",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is NOT one of the commonly taught four pillars of OOP?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance",
+      "C": "Polymorphism",
+      "D": "Normalization"
+    },
+    "correct_answer": "D",
+    "explanation": "Encapsulation, inheritance, abstraction, and polymorphism are commonly taught as the four core OOP pillars; normalization is a database concept.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of these is one of the commonly taught four pillars of OOP?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Normalization",
+      "C": "Indexing",
+      "D": "Transaction logging"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction is commonly included among the four fundamental OOP concepts.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP pillar is most associated with code reuse through parent-child relationships?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Encapsulation",
+      "C": "Abstraction",
+      "D": "Polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "Inheritance supports reuse and specialization through parent-child class relationships.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP pillar is most associated with providing one common operation for different types?",
+    "options": {
+      "A": "Polymorphism",
+      "B": "Encapsulation",
+      "C": "Abstraction",
+      "D": "Inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphism allows different types to respond to a common operation through a shared interface.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP pillar is most associated with exposing only essential details?",
+    "options": {
+      "A": "Abstraction",
+      "B": "Inheritance",
+      "C": "Polymorphism",
+      "D": "Association"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction focuses on essential features while hiding unnecessary implementation details.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which OOP pillar is most associated with bundling state and behavior with controlled access?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance",
+      "C": "Polymorphism",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation bundles state and behavior and controls how internal state is accessed.",
+    "category": "Core OOP",
+    "subject": "OOPS",
+    "topic": "OOP Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If two classes communicate by using a reference to each other, this can be an example of:",
+    "options": {
+      "A": "Association",
+      "B": "Inheritance",
+      "C": "Overloading",
+      "D": "Abstraction"
+    },
+    "correct_answer": "A",
+    "explanation": "Association represents a connection between objects or classes that allows them to interact.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Association",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship allows the contained object to exist independently of the container?",
+    "options": {
+      "A": "Aggregation",
+      "B": "Composition",
+      "C": "Inheritance",
+      "D": "Overriding"
+    },
+    "correct_answer": "A",
+    "explanation": "In aggregation, the part can generally have a lifecycle independent of the whole.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Aggregation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which relationship usually implies stronger ownership of the part by the whole?",
+    "options": {
+      "A": "Composition",
+      "B": "Association",
+      "C": "Dependency",
+      "D": "Inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Composition represents stronger whole-part ownership than ordinary association or aggregation.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Composition",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A method that changes an object's balance after checking whether the amount is valid demonstrates:",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Multiple inheritance",
+      "C": "Compile-time binding only",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "The method controls how internal state is modified and can enforce validation rules, which is encapsulation.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does 'is-a' usually indicate in OOP modeling?",
+    "options": {
+      "A": "A specialization relationship",
+      "B": "A whole-part relationship",
+      "C": "A database join",
+      "D": "A method parameter"
+    },
+    "correct_answer": "A",
+    "explanation": "An is-a relationship usually indicates that one type is a specialization of another and is often modeled with inheritance.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Is-A and Has-A",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What does 'has-a' usually indicate in OOP modeling?",
+    "options": {
+      "A": "A containment or ownership relationship",
+      "B": "A specialization relationship",
+      "C": "A method overload",
+      "D": "A compiler directive"
+    },
+    "correct_answer": "A",
+    "explanation": "Has-a commonly describes one object containing, owning, or referring to another object.",
+    "category": "Class Relationships",
+    "subject": "OOPS",
+    "topic": "Is-A and Has-A",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which design is usually more flexible when a relationship is truly 'has-a' rather than 'is-a'?",
+    "options": {
+      "A": "Composition over inappropriate inheritance",
+      "B": "Always use multiple inheritance",
+      "C": "Use global variables",
+      "D": "Avoid objects"
+    },
+    "correct_answer": "A",
+    "explanation": "Composition is often preferable when one object should contain or use another rather than claim to be a subtype of it.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Composition over Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "What is the main purpose of an abstract method or operation?",
+    "options": {
+      "A": "To require a suitable concrete implementation in a subtype",
+      "B": "To create a database index",
+      "C": "To prevent all polymorphism",
+      "D": "To make every member public"
+    },
+    "correct_answer": "A",
+    "explanation": "An abstract operation specifies required behavior that a concrete subtype must implement, subject to language rules.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Abstract Methods",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Why might a developer use an interface for several unrelated classes?",
+    "options": {
+      "A": "To give them a common contract without requiring the same class hierarchy",
+      "B": "To force them to share all internal state",
+      "C": "To prevent them from interacting",
+      "D": "To eliminate all methods"
+    },
+    "correct_answer": "A",
+    "explanation": "Interfaces allow different classes to support the same contract without necessarily sharing implementation or a common inheritance hierarchy.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Interfaces",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which statement best describes polymorphic code?",
+    "options": {
+      "A": "Code can work through a common abstraction while concrete behavior varies",
+      "B": "Code contains no methods",
+      "C": "Code uses only global variables",
+      "D": "Code must use multiple inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphic code can use a common abstraction while allowing different concrete types to provide different behavior.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Polymorphism Basics",
+    "difficulty": "L1"
+  },
+  {
+    "question": "If a parent reference refers to a child object, what OOP feature may allow a child implementation to be selected at runtime?",
+    "options": {
+      "A": "Dynamic dispatch",
+      "B": "Encapsulation",
+      "C": "Aggregation",
+      "D": "Constructor overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic dispatch can select the overridden child implementation at runtime in languages that support such polymorphism.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Dynamic Dispatch",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which concept allows different methods with the same name to be distinguished by their parameter lists?",
+    "options": {
+      "A": "Overloading",
+      "B": "Overriding",
+      "C": "Composition",
+      "D": "Inheritance only"
+    },
+    "correct_answer": "A",
+    "explanation": "Overloaded methods share a name but have distinguishable signatures, such as different parameter lists.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Overloading",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which concept involves a subclass replacing or specializing inherited behavior?",
+    "options": {
+      "A": "Overriding",
+      "B": "Overloading",
+      "C": "Aggregation",
+      "D": "Encapsulation"
+    },
+    "correct_answer": "A",
+    "explanation": "Overriding allows a subtype to provide its own implementation of inherited behavior.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Overriding",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is a typical advantage of abstraction?",
+    "options": {
+      "A": "It reduces the amount of implementation detail users need to understand",
+      "B": "It guarantees zero memory usage",
+      "C": "It removes all dependencies",
+      "D": "It prevents reuse"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstraction lets users interact with essential functionality without understanding every implementation detail.",
+    "category": "Abstraction",
+    "subject": "OOPS",
+    "topic": "Benefits of Abstraction",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is a typical advantage of encapsulation?",
+    "options": {
+      "A": "It allows validation and controlled access to state",
+      "B": "It forces every class to inherit from another",
+      "C": "It removes all object behavior",
+      "D": "It guarantees no runtime errors"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation lets a class control how its internal state is read or changed and can enforce invariants.",
+    "category": "Encapsulation",
+    "subject": "OOPS",
+    "topic": "Benefits of Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is a typical advantage of inheritance when used appropriately?",
+    "options": {
+      "A": "Reuse and specialization of existing behavior",
+      "B": "Guaranteed elimination of coupling",
+      "C": "Automatic database normalization",
+      "D": "Removal of all interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Inheritance can provide reuse and allow a subtype to specialize inherited behavior.",
+    "category": "Inheritance",
+    "subject": "OOPS",
+    "topic": "Benefits of Inheritance",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which is a typical advantage of polymorphism?",
+    "options": {
+      "A": "Generic code can work with multiple compatible concrete types",
+      "B": "All objects must have identical behavior",
+      "C": "Classes cannot be extended",
+      "D": "It eliminates the need for abstractions"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphism allows code to operate through a common abstraction while supporting different concrete implementations.",
+    "category": "Polymorphism",
+    "subject": "OOPS",
+    "topic": "Benefits of Polymorphism",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A class that only stores unrelated responsibilities is likely to have:",
+    "options": {
+      "A": "Low cohesion",
+      "B": "High cohesion",
+      "C": "No coupling",
+      "D": "Perfect abstraction"
+    },
+    "correct_answer": "A",
+    "explanation": "Unrelated responsibilities indicate low cohesion because the class lacks a focused purpose.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Cohesion",
+    "difficulty": "L1"
+  },
+  {
+    "question": "A class that depends directly on many unrelated concrete classes is likely to have:",
+    "options": {
+      "A": "High coupling",
+      "B": "Low coupling",
+      "C": "High cohesion automatically",
+      "D": "No dependencies"
+    },
+    "correct_answer": "A",
+    "explanation": "Many direct dependencies, especially on concrete implementations, generally indicate high coupling.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "Coupling",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is most directly concerned with avoiding overly large interfaces?",
+    "options": {
+      "A": "Interface Segregation Principle",
+      "B": "Single Responsibility Principle",
+      "C": "Open/Closed Principle",
+      "D": "Dependency Inversion Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "The Interface Segregation Principle favors focused interfaces so clients do not depend on unnecessary operations.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is most directly concerned with depending on abstractions rather than concrete details?",
+    "options": {
+      "A": "Dependency Inversion Principle",
+      "B": "Single Responsibility Principle",
+      "C": "Liskov Substitution Principle",
+      "D": "Interface Segregation Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "The Dependency Inversion Principle encourages high-level policy to depend on abstractions rather than concrete low-level details.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is most directly concerned with substitutability of subtypes?",
+    "options": {
+      "A": "Liskov Substitution Principle",
+      "B": "Open/Closed Principle",
+      "C": "Interface Segregation Principle",
+      "D": "Single Responsibility Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "LSP requires subtypes to remain usable wherever their base type is expected without violating expected behavior.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is most directly concerned with having one focused reason for a class to change?",
+    "options": {
+      "A": "Single Responsibility Principle",
+      "B": "Dependency Inversion Principle",
+      "C": "Liskov Substitution Principle",
+      "D": "Interface Segregation Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "SRP promotes focused responsibilities so a class has one primary reason to change.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which SOLID principle is most directly concerned with extending behavior without repeatedly modifying stable code?",
+    "options": {
+      "A": "Open/Closed Principle",
+      "B": "Interface Segregation Principle",
+      "C": "Liskov Substitution Principle",
+      "D": "Single Responsibility Principle"
+    },
+    "correct_answer": "A",
+    "explanation": "The Open/Closed Principle favors designs that allow behavior to be extended without modifying existing stable code unnecessarily.",
+    "category": "Design Principles",
+    "subject": "OOPS",
+    "topic": "SOLID Principles",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is a concrete example of encapsulation?",
+    "options": {
+      "A": "Keeping an employee salary field private and exposing controlled access",
+      "B": "Making every field global",
+      "C": "Using inheritance between Employee and Database",
+      "D": "Creating two methods with the same name"
+    },
+    "correct_answer": "A",
+    "explanation": "A private salary field with controlled access is a standard example of encapsulation and data hiding.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L1"
+  },
+  {
+    "question": "Which of the following is a concrete example of inheritance?",
+    "options": {
+      "A": "A SavingsAccount class extends the general Account concept",
+      "B": "A Student contains an Address object",
+      "C": "A method has two parameter lists",
+      "D": "A field is private"
+    },
+    "correct_answer": "A",
+    "explanation": "SavingsAccount specializing Account represents an is-a relationship and is a typical inheritance example.",
+    "category": "Scenario-Based",
+    "subject": "OOPS",
+    "topic": "Inheritance",
+    "difficulty": "L1"
+  }
+]

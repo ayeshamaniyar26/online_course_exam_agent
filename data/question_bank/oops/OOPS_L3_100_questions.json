@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "A payment module creates a concrete StripeGateway internally, while business services also depend directly on it. Which redesign most directly addresses the Dependency Inversion Principle?",
+    "options": {
+      "A": "Make every service inherit from StripeGateway",
+      "B": "Make business logic depend on a payment abstraction and inject the gateway implementation",
+      "C": "Move StripeGateway into a utility class",
+      "D": "Make StripeGateway methods static"
+    },
+    "correct_answer": "B",
+    "explanation": "High-level business logic should depend on an abstraction; the concrete gateway should be supplied through dependency injection.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A reporting system requires every new report type to modify a large switch statement inside ReportGenerator. Which design change best satisfies the Open/Closed Principle?",
+    "options": {
+      "A": "Add more branches to the switch",
+      "B": "Make the switch private",
+      "C": "Represent report behavior through polymorphic report objects",
+      "D": "Make ReportGenerator final"
+    },
+    "correct_answer": "C",
+    "explanation": "Polymorphic report implementations allow new behavior to be added without modifying the existing generator logic.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Open/Closed Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass of a read-only Account inherits withdraw(), but calling withdraw() can throw because the subclass cannot support withdrawal. What is the strongest OOP diagnosis?",
+    "options": {
+      "A": "Only encapsulation is violated",
+      "B": "The subclass likely violates Liskov Substitution Principle",
+      "C": "The superclass violates abstraction because it has methods",
+      "D": "This is necessarily a cohesion problem"
+    },
+    "correct_answer": "B",
+    "explanation": "If valid uses of the base type become invalid for the subtype, substitutability is broken.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An interface contains print(), scan(), fax(), and staple(). A basic printer is forced to implement all four methods, although it only prints. Which redesign best addresses the issue?",
+    "options": {
+      "A": "Create one deeper inheritance hierarchy",
+      "B": "Split the interface into smaller role-specific interfaces",
+      "C": "Make all methods protected",
+      "D": "Replace interfaces with global functions"
+    },
+    "correct_answer": "B",
+    "explanation": "The Interface Segregation Principle favors focused interfaces so clients depend only on operations they need.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Interface Segregation Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class calculates invoices, writes files, sends emails, validates tax rules, and formats HTML. Which refactoring is most justified first?",
+    "options": {
+      "A": "Add more private methods to the class",
+      "B": "Split responsibilities into collaborating classes with focused responsibilities",
+      "C": "Make the class immutable",
+      "D": "Convert all methods to static"
+    },
+    "correct_answer": "B",
+    "explanation": "The class has multiple unrelated reasons to change, indicating poor cohesion and a likely Single Responsibility violation.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Single Responsibility Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass overrides a base operation but silently ignores an input value that the base contract requires to affect the result. What concern is most relevant?",
+    "options": {
+      "A": "The subtype may be strengthening or changing the behavioral contract",
+      "B": "Only method overloading is involved",
+      "C": "It proves composition is impossible",
+      "D": "It is necessarily a constructor problem"
+    },
+    "correct_answer": "A",
+    "explanation": "A subtype must preserve the behavioral expectations established by the base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A service constructs its database repository, logger, clock, and HTTP client itself. Unit tests become difficult because real infrastructure is always created. What is the most direct architectural improvement?",
+    "options": {
+      "A": "Increase inheritance",
+      "B": "Inject dependencies through abstractions",
+      "C": "Use more global variables",
+      "D": "Make infrastructure methods private"
+    },
+    "correct_answer": "B",
+    "explanation": "Dependency injection separates object construction from business behavior and makes collaborators replaceable in tests.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Injection",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A team proposes inheriting from an existing class only to reuse two utility methods, but the child would not conceptually be a subtype. What is the strongest objection?",
+    "options": {
+      "A": "Inheritance always reduces performance",
+      "B": "Inheritance creates an is-a relationship and can expose unwanted coupling",
+      "C": "Utility methods cannot be inherited",
+      "D": "Composition cannot reuse behavior"
+    },
+    "correct_answer": "B",
+    "explanation": "Inheritance communicates substitutability; using it only for code reuse can create inappropriate coupling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composition vs Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A module depends on a concrete FileLogger. Later, logging must support database and remote sinks without changing business classes. Which abstraction boundary is most appropriate?",
+    "options": {
+      "A": "Business classes depend on a Logger interface",
+      "B": "All loggers inherit from BusinessService",
+      "C": "Business classes call FileLogger through static methods",
+      "D": "The database should inherit from FileLogger"
+    },
+    "correct_answer": "A",
+    "explanation": "The business layer should depend on the stable logging abstraction rather than a particular infrastructure implementation.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class has many methods that are unrelated and are used by different groups of clients. Which combination best characterizes the design problem?",
+    "options": {
+      "A": "High cohesion and low coupling",
+      "B": "Low cohesion and potentially excessive coupling",
+      "C": "High cohesion and excessive inheritance",
+      "D": "Only polymorphism"
+    },
+    "correct_answer": "B",
+    "explanation": "Unrelated responsibilities reduce cohesion, while clients depending on unnecessary behavior can increase coupling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Cohesion and Coupling",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A Car contains an Engine whose lifetime is strictly controlled by the Car: when the Car is destroyed, that Engine instance has no independent meaning in the model. Which relationship is strongest?",
+    "options": {
+      "A": "Association",
+      "B": "Aggregation",
+      "C": "Composition",
+      "D": "Dependency only"
+    },
+    "correct_answer": "C",
+    "explanation": "Composition models strong ownership in which the contained object's lifecycle is tied to the owning object.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composition",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A University has Students, but students can exist independently and may move between universities. Which relationship is the better conceptual model?",
+    "options": {
+      "A": "Composition",
+      "B": "Aggregation",
+      "C": "Inheritance",
+      "D": "Dynamic binding"
+    },
+    "correct_answer": "B",
+    "explanation": "Aggregation represents a whole-part relationship without strict ownership of the part's lifetime.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Two classes collaborate because one temporarily uses the other to perform an operation, without owning or storing it. Which relationship is most appropriate?",
+    "options": {
+      "A": "Dependency",
+      "B": "Composition",
+      "C": "Inheritance",
+      "D": "Generalization"
+    },
+    "correct_answer": "A",
+    "explanation": "A dependency expresses a usage relationship without implying structural ownership.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Class Relationships",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An abstract base class provides a common invariant and shared algorithm, while subclasses must supply a few variable steps. Which abstraction is most suitable?",
+    "options": {
+      "A": "An abstract base class with overridable operations",
+      "B": "A single unrelated utility class",
+      "C": "Only aggregation",
+      "D": "A global singleton"
+    },
+    "correct_answer": "A",
+    "explanation": "A shared abstract algorithm plus subclass-specific steps is a natural use of an abstract base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstract Classes",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An interface represents a capability that several otherwise unrelated classes can provide. Why can this be preferable to a common base class?",
+    "options": {
+      "A": "It expresses a contract without requiring shared implementation or a common data hierarchy",
+      "B": "It guarantees zero coupling",
+      "C": "It prevents polymorphism",
+      "D": "It forces all implementations to share state"
+    },
+    "correct_answer": "A",
+    "explanation": "Interfaces can model capabilities independently of an implementation or inheritance hierarchy.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Interfaces",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A factory returns a concrete implementation based on configuration. The caller uses only the abstraction. What design benefit is most directly achieved?",
+    "options": {
+      "A": "The caller becomes coupled to every concrete type",
+      "B": "Object creation is decoupled from object usage",
+      "C": "Inheritance is eliminated from the system",
+      "D": "All objects become immutable"
+    },
+    "correct_answer": "B",
+    "explanation": "The factory hides construction decisions so clients depend on the abstraction rather than concrete classes.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Factory and Abstraction",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An object owns a resource that must be released exactly once. Several aliases can refer to the same object. Which design risk is greatest if ownership is unclear?",
+    "options": {
+      "A": "Duplicate or premature release of the resource",
+      "B": "Excessive method overloading",
+      "C": "Loss of inheritance",
+      "D": "Compile-time polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "Aliasing combined with unclear ownership can cause double release, leaks, or use-after-release depending on the lifecycle model.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Object Lifecycle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A domain object exposes every internal collection directly. Callers can mutate the collection without the object enforcing its invariants. Which OOP property is most compromised?",
+    "options": {
+      "A": "Encapsulation",
+      "B": "Inheritance",
+      "C": "Overloading",
+      "D": "Generalization"
+    },
+    "correct_answer": "A",
+    "explanation": "Encapsulation requires controlling access to representation so invariants are protected.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class hides its state and exposes operations that enforce business rules instead of public fields. Which statement best explains the benefit?",
+    "options": {
+      "A": "The representation can change without forcing clients to manipulate it directly",
+      "B": "It prevents all forms of inheritance",
+      "C": "It guarantees no runtime errors",
+      "D": "It removes the need for abstraction"
+    },
+    "correct_answer": "A",
+    "explanation": "Clients depend on behavior rather than internal representation, reducing representation coupling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base class defines an operation whose implementation is intentionally incomplete, and every concrete subtype must provide it. What is the main purpose?",
+    "options": {
+      "A": "To establish a required behavioral contract for concrete subtypes",
+      "B": "To force static binding",
+      "C": "To eliminate polymorphism",
+      "D": "To make every subtype identical"
+    },
+    "correct_answer": "A",
+    "explanation": "An abstract operation defines behavior that concrete subclasses are required to realize.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstraction",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A collection stores objects through a common base type. At runtime, each object's overridden method executes according to its actual subtype. What mechanism is being relied upon?",
+    "options": {
+      "A": "Dynamic dispatch",
+      "B": "Static initialization",
+      "C": "Method hiding only",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic dispatch selects the overridden implementation based on the runtime type of the object.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dynamic Binding",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Two operations have the same name but different parameter signatures. The compiler chooses the applicable operation before execution. What concept is this?",
+    "options": {
+      "A": "Overriding",
+      "B": "Overloading",
+      "C": "Dynamic dispatch",
+      "D": "Composition"
+    },
+    "correct_answer": "B",
+    "explanation": "Overloading distinguishes operations by their signatures and is resolved through static type information in typical OOP models.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Overloading",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass supplies a new implementation for a superclass operation while preserving the same conceptual contract. What is the defining characteristic?",
+    "options": {
+      "A": "Overriding",
+      "B": "Overloading",
+      "C": "Aggregation",
+      "D": "Encapsulation"
+    },
+    "correct_answer": "A",
+    "explanation": "Overriding replaces or specializes inherited behavior while retaining the base operation's role.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Overriding",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A variable has static type Shape and references a Circle. Calling draw() invokes Circle.draw(). What determines the selected implementation if draw() is dynamically dispatched?",
+    "options": {
+      "A": "The runtime type of the referenced object",
+      "B": "Only the variable's declared type",
+      "C": "The constructor name",
+      "D": "The package name"
+    },
+    "correct_answer": "A",
+    "explanation": "Dynamic dispatch resolves the overridden implementation from the object's runtime type.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Polymorphism",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A system relies on polymorphism, but a new subtype requires callers to inspect its concrete type and branch on it before using it. What does this suggest?",
+    "options": {
+      "A": "The abstraction may be weak or violating substitutability",
+      "B": "The subtype has perfect encapsulation",
+      "C": "The system has no coupling",
+      "D": "Overloading is being used correctly"
+    },
+    "correct_answer": "A",
+    "explanation": "Repeated concrete-type checks often indicate that the abstraction does not adequately capture the polymorphic contract.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Polymorphism",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype overrides a method and narrows the set of inputs it accepts compared with the base contract. Why is this dangerous?",
+    "options": {
+      "A": "Existing clients valid for the base type may fail when given the subtype",
+      "B": "It always improves cohesion",
+      "C": "It converts overriding into overloading",
+      "D": "It guarantees compile-time polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "A subtype that accepts fewer valid inputs can violate the expectations of clients written against the base type.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A polymorphic collection contains ten implementations. Adding an eleventh implementation requires no change to the collection-processing algorithm. Which design property is demonstrated?",
+    "options": {
+      "A": "Extensibility through polymorphism",
+      "B": "Tight coupling to concrete classes",
+      "C": "Interface pollution",
+      "D": "Object slicing"
+    },
+    "correct_answer": "A",
+    "explanation": "The algorithm depends on the common abstraction, allowing new implementations to participate without modifying it.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Polymorphism",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A client receives an object through an interface and calls only interface operations. The concrete class can be replaced without changing client code. What principle is most directly illustrated?",
+    "options": {
+      "A": "Programming to an abstraction",
+      "B": "Breaking encapsulation",
+      "C": "Multiple inheritance",
+      "D": "Method hiding"
+    },
+    "correct_answer": "A",
+    "explanation": "The client depends on a stable abstraction rather than a concrete implementation.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstraction",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base reference points to an object whose subtype adds extra state. The client can access only the base contract. What is the key implication?",
+    "options": {
+      "A": "The client can rely only on behavior promised by the base abstraction",
+      "B": "The client automatically gains access to all subtype state",
+      "C": "The subtype loses all polymorphism",
+      "D": "The object must be copied"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphic substitution exposes the base contract to the client, not arbitrary subtype-specific representation.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Subtype Abstraction",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A design has dozens of instanceof/type checks inside business logic, each selecting a different concrete class. What is the most likely design smell?",
+    "options": {
+      "A": "Polymorphism may have been replaced by explicit type discrimination",
+      "B": "Composition is necessarily excessive",
+      "C": "All classes are immutable",
+      "D": "Coupling is necessarily zero"
+    },
+    "correct_answer": "A",
+    "explanation": "Repeated type discrimination can indicate behavior that should instead be delegated polymorphically.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Polymorphism Smells",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class inherits the same method through two parent paths that ultimately derive from one common ancestor. If the language permits multiple inheritance, what classic ambiguity can arise?",
+    "options": {
+      "A": "Diamond inheritance ambiguity",
+      "B": "Only constructor overloading",
+      "C": "Interface segregation",
+      "D": "Garbage collection"
+    },
+    "correct_answer": "A",
+    "explanation": "The diamond problem occurs when multiple inheritance creates two paths to a common ancestor and inherited behavior becomes ambiguous.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Multiple Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Which strategy most directly resolves a diamond ambiguity when two parent paths refer to the same logical base state?",
+    "options": {
+      "A": "Use a single shared base subobject/state or an explicit language-supported virtual inheritance mechanism",
+      "B": "Duplicate the base state silently",
+      "C": "Make every method static",
+      "D": "Remove all polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "A shared base representation avoids maintaining two independent copies of the same logical ancestor.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Diamond Problem",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class inherits behavior from two interfaces that define compatible contracts but provide conflicting default implementations. What must a well-designed subtype do?",
+    "options": {
+      "A": "Resolve the conflict explicitly according to the language's rules",
+      "B": "Ignore both interfaces",
+      "C": "Assume one implementation is always chosen randomly",
+      "D": "Convert every method to a constructor"
+    },
+    "correct_answer": "A",
+    "explanation": "Conflicting inherited behavior requires explicit resolution or another unambiguous rule.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Multiple Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype inherits two parents whose methods have identical signatures but incompatible semantic contracts. Why is simply resolving the method name not enough?",
+    "options": {
+      "A": "The subtype may still have no implementation satisfying both behavioral contracts",
+      "B": "Identical signatures guarantee substitutability",
+      "C": "The problem becomes only syntactic",
+      "D": "The subtype becomes immutable"
+    },
+    "correct_answer": "A",
+    "explanation": "Behavioral incompatibility cannot be solved merely by choosing one method body; the subtype must satisfy the relevant contract.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Multiple Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A design uses multiple inheritance solely to reuse implementation from two unrelated utility classes. Which alternative usually reduces hierarchy complexity?",
+    "options": {
+      "A": "Composition through delegated helper objects",
+      "B": "More levels of inheritance",
+      "C": "Global mutable state",
+      "D": "Duplicating every class"
+    },
+    "correct_answer": "A",
+    "explanation": "Composition reuses capabilities without forcing unrelated types into one inheritance hierarchy.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composition vs Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base type defines invariant I. A subtype strengthens I by requiring an additional condition that callers of the base type were never required to establish. What principle is threatened?",
+    "options": {
+      "A": "Liskov Substitution Principle",
+      "B": "Interface Segregation Principle only",
+      "C": "Open/Closed Principle only",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "Strengthening preconditions or required assumptions can make valid base-type clients invalid for the subtype.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype returns results that are more specific while still satisfying the base return contract. Which substitution rule is this closest to?",
+    "options": {
+      "A": "Covariant return behavior",
+      "B": "Contravariant parameter behavior",
+      "C": "Interface pollution",
+      "D": "Composition"
+    },
+    "correct_answer": "A",
+    "explanation": "A more specific return type can preserve substitutability when the base contract permits it.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Covariance and Contravariance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype requires callers to provide a more general input than the base type required. Conceptually, why can this preserve substitutability?",
+    "options": {
+      "A": "The subtype accepts at least the inputs accepted by the base contract",
+      "B": "The subtype rejects more valid inputs",
+      "C": "It eliminates dynamic dispatch",
+      "D": "It forces composition"
+    },
+    "correct_answer": "A",
+    "explanation": "Accepting a broader input domain avoids invalidating clients that were written for the base type.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Contravariance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype promises fewer possible failure conditions than the base contract. If the base contract allows those failures, why is this generally safe?",
+    "options": {
+      "A": "Clients expecting the base behavior are not harmed by fewer failures",
+      "B": "Clients must always catch more exceptions",
+      "C": "It violates encapsulation",
+      "D": "It prevents overriding"
+    },
+    "correct_answer": "A",
+    "explanation": "Reducing unexpected failure behavior can preserve or strengthen substitutability when the base contract permits the broader behavior.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subtype changes an inherited method so that a previously observable postcondition is no longer guaranteed. What is the most precise concern?",
+    "options": {
+      "A": "The subtype may violate the base postcondition and therefore substitutability",
+      "B": "Only overloading is affected",
+      "C": "The class becomes an interface",
+      "D": "Aggregation is introduced"
+    },
+    "correct_answer": "A",
+    "explanation": "A subtype must preserve the postconditions expected by clients of the base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An object contains a reference to a mutable nested object. A shallow copy duplicates only the outer object, so both copies point to the same nested object. What risk follows?",
+    "options": {
+      "A": "Mutating the nested object through one copy can affect the other",
+      "B": "The copies necessarily have different nested state",
+      "C": "Polymorphism stops working",
+      "D": "Constructors cannot run"
+    },
+    "correct_answer": "A",
+    "explanation": "Shallow copying preserves the nested reference, so both objects can share mutable state.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Copy Semantics",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A deep copy is required when two objects must evolve independently, including their mutable nested objects. What must the copy operation ensure?",
+    "options": {
+      "A": "Owned mutable subobjects are copied rather than merely referenced",
+      "B": "Only the outer object's identity is copied",
+      "C": "All methods become static",
+      "D": "The subtype hierarchy is removed"
+    },
+    "correct_answer": "A",
+    "explanation": "Independent evolution requires independent mutable object graphs where ownership semantics demand it.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Deep Copy",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Two domain objects represent the same logical entity but are distinct in-memory instances. Which concept should determine whether they compare equal?",
+    "options": {
+      "A": "The domain's equality semantics, not merely object identity",
+      "B": "Only memory address",
+      "C": "Only construction time",
+      "D": "The class name alone"
+    },
+    "correct_answer": "A",
+    "explanation": "Logical equality can differ from reference identity and should reflect the domain's equality contract.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Equality and Identity",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A mutable object is used as a key in a hash-based collection, and a field participating in hashing is later changed. What can happen?",
+    "options": {
+      "A": "The collection may no longer locate the key correctly",
+      "B": "The object becomes immutable automatically",
+      "C": "All keys are rehashed automatically in every design",
+      "D": "The object must be garbage-collected"
+    },
+    "correct_answer": "A",
+    "explanation": "Changing hash-relevant state can place the key in a bucket inconsistent with its current hash value.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Equality and Hashing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A value object is intended to be immutable. Which design is strongest?",
+    "options": {
+      "A": "Private state, no mutators, controlled construction, and defensive handling of mutable inputs/outputs",
+      "B": "Public mutable fields",
+      "C": "Global setters",
+      "D": "Returning internal mutable collections directly"
+    },
+    "correct_answer": "A",
+    "explanation": "Immutability requires preventing observable state changes, including through aliases to mutable internals.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Immutability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An immutable object receives a mutable collection in its constructor and stores the reference directly. What flaw remains?",
+    "options": {
+      "A": "External code can mutate the collection after construction",
+      "B": "The object is automatically deeply copied",
+      "C": "The constructor becomes abstract",
+      "D": "Inheritance is disabled"
+    },
+    "correct_answer": "A",
+    "explanation": "Without defensive copying or another ownership mechanism, callers retain an alias to mutable state.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Defensive Copying",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An immutable object returns its internal mutable list directly from a getter. Why does this break immutability?",
+    "options": {
+      "A": "Clients can mutate internal state through the returned alias",
+      "B": "Getters always violate encapsulation",
+      "C": "Lists cannot be returned from methods",
+      "D": "The object becomes polymorphic"
+    },
+    "correct_answer": "A",
+    "explanation": "Returning the mutable representation leaks an alias that permits state changes.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A domain object uses identity-based equality in one subsystem and value-based equality in another. What is the primary design risk?",
+    "options": {
+      "A": "Inconsistent semantics can cause incorrect collections, comparisons, and business decisions",
+      "B": "It guarantees stronger encapsulation",
+      "C": "It eliminates coupling",
+      "D": "It makes inheritance impossible"
+    },
+    "correct_answer": "A",
+    "explanation": "Equality semantics should be coherent across contexts where objects are compared or stored.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Equality Semantics",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class's equality uses field A, but its hash calculation uses unrelated field B. What contract is most directly violated?",
+    "options": {
+      "A": "Equal objects must produce compatible hash values",
+      "B": "Every unequal object must have a unique hash",
+      "C": "Every object must be immutable",
+      "D": "Every subclass must override constructors"
+    },
+    "correct_answer": "A",
+    "explanation": "Hash-based structures rely on equal objects mapping to the same hash value.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Equality and Hashing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Two objects share a mutable collaborator intentionally because the collaborator represents shared domain state. Which conclusion is most accurate?",
+    "options": {
+      "A": "Sharing can be valid, but ownership and mutation semantics must be explicit",
+      "B": "Sharing is always a violation of encapsulation",
+      "C": "Shared state always requires inheritance",
+      "D": "Shared objects cannot participate in polymorphism"
+    },
+    "correct_answer": "A",
+    "explanation": "Aliasing is not inherently wrong; the design must make shared ownership and mutation behavior intentional.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Object Sharing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A service obtains Customer, then Customer's Account, then Account's Ledger, then Ledger's Entries to perform one operation. Which design principle is most clearly under pressure?",
+    "options": {
+      "A": "Law of Demeter",
+      "B": "Open/Closed Principle only",
+      "C": "Constructor chaining",
+      "D": "Method overloading"
+    },
+    "correct_answer": "A",
+    "explanation": "Long chains through collaborators increase knowledge of object structure and violate the spirit of the Law of Demeter.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Law of Demeter",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class directly accesses many internal details of several other classes. What is the likely architectural consequence?",
+    "options": {
+      "A": "High coupling and increased fragility when collaborator internals change",
+      "B": "Guaranteed high cohesion",
+      "C": "Automatic immutability",
+      "D": "Reduced dependency count"
+    },
+    "correct_answer": "A",
+    "explanation": "Knowledge of collaborator internals increases coupling and makes changes propagate more easily.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Coupling",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class has one narrowly defined responsibility and most of its methods operate on the same small state set. What does this indicate?",
+    "options": {
+      "A": "High cohesion",
+      "B": "Low cohesion",
+      "C": "Excessive inheritance",
+      "D": "Interface pollution"
+    },
+    "correct_answer": "A",
+    "explanation": "Cohesion measures how closely related the responsibilities and data handled by a module are.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Cohesion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A module can be changed internally without requiring changes in many clients because clients depend on a stable abstraction. Which property has been improved?",
+    "options": {
+      "A": "Loose coupling",
+      "B": "Low cohesion",
+      "C": "State duplication",
+      "D": "Inheritance depth"
+    },
+    "correct_answer": "A",
+    "explanation": "Stable abstractions reduce direct dependency on implementation details and therefore reduce coupling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Coupling",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A single class coordinates database access, UI formatting, authentication, and business rules. A change to UI formatting repeatedly breaks database tests. What is the deeper design issue?",
+    "options": {
+      "A": "Responsibilities are entangled, increasing coupling between unrelated concerns",
+      "B": "Polymorphism is impossible",
+      "C": "The class necessarily needs multiple inheritance",
+      "D": "The object must be a singleton"
+    },
+    "correct_answer": "A",
+    "explanation": "Unrelated responsibilities create change coupling and make isolated testing difficult.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Separation of Concerns",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A developer argues that a class with 30 methods must have low cohesion. Why is the statement insufficient?",
+    "options": {
+      "A": "Method count alone does not determine whether the responsibilities are conceptually related",
+      "B": "Cohesion is determined only by inheritance depth",
+      "C": "Any class with 30 methods is always cohesive",
+      "D": "Cohesion applies only to interfaces"
+    },
+    "correct_answer": "A",
+    "explanation": "Cohesion is about relatedness of responsibilities, not a fixed numerical method threshold.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Cohesion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A client depends on a large service abstraction but uses only one method. Many unrelated changes to the service affect the client. Which improvement is most aligned with ISP?",
+    "options": {
+      "A": "Expose a smaller client-specific interface",
+      "B": "Add more methods to the interface",
+      "C": "Make all service methods static",
+      "D": "Move the client into the service"
+    },
+    "correct_answer": "A",
+    "explanation": "A smaller interface reduces unnecessary dependency on unrelated operations.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Interface Segregation Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A dependency graph contains A→B→C→A among high-level modules. What design risk is most apparent?",
+    "options": {
+      "A": "Circular dependencies that make independent evolution and testing harder",
+      "B": "Guaranteed loose coupling",
+      "C": "Automatic composition",
+      "D": "Improved substitutability"
+    },
+    "correct_answer": "A",
+    "explanation": "Cycles in dependency graphs increase coupling and complicate build, testing, and architectural boundaries.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Management",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A business module directly imports database-specific classes in many places. What refactoring best establishes a cleaner boundary?",
+    "options": {
+      "A": "Introduce a domain-facing repository abstraction implemented by infrastructure code",
+      "B": "Make database classes inherit from business services",
+      "C": "Move all business rules into SQL",
+      "D": "Make the database global"
+    },
+    "correct_answer": "A",
+    "explanation": "A repository abstraction can isolate business logic from infrastructure-specific persistence details.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Layered Architecture",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class's public API exposes internal data structures, causing every client to know representation details. What design improvement is strongest?",
+    "options": {
+      "A": "Expose domain operations and stable abstractions instead of representation",
+      "B": "Add more public fields",
+      "C": "Duplicate the data in every client",
+      "D": "Remove all methods"
+    },
+    "correct_answer": "A",
+    "explanation": "Behavior-oriented APIs reduce representation coupling and protect invariants.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A system must support multiple interchangeable pricing algorithms selected at runtime. Each algorithm follows the same contract. Which pattern best fits?",
+    "options": {
+      "A": "Strategy",
+      "B": "Singleton",
+      "C": "Composite",
+      "D": "Prototype only"
+    },
+    "correct_answer": "A",
+    "explanation": "Strategy encapsulates interchangeable algorithms behind a common interface.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Strategy Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An object changes its behavior when its internal state changes, without the client selecting the behavior class explicitly each time. Which pattern best models this?",
+    "options": {
+      "A": "State",
+      "B": "Factory only",
+      "C": "Adapter only",
+      "D": "Facade only"
+    },
+    "correct_answer": "A",
+    "explanation": "The State pattern represents state-dependent behavior through state objects or equivalent polymorphic structure.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "State Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Several clients need access to a complex subsystem, but the desired API should hide subsystem complexity behind a small interface. Which pattern fits?",
+    "options": {
+      "A": "Facade",
+      "B": "Strategy",
+      "C": "Prototype",
+      "D": "Iterator only"
+    },
+    "correct_answer": "A",
+    "explanation": "A Facade presents a simplified interface over a more complex subsystem.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Facade Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An existing class has useful behavior but an incompatible interface expected by the client. Which pattern is designed to reconcile the interfaces?",
+    "options": {
+      "A": "Adapter",
+      "B": "State",
+      "C": "Singleton",
+      "D": "Observer"
+    },
+    "correct_answer": "A",
+    "explanation": "Adapter converts the interface of an existing object into the interface expected by clients.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Adapter Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A publisher must notify multiple independent subscribers whenever its state changes. Which pattern is the closest fit?",
+    "options": {
+      "A": "Observer",
+      "B": "Factory",
+      "C": "Prototype",
+      "D": "Builder"
+    },
+    "correct_answer": "A",
+    "explanation": "Observer establishes a one-to-many notification relationship between a subject and subscribers.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Observer Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A family of related objects must be created without the client depending on their concrete classes. Which pattern is especially suited to this requirement?",
+    "options": {
+      "A": "Abstract Factory",
+      "B": "Adapter",
+      "C": "State",
+      "D": "Facade"
+    },
+    "correct_answer": "A",
+    "explanation": "Abstract Factory creates related families of products through abstract creation interfaces.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstract Factory",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An object has many optional construction parameters, and telescoping constructors are becoming difficult to maintain. Which pattern can improve construction clarity?",
+    "options": {
+      "A": "Builder",
+      "B": "Observer",
+      "C": "Adapter",
+      "D": "State"
+    },
+    "correct_answer": "A",
+    "explanation": "Builder separates complex construction steps from the final representation and handles optional parameters cleanly.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Builder Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A command must be queued, logged, retried, or undone as an object. Which pattern most directly models the operation as data?",
+    "options": {
+      "A": "Command",
+      "B": "Facade",
+      "C": "Singleton",
+      "D": "Flyweight"
+    },
+    "correct_answer": "A",
+    "explanation": "Command encapsulates a request as an object, enabling queuing, logging, retrying, and undo mechanisms.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Command Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A hierarchy of objects should allow clients to treat individual objects and nested groups uniformly. Which pattern is appropriate?",
+    "options": {
+      "A": "Composite",
+      "B": "Adapter",
+      "C": "Strategy",
+      "D": "Factory Method"
+    },
+    "correct_answer": "A",
+    "explanation": "Composite lets clients use a common abstraction for leaves and compositions.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composite Pattern",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class has a stable algorithm with fixed overall steps, but selected steps vary by subclass. Which pattern most closely fits?",
+    "options": {
+      "A": "Template Method",
+      "B": "Observer",
+      "C": "Facade",
+      "D": "Singleton"
+    },
+    "correct_answer": "A",
+    "explanation": "Template Method defines an algorithm skeleton while allowing subclasses to customize designated steps.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Template Method",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A singleton is proposed because several services need the same configuration object. What is the strongest design objection?",
+    "options": {
+      "A": "Singleton introduces global access and hidden coupling when simple dependency injection could express the dependency",
+      "B": "Singleton always prevents object creation",
+      "C": "Configuration can never be shared",
+      "D": "Singleton is identical to an interface"
+    },
+    "correct_answer": "A",
+    "explanation": "Global access makes dependencies less explicit and can complicate testing; sharing does not inherently require a singleton.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Singleton and Dependency Injection",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A repository interface contains methods for SQL transactions, HTTP caching, filesystem paths, and domain persistence. What is the likely problem?",
+    "options": {
+      "A": "The abstraction mixes unrelated responsibilities and leaks infrastructure concerns",
+      "B": "It necessarily has high cohesion",
+      "C": "It guarantees portability",
+      "D": "It is a pure domain abstraction"
+    },
+    "correct_answer": "A",
+    "explanation": "A repository abstraction should represent the relevant domain persistence contract rather than unrelated infrastructure operations.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstraction Boundaries",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class delegates almost every method to another class and adds little domain meaning. What might this indicate?",
+    "options": {
+      "A": "A possible unnecessary wrapper or misplaced responsibility",
+      "B": "Guaranteed high cohesion",
+      "C": "Perfect encapsulation",
+      "D": "Required multiple inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "A thin wrapper can be justified, but pervasive delegation with little added value may indicate an unnecessary abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Design Smells",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A service method accepts a huge parameter object containing fields for many unrelated operations. What design issue is most likely?",
+    "options": {
+      "A": "The API may be exposing an overly broad abstraction and increasing coupling",
+      "B": "It guarantees interface segregation",
+      "C": "It eliminates dependency injection",
+      "D": "It proves the service is immutable"
+    },
+    "correct_answer": "A",
+    "explanation": "Broad parameter structures can couple clients to data they do not actually need.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "API Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class directly depends on a concrete email sender, concrete payment processor, and concrete database adapter. All three are likely to vary independently. What is the strongest refactoring?",
+    "options": {
+      "A": "Introduce stable abstractions at the boundary and inject the varying implementations",
+      "B": "Merge all three concrete classes",
+      "C": "Make them all subclasses of EmailSender",
+      "D": "Convert dependencies to global variables"
+    },
+    "correct_answer": "A",
+    "explanation": "Independent variation points should be abstracted so high-level policy is not coupled to infrastructure implementations.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass inherits a method that makes no semantic sense for it, so the developer throws UnsupportedOperationException whenever it is called. What should be investigated first?",
+    "options": {
+      "A": "Whether the inheritance hierarchy models a false is-a relationship",
+      "B": "Whether the method should be static",
+      "C": "Whether aggregation should be removed",
+      "D": "Whether all classes need constructors"
+    },
+    "correct_answer": "A",
+    "explanation": "Unsupported inherited behavior is a classic warning that the subtype may not truly satisfy the base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Inheritance Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A team replaces every inheritance relationship with composition without examining semantics. Why can that still be poor design?",
+    "options": {
+      "A": "Composition is not automatically correct; the relationship and behavioral contract still need to match the domain",
+      "B": "Composition always increases coupling",
+      "C": "Composition prevents delegation",
+      "D": "Composition cannot model reuse"
+    },
+    "correct_answer": "A",
+    "explanation": "Neither inheritance nor composition is universally superior; the correct choice depends on ownership, substitutability, and behavior.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composition vs Inheritance",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base abstraction exposes mutable internal state because subclasses need it. What is the strongest redesign direction?",
+    "options": {
+      "A": "Expose controlled behavior or protected abstractions rather than leaking representation",
+      "B": "Make all fields public",
+      "C": "Duplicate the state in every subclass",
+      "D": "Use global variables"
+    },
+    "correct_answer": "A",
+    "explanation": "Subclasses should collaborate through controlled contracts rather than requiring clients or subclasses to depend on fragile representation details.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A domain service has no state and contains unrelated static helper methods for formatting, persistence, validation, and networking. What is the strongest concern?",
+    "options": {
+      "A": "The utility collection may be hiding several unrelated responsibilities and weak boundaries",
+      "B": "Static methods automatically provide high cohesion",
+      "C": "It is necessarily an abstract class",
+      "D": "It guarantees dependency inversion"
+    },
+    "correct_answer": "A",
+    "explanation": "Grouping unrelated operations into a single utility/service can obscure responsibilities and increase coupling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Cohesion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A feature requires changes to five unrelated classes every time a new business rule is added. What design property should be examined?",
+    "options": {
+      "A": "Whether responsibilities and variation points are poorly localized",
+      "B": "Only object identity",
+      "C": "Only constructor syntax",
+      "D": "Whether classes have too few fields"
+    },
+    "correct_answer": "A",
+    "explanation": "Scattered changes indicate that the design may not isolate the behavior that varies.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Open/Closed Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base PaymentMethod promises process(amount) succeeds for every nonnegative amount. A subtype rejects amounts above a smaller threshold that the base type permits. What is the most precise issue?",
+    "options": {
+      "A": "The subtype strengthens the precondition and can violate substitutability",
+      "B": "The subtype only overloads the method",
+      "C": "The subtype improves encapsulation",
+      "D": "The subtype necessarily violates abstraction because it has fields"
+    },
+    "correct_answer": "A",
+    "explanation": "The subtype accepts fewer valid inputs than the base contract, violating the expected input domain.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A base method guarantees that after successful execution, balance is never negative. A subtype may finish successfully while making balance negative. Which contract element is violated?",
+    "options": {
+      "A": "Postcondition",
+      "B": "Constructor precondition",
+      "C": "Interface segregation",
+      "D": "Aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "The subtype violates a postcondition promised by the base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass overrides a method but requires an authentication token that the base class never required. Why is this suspicious even if compilation succeeds?",
+    "options": {
+      "A": "Existing base-type clients may not know to supply the new requirement",
+      "B": "Overriding always forbids extra validation",
+      "C": "It automatically causes multiple inheritance",
+      "D": "It proves low cohesion"
+    },
+    "correct_answer": "A",
+    "explanation": "Adding a new mandatory precondition can make valid base clients invalid for the subtype.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A strategy interface has methods for five algorithms, but each implementation needs only one method and throws for the rest. What is the strongest refactoring?",
+    "options": {
+      "A": "Split the interface into focused abstractions",
+      "B": "Add more default methods",
+      "C": "Make all methods protected",
+      "D": "Create a deeper inheritance tree"
+    },
+    "correct_answer": "A",
+    "explanation": "Clients and implementations should not be forced to depend on operations they do not need.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Interface Segregation Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A notification service chooses EmailNotifier, SMSNotifier, or PushNotifier through a large conditional inside business logic. What design most directly reduces modification when a new notifier is added?",
+    "options": {
+      "A": "Inject a notifier abstraction whose implementations encapsulate channel-specific behavior",
+      "B": "Add another conditional branch",
+      "C": "Make all notifiers inherit from the business service",
+      "D": "Expose notifier internals to clients"
+    },
+    "correct_answer": "A",
+    "explanation": "Polymorphic implementations isolate channel-specific behavior and keep business policy independent of concrete channels.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Open/Closed Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass needs access to ten protected fields from its parent to implement its behavior. What does this often indicate?",
+    "options": {
+      "A": "The inheritance hierarchy may be exposing too much representation and may be too tightly coupled",
+      "B": "The subclass is necessarily immutable",
+      "C": "The design has perfect encapsulation",
+      "D": "Protected state always implies composition"
+    },
+    "correct_answer": "A",
+    "explanation": "Heavy dependence on inherited representation makes subclasses fragile when the base implementation changes.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Inheritance Coupling",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An object graph contains circular ownership: A owns B, B owns C, and C owns A. Why is this especially problematic under strict ownership-based lifecycle management?",
+    "options": {
+      "A": "It can make ownership and destruction responsibilities ambiguous or prevent clean lifecycle termination",
+      "B": "It guarantees automatic garbage collection",
+      "C": "It eliminates coupling",
+      "D": "It makes all objects value objects"
+    },
+    "correct_answer": "A",
+    "explanation": "Cycles complicate ownership reasoning and can cause leaks in ownership models without automatic cycle handling.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Object Lifecycle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class exposes a method that returns an internal mutable object solely because another class needs to modify it. What is a better design direction?",
+    "options": {
+      "A": "Expose a domain operation expressing the intended mutation instead of leaking the mutable collaborator",
+      "B": "Make the internal object public",
+      "C": "Return the same object from every method",
+      "D": "Remove encapsulation completely"
+    },
+    "correct_answer": "A",
+    "explanation": "A behavior-oriented operation preserves invariants and avoids exposing representation for arbitrary mutation.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Encapsulation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A system's high-level module defines business policy but imports concrete database, messaging, and filesystem classes. Which architectural principle is most directly violated?",
+    "options": {
+      "A": "Dependency Inversion",
+      "B": "Aggregation",
+      "C": "Method overloading",
+      "D": "Prototype"
+    },
+    "correct_answer": "A",
+    "explanation": "High-level policy should not depend directly on low-level implementation details; both should depend on suitable abstractions.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A team introduces an abstraction solely to satisfy a design principle, but it has one implementation, no independent variation, and adds indirection without protecting a boundary. What is the strongest conclusion?",
+    "options": {
+      "A": "Abstraction should be justified by a real boundary, variation, or dependency need rather than ceremony",
+      "B": "Every class must have an interface",
+      "C": "More abstractions always mean lower coupling",
+      "D": "Interfaces eliminate maintenance cost"
+    },
+    "correct_answer": "A",
+    "explanation": "Unnecessary abstractions can increase complexity; principles are design heuristics, not requirements to create interfaces everywhere.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Abstraction Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An Order object directly creates TaxCalculator, DiscountEngine, PaymentGateway, and EmailService. Each dependency has multiple implementations and is independently tested. Which design gives the strongest separation of policy from mechanism?",
+    "options": {
+      "A": "Inject abstractions for each varying dependency into Order-related business logic",
+      "B": "Make all dependencies static",
+      "C": "Make Order inherit from every dependency",
+      "D": "Expose every dependency as a public field"
+    },
+    "correct_answer": "A",
+    "explanation": "Injecting stable abstractions keeps business policy independent from concrete mechanisms and improves testability.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Injection",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A subclass of Document overrides save() so that it silently does nothing when the base contract says save() persists the document. What is the strongest diagnosis?",
+    "options": {
+      "A": "The subtype violates the base behavioral contract",
+      "B": "The subtype is merely overloaded",
+      "C": "The subtype increases cohesion",
+      "D": "The subtype creates aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "A no-op implementation that fails to fulfill the promised behavior breaks substitutability.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A system uses inheritance for PremiumUser because premium users are users, but later PremiumUser needs behavior that conflicts with an invariant of User. What should be reconsidered?",
+    "options": {
+      "A": "Whether PremiumUser is truly a behavioral subtype of User",
+      "B": "Whether User should become a singleton",
+      "C": "Whether methods should all be static",
+      "D": "Whether aggregation is forbidden"
+    },
+    "correct_answer": "A",
+    "explanation": "An is-a relationship is not sufficient; the subtype must also honor the behavioral contract of the base type.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Inheritance Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class has high cohesion internally, but dozens of clients instantiate it directly and depend on its constructor details. A new required dependency would break all clients. What is the most relevant improvement?",
+    "options": {
+      "A": "Hide construction behind a factory or composition root while exposing a stable abstraction",
+      "B": "Add more constructors indefinitely",
+      "C": "Make the constructor public everywhere",
+      "D": "Duplicate the class"
+    },
+    "correct_answer": "A",
+    "explanation": "Centralizing construction reduces client coupling to concrete construction details.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Construction Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A factory itself contains business rules, persistence calls, network calls, and object construction. What is the most likely issue?",
+    "options": {
+      "A": "The factory has accumulated responsibilities beyond object creation",
+      "B": "Factories must always be singletons",
+      "C": "Factories cannot depend on abstractions",
+      "D": "The design necessarily violates inheritance"
+    },
+    "correct_answer": "A",
+    "explanation": "A factory should primarily encapsulate creation decisions; unrelated business and infrastructure responsibilities reduce cohesion.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Factory Design",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A polymorphic algorithm requires a new subtype to expose several subtype-specific methods before the algorithm can work. What does that imply?",
+    "options": {
+      "A": "The common abstraction may be missing behavior required by the algorithm",
+      "B": "Dynamic dispatch is impossible",
+      "C": "The subtype must use multiple inheritance",
+      "D": "Encapsulation is necessarily perfect"
+    },
+    "correct_answer": "A",
+    "explanation": "If clients must downcast to access essential behavior, the abstraction may be incomplete.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Polymorphism",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class delegates behavior to a collaborator, but the collaborator is created internally and cannot be replaced in tests. Which statement is most accurate?",
+    "options": {
+      "A": "Composition exists, but dependency injection is still missing",
+      "B": "Composition automatically guarantees testability",
+      "C": "Delegation always means inheritance",
+      "D": "The class has no dependency"
+    },
+    "correct_answer": "A",
+    "explanation": "Using a collaborator is composition/delegation, but internally constructing it can still create hard-wired dependencies.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Composition and Dependency Injection",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A design has a stable domain interface implemented by several infrastructure adapters. Which dependency direction is healthiest?",
+    "options": {
+      "A": "Domain policy depends on the interface; infrastructure depends on the interface",
+      "B": "Domain depends on every adapter",
+      "C": "Adapters depend directly on UI controllers only",
+      "D": "Both layers depend on concrete database classes"
+    },
+    "correct_answer": "A",
+    "explanation": "The abstraction forms a boundary that prevents domain policy from depending on infrastructure details.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Dependency Inversion",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A class is replaced by a subtype in a production configuration. Most tests pass, but one client fails because it assumed a base method would return a non-null result and the subtype returns null. Which concept should the team inspect?",
+    "options": {
+      "A": "Whether the subtype preserves the base method's postconditions",
+      "B": "Only method overloading",
+      "C": "Only constructor visibility",
+      "D": "Only aggregation"
+    },
+    "correct_answer": "A",
+    "explanation": "A subtype must preserve guarantees that clients rely on when using the base abstraction.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Liskov Substitution Principle",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A large OOP codebase repeatedly changes concrete classes whenever a new external provider is added, even though provider behavior is conceptually the same. Which combined design direction is strongest?",
+    "options": {
+      "A": "Define a stable provider abstraction, encapsulate provider-specific behavior behind implementations, and inject the selected implementation",
+      "B": "Add provider-specific conditionals throughout business logic",
+      "C": "Make each provider a superclass of the business service",
+      "D": "Expose provider internals to every client"
+    },
+    "correct_answer": "A",
+    "explanation": "A stable abstraction plus polymorphic implementations and dependency injection isolates external variation from business policy.",
+    "category": "Core",
+    "subject": "OOPS",
+    "topic": "Integrated OOP Design",
+    "difficulty": "L3"
+  }
+]

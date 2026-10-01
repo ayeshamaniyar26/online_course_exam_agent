@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "Given Employee(Eid, Dept, Salary), which query returns departments whose average salary is greater than the overall average salary?",
+    "options": {
+      "A": "SELECT Dept FROM Employee GROUP BY Dept HAVING AVG(Salary) > (SELECT AVG(Salary) FROM Employee)",
+      "B": "SELECT Dept FROM Employee WHERE AVG(Salary) > (SELECT AVG(Salary) FROM Employee) GROUP BY Dept",
+      "C": "SELECT Dept FROM Employee GROUP BY Dept WHERE AVG(Salary) > AVG(Salary)",
+      "D": "SELECT Dept FROM Employee HAVING Salary > AVG(Salary)"
+    },
+    "correct_answer": "A",
+    "explanation": "The inner query computes the overall average. GROUP BY computes an average per department, and HAVING compares each department's average with the overall average.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, Name, DeptID, Salary), which query returns the highest-paid employee(s) in every department, including ties?",
+    "options": {
+      "A": "SELECT * FROM Employee WHERE Salary = (SELECT MAX(Salary) FROM Employee)",
+      "B": "SELECT e.* FROM Employee e WHERE Salary = (SELECT MAX(e2.Salary) FROM Employee e2 WHERE e2.DeptID=e.DeptID)",
+      "C": "SELECT * FROM Employee GROUP BY DeptID HAVING Salary=MAX(Salary)",
+      "D": "SELECT e.* FROM Employee e JOIN Employee x ON e.Salary>x.Salary"
+    },
+    "correct_answer": "B",
+    "explanation": "The correlated subquery computes the maximum salary separately for the department of each outer employee, so all employees tied at that maximum are returned.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID) and Project(Pid, DeptID), which query finds departments that have employees but no projects?",
+    "options": {
+      "A": "SELECT DeptID FROM Employee INTERSECT SELECT DeptID FROM Project",
+      "B": "SELECT DeptID FROM Employee EXCEPT SELECT DeptID FROM Project",
+      "C": "SELECT DeptID FROM Employee UNION SELECT DeptID FROM Project",
+      "D": "SELECT DeptID FROM Project EXCEPT SELECT DeptID FROM Employee"
+    },
+    "correct_answer": "B",
+    "explanation": "EXCEPT returns department IDs present in Employee but absent from Project. Equivalent NOT EXISTS logic can also express the requirement.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Set Operations",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query groups Sales by Region and uses HAVING SUM(Amount) > 100000. What would be wrong with replacing HAVING with WHERE SUM(Amount) > 100000?",
+    "options": {
+      "A": "Nothing; WHERE and HAVING are interchangeable",
+      "B": "WHERE filters rows before aggregation and cannot normally filter an aggregate result",
+      "C": "HAVING can only filter individual rows",
+      "D": "SUM cannot be used with GROUP BY"
+    },
+    "correct_answer": "B",
+    "explanation": "Aggregate results are available after grouping, so HAVING is the appropriate clause for conditions such as SUM(Amount) > 100000.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Orders(OrderID, CustomerID, OrderDate), which query returns customers who have placed at least two orders?",
+    "options": {
+      "A": "SELECT CustomerID FROM Orders WHERE COUNT(*) >= 2",
+      "B": "SELECT CustomerID FROM Orders GROUP BY CustomerID HAVING COUNT(*) >= 2",
+      "C": "SELECT CustomerID FROM Orders ORDER BY COUNT(*) >= 2",
+      "D": "SELECT DISTINCT CustomerID FROM Orders HAVING COUNT(*) >= 2"
+    },
+    "correct_answer": "B",
+    "explanation": "GROUP BY forms one group per customer and HAVING filters groups whose order count is at least two.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Student(Sid, Name) and Marks(Sid, Subject, Score), which query returns students who have no marks record at all?",
+    "options": {
+      "A": "SELECT s.* FROM Student s INNER JOIN Marks m ON s.Sid=m.Sid",
+      "B": "SELECT s.* FROM Student s LEFT JOIN Marks m ON s.Sid=m.Sid WHERE m.Sid IS NULL",
+      "C": "SELECT s.* FROM Student s RIGHT JOIN Marks m ON s.Sid=m.Sid WHERE m.Sid IS NULL",
+      "D": "SELECT * FROM Student WHERE Sid IN (SELECT Sid FROM Marks)"
+    },
+    "correct_answer": "B",
+    "explanation": "A LEFT JOIN preserves every student; students with no matching Marks row have NULL values on the Marks side and can be selected with IS NULL.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query returns the second-highest distinct salary?",
+    "options": {
+      "A": "SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee)",
+      "B": "SELECT MIN(Salary) FROM Employee",
+      "C": "SELECT MAX(Salary) FROM Employee",
+      "D": "SELECT Salary FROM Employee ORDER BY Salary ASC LIMIT 2"
+    },
+    "correct_answer": "A",
+    "explanation": "The inner MAX finds the highest salary, and the outer MAX finds the largest salary strictly below it, giving the second-highest distinct salary.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Employee(Eid, DeptID, Salary) contains salaries 100, 200, 200, 300. What does SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee) return?",
+    "options": {
+      "A": "100",
+      "B": "200",
+      "C": "300",
+      "D": "NULL"
+    },
+    "correct_answer": "B",
+    "explanation": "The maximum salary is 300. Values below 300 are 100, 200, 200, so the maximum among them is 200.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Subqueries",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query returns departments where every employee earns at least 50000?",
+    "options": {
+      "A": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING MIN(Salary) >= 50000",
+      "B": "SELECT DeptID FROM Employee WHERE MIN(Salary) >= 50000 GROUP BY DeptID",
+      "C": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING MAX(Salary) >= 50000",
+      "D": "SELECT DeptID FROM Employee WHERE Salary >= 50000"
+    },
+    "correct_answer": "A",
+    "explanation": "If the minimum salary in a department is at least 50000, then every employee in that department satisfies the condition.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query returns departments where at least one employee earns more than 100000?",
+    "options": {
+      "A": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING MAX(Salary) > 100000",
+      "B": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING MIN(Salary) > 100000",
+      "C": "SELECT DeptID FROM Employee WHERE MAX(Salary) > 100000",
+      "D": "SELECT DISTINCT DeptID FROM Employee HAVING Salary > 100000"
+    },
+    "correct_answer": "A",
+    "explanation": "A department has at least one salary above 100000 exactly when its maximum salary is above 100000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Relation R(A,B,C,D) has functional dependencies A→B and B→C. Which attribute set is a superkey if A does not determine D?",
+    "options": {
+      "A": "{A}",
+      "B": "{A,B}",
+      "C": "{A,D}",
+      "D": "{B,D}"
+    },
+    "correct_answer": "C",
+    "explanation": "A determines B and then C, but not D. Therefore A,D determines all attributes A,B,C,D and is a superkey.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Functional Dependencies",
+    "difficulty": "L3"
+  },
+  {
+    "question": "For R(A,B,C,D), F={A→B, B→C, AC→D}. What is A+?",
+    "options": {
+      "A": "{A,B}",
+      "B": "{A,B,C}",
+      "C": "{A,B,C,D}",
+      "D": "{A,D}"
+    },
+    "correct_answer": "C",
+    "explanation": "Start with A, derive B using A→B, derive C using B→C, then AC→D applies because A and C are available. Thus A+ contains all attributes.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Attribute Closure",
+    "difficulty": "L3"
+  },
+  {
+    "question": "For R(A,B,C,D,E), F={A→B, B→C, CD→E}. Which set is a candidate key?",
+    "options": {
+      "A": "{A}",
+      "B": "{A,D}",
+      "C": "{B,D}",
+      "D": "{C,D}"
+    },
+    "correct_answer": "B",
+    "explanation": "A determines B and C. Adding D allows CD→E, so AD determines all attributes. Neither A nor D alone determines all attributes, making AD a candidate key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Candidate Keys",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has F={A→B, B→C}. Which statement is true about the dependency A→C?",
+    "options": {
+      "A": "It is implied by transitivity",
+      "B": "It contradicts A→B",
+      "C": "It requires C→A",
+      "D": "It is valid only if A is a foreign key"
+    },
+    "correct_answer": "A",
+    "explanation": "By transitivity, A→B and B→C imply A→C.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Functional Dependencies",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C,D) has candidate key AB and FDs A→C and AB→D. Which issue prevents the relation from being in 2NF?",
+    "options": {
+      "A": "D depends on the whole key",
+      "B": "C depends only on part of the composite key",
+      "C": "AB is not a key",
+      "D": "There is no functional dependency"
+    },
+    "correct_answer": "B",
+    "explanation": "A→C means non-key attribute C depends on only part A of the composite candidate key AB, which violates 2NF.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has key A and dependencies A→B and B→C. Which normal form is violated because of B→C?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "None"
+    },
+    "correct_answer": "C",
+    "explanation": "B is a non-key attribute determining another non-key attribute C, creating a transitive dependency from the key A to C.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C,D) has F={AB→C, C→D} and candidate key AB. Which normal form is definitely violated?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "None"
+    },
+    "correct_answer": "C",
+    "explanation": "C→D is a transitive dependency from the candidate key AB through non-key attribute C to non-key attribute D, violating 3NF.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has candidate keys AB and AC. Which attribute could be prime?",
+    "options": {
+      "A": "Only B",
+      "B": "Only C",
+      "C": "A, B, and C",
+      "D": "None"
+    },
+    "correct_answer": "C",
+    "explanation": "A, B, and C all occur in at least one candidate key, so all three are prime attributes.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A decomposition of R(A,B,C) into R1(A,B) and R2(B,C) is being checked for lossless join. If B→C holds in R, which conclusion is most appropriate?",
+    "options": {
+      "A": "The decomposition can be lossless because B is a key of R2 under the dependency",
+      "B": "It must always be lossy",
+      "C": "It is lossless only if A→B",
+      "D": "Foreign keys are required"
+    },
+    "correct_answer": "A",
+    "explanation": "For this binary decomposition, the common attribute B functionally determines all attributes of R2, satisfying the standard lossless-join condition.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A relation has FDs A→B and C→D and candidate key AC. Which non-key attributes have partial dependencies?",
+    "options": {
+      "A": "B and D",
+      "B": "Only B",
+      "C": "Only D",
+      "D": "None"
+    },
+    "correct_answer": "A",
+    "explanation": "B depends only on A and D depends only on C, each of which is a proper subset of composite key AC. Both are partial dependencies.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Schedule S consists of r1(X), w1(X), r2(X), w2(X). Are T1 and T2 conflict-serializable, and if so, in what order?",
+    "options": {
+      "A": "Yes, T1 before T2",
+      "B": "Yes, T2 before T1",
+      "C": "Yes, either order",
+      "D": "No, it contains a cycle"
+    },
+    "correct_answer": "A",
+    "explanation": "Conflicts from T1's operations on X preceding T2's operations create an edge T1→T2 and no reverse edge, so the schedule is equivalent to T1 then T2.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Conflict Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Schedule S contains r1(X), w2(X), w1(Y), r2(Y). Which precedence edges are present?",
+    "options": {
+      "A": "T1→T2 only",
+      "B": "T2→T1 only",
+      "C": "T1→T2 and T2→T1",
+      "D": "No edges"
+    },
+    "correct_answer": "C",
+    "explanation": "r1(X) before w2(X) gives T1→T2. w2(Y) before r1(Y) would be needed for the reverse, but the stated sequence has w1(Y) after w2(X); there is no w2(Y). Thus only T1→T2 would actually be present.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Conflict Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A schedule has precedence graph edges T1→T2, T2→T3, and T3→T1. What does this imply?",
+    "options": {
+      "A": "It is conflict-serializable",
+      "B": "It is not conflict-serializable because the graph has a cycle",
+      "C": "It is view-serializable by definition",
+      "D": "It is necessarily recoverable"
+    },
+    "correct_answer": "B",
+    "explanation": "A cycle in the precedence graph means the schedule is not conflict-serializable.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Conflict Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "T1 reads X, T2 writes X and commits, then T1 commits. If T1 read the value written by T2 before T2 committed, what property of the schedule is problematic?",
+    "options": {
+      "A": "Recoverability",
+      "B": "Indexing",
+      "C": "Normalization",
+      "D": "Physical data independence"
+    },
+    "correct_answer": "A",
+    "explanation": "T1 depends on T2's write. If T1 can commit before T2, the schedule would be non-recoverable; the stated commit order avoids that, but the dirty read itself is still an isolation concern.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recoverability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "T1 writes X. T2 reads X before T1 commits. T1 later aborts. What did T2 perform?",
+    "options": {
+      "A": "A dirty read",
+      "B": "A phantom read",
+      "C": "A lossless join",
+      "D": "A committed read"
+    },
+    "correct_answer": "A",
+    "explanation": "T2 read data written by an uncommitted transaction, so it performed a dirty read.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L3"
+  },
+  {
+    "question": "T1 reads X, T2 writes X and commits, and T1 reads X again. What anomaly may T1 observe?",
+    "options": {
+      "A": "Non-repeatable read",
+      "B": "Insertion anomaly",
+      "C": "Lost update necessarily",
+      "D": "Deadlock necessarily"
+    },
+    "correct_answer": "A",
+    "explanation": "The second read can return a different committed value because T2 changed X between T1's reads.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L3"
+  },
+  {
+    "question": "T1 executes SELECT * WHERE Salary>50000 twice. Between the two executions, T2 inserts a qualifying employee and commits. What can T1 observe?",
+    "options": {
+      "A": "A phantom row",
+      "B": "A dirty write",
+      "C": "A partial dependency",
+      "D": "A lost key"
+    },
+    "correct_answer": "A",
+    "explanation": "The second predicate execution can return an additional row created by another committed transaction, which is a phantom read.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L3"
+  },
+  {
+    "question": "T1 locks X and waits for Y; T2 locks Y and waits for Z; T3 locks Z and waits for X. What does the wait-for graph indicate?",
+    "options": {
+      "A": "A cycle and therefore a deadlock",
+      "B": "A serial schedule",
+      "C": "A candidate key",
+      "D": "A lossless decomposition"
+    },
+    "correct_answer": "A",
+    "explanation": "The wait relationships form T1→T2→T3→T1, a cycle indicating deadlock.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Deadlocks",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Under strict two-phase locking, when are exclusive locks generally held until?",
+    "options": {
+      "A": "Until commit or abort",
+      "B": "Until the first read",
+      "C": "Until the first write",
+      "D": "Until the transaction requests another lock"
+    },
+    "correct_answer": "A",
+    "explanation": "Strict 2PL holds exclusive locks until the transaction commits or aborts, preventing other transactions from reading or overwriting uncommitted writes.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Two-Phase Locking",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction obtains a lock after releasing another lock. Which property of basic two-phase locking is violated?",
+    "options": {
+      "A": "Growing phase followed by shrinking phase",
+      "B": "Atomicity",
+      "C": "Durability",
+      "D": "Referential integrity"
+    },
+    "correct_answer": "A",
+    "explanation": "In two-phase locking, a transaction cannot acquire new locks after it has begun releasing locks.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Two-Phase Locking",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A B+ tree index is available on Employee(Salary). Which query is most naturally supported by the ordered structure?",
+    "options": {
+      "A": "Salary BETWEEN 50000 AND 70000",
+      "B": "UPPER(Name)='RAVI' when Name is unindexed",
+      "C": "Random row selection with no predicate",
+      "D": "Changing the table schema"
+    },
+    "correct_answer": "A",
+    "explanation": "B+ trees maintain keys in order, making range searches efficient when the optimizer can use the index.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "B+ Tree Indexing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An index exists on Employee(DeptID, Salary). Which predicate can generally use the index's leading key most directly?",
+    "options": {
+      "A": "WHERE DeptID=10 AND Salary>50000",
+      "B": "WHERE Salary>50000 only",
+      "C": "WHERE Name='A' only",
+      "D": "WHERE UPPER(DeptID)='10' necessarily"
+    },
+    "correct_answer": "A",
+    "explanation": "DeptID is the leading index column, so a predicate constraining DeptID can use the composite index and then apply the Salary condition.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Composite Indexes",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An index is defined on Employee(DeptID, Salary). Why might WHERE Salary > 50000 alone fail to use this index as efficiently as a condition on DeptID?",
+    "options": {
+      "A": "Salary is not the leading indexed column",
+      "B": "Salary cannot be compared",
+      "C": "Composite indexes cannot store numeric values",
+      "D": "Indexes require a primary key"
+    },
+    "correct_answer": "A",
+    "explanation": "B-tree-style composite indexes are organized first by the leading column, so a predicate only on the second column may not provide an efficient ordered lookup.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Composite Indexes",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query returns only 1% of rows using an indexed column. Why is an index often attractive in this situation?",
+    "options": {
+      "A": "The predicate is selective, so locating a small set can avoid a large table scan",
+      "B": "The index guarantees no disk access",
+      "C": "The index removes duplicate rows",
+      "D": "The index automatically commits transactions"
+    },
+    "correct_answer": "A",
+    "explanation": "High selectivity means relatively few rows qualify, making an index access path potentially cheaper than scanning the entire table.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A table is updated very frequently and an index is added to five columns. What trade-off should be considered?",
+    "options": {
+      "A": "Writes can become more expensive because indexes must be maintained",
+      "B": "Reads always become slower",
+      "C": "Indexes eliminate storage costs",
+      "D": "Updates no longer require locks"
+    },
+    "correct_answer": "A",
+    "explanation": "Insert, update, and delete operations may need to maintain each affected index, increasing write cost and storage use.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Indexing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A clustered index determines the physical ordering of table rows in a DBMS that supports this concept. Which workload can benefit strongly?",
+    "options": {
+      "A": "Range retrieval on the clustering key",
+      "B": "Queries on completely unrelated columns only",
+      "C": "Changing database passwords",
+      "D": "Granting privileges"
+    },
+    "correct_answer": "A",
+    "explanation": "Physically clustering related key values can reduce I/O for range scans on the clustering key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Clustered Indexing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query applies a function to an indexed column, such as WHERE YEAR(OrderDate)=2026. Why might a normal index on OrderDate be less directly useful?",
+    "options": {
+      "A": "The function changes the searchable expression and may prevent a simple index range lookup",
+      "B": "Indexes cannot contain dates",
+      "C": "YEAR always deletes the index",
+      "D": "Functions automatically drop constraints"
+    },
+    "correct_answer": "A",
+    "explanation": "The DBMS may be unable to use a simple ordered index on the raw column efficiently when the predicate applies a function, unless an appropriate functional/indexed expression exists.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Query Optimization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query joins Customer and Orders on CustomerID. Which index combination is likely to help join processing if CustomerID is the primary key of Customer?",
+    "options": {
+      "A": "Index CustomerID on Orders as well",
+      "B": "Remove Customer's primary key",
+      "C": "Index only an unrelated Name column",
+      "D": "Create a CROSS JOIN"
+    },
+    "correct_answer": "A",
+    "explanation": "CustomerID is already indexed through the primary key on Customer; indexing the foreign-key side can make finding matching orders more efficient.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Query Optimization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A table has an index on a column with only two possible values and millions of rows. Why might the index be less useful for a query selecting one value?",
+    "options": {
+      "A": "The predicate may have low selectivity and touch a large fraction of rows",
+      "B": "Indexes cannot index two-valued columns",
+      "C": "The table cannot have an index",
+      "D": "Low cardinality always causes incorrect results"
+    },
+    "correct_answer": "A",
+    "explanation": "When a value matches a large fraction of the table, an index may not save enough I/O compared with a scan.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Index Selectivity",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query planner chooses a full table scan instead of an available index for a condition. Which is a plausible reason?",
+    "options": {
+      "A": "The optimizer estimates the scan will be cheaper for the expected number of qualifying rows",
+      "B": "The DBMS cannot execute SELECT",
+      "C": "Indexes only work after COMMIT",
+      "D": "A table scan violates ACID"
+    },
+    "correct_answer": "A",
+    "explanation": "The optimizer chooses an access path based on estimated cost; for low-selectivity predicates a scan can be cheaper than index access.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Query Optimization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction performs a debit and credit. The debit is committed but the credit is not. Which transaction property is violated by allowing this final state as one transfer transaction?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Isolation",
+      "C": "Indexing",
+      "D": "Projection"
+    },
+    "correct_answer": "A",
+    "explanation": "A transfer represented as one transaction should be all-or-nothing; committing only one side violates atomicity.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ACID",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction commits, then the database server loses power. After restart, the committed changes are restored from the log. Which ACID property is being demonstrated?",
+    "options": {
+      "A": "Durability",
+      "B": "Isolation",
+      "C": "Atomicity",
+      "D": "Cardinality"
+    },
+    "correct_answer": "A",
+    "explanation": "Recovery restoring committed changes after failure demonstrates durability.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "During recovery, a transaction that committed before the crash has its logged writes applied again. Which operation is this?",
+    "options": {
+      "A": "Redo",
+      "B": "Undo",
+      "C": "Rollback to savepoint",
+      "D": "Projection"
+    },
+    "correct_answer": "A",
+    "explanation": "Redo reapplies the effects of committed transactions when their changes need to be restored after a failure.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "During recovery, changes made by an uncommitted transaction are removed. Which operation is this?",
+    "options": {
+      "A": "Undo",
+      "B": "Redo",
+      "C": "Commit",
+      "D": "Checkpoint"
+    },
+    "correct_answer": "A",
+    "explanation": "Undo reverses effects of transactions that were not committed when the failure occurred.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C,D,E) has F={A→BC, B→D, CD→E}. Which closure is correct for A?",
+    "options": {
+      "A": "{A,B,C,D,E}",
+      "B": "{A,B,C}",
+      "C": "{A,B,D}",
+      "D": "{A,C,E}"
+    },
+    "correct_answer": "A",
+    "explanation": "A→BC gives B and C; B→D gives D; with C and D, CD→E gives E. Therefore A+ contains every attribute.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Attribute Closure",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C,D) has F={AB→C, C→D}. Is AB a candidate key?",
+    "options": {
+      "A": "Yes, because AB determines C and then D",
+      "B": "No, because AB cannot determine C",
+      "C": "Only if C→AB",
+      "D": "No, because D is a key"
+    },
+    "correct_answer": "A",
+    "explanation": "AB determines C directly and C determines D, so AB determines all attributes. Since neither A nor B alone necessarily determines all attributes, AB can be a candidate key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Candidate Keys",
+    "difficulty": "L3"
+  },
+  {
+    "question": "For R(A,B,C,D), F={A→B, C→D}, what is the closure of AC?",
+    "options": {
+      "A": "{A,B,C,D}",
+      "B": "{A,C}",
+      "C": "{A,B,C}",
+      "D": "{A,C,D}"
+    },
+    "correct_answer": "A",
+    "explanation": "Starting with A,C, A→B adds B and C→D adds D, so all four attributes are in AC+.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Attribute Closure",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A relation R(A,B,C) has F={A→B, B→A}. If C is not determined by A or B, which set must be included in every candidate key?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "A and B but not C"
+    },
+    "correct_answer": "C",
+    "explanation": "Since C is not functionally determined by the other attributes, every key must contain C. Either AC or BC can potentially be a candidate key.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Candidate Keys",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has candidate key AB and FD A→C. Which normal form is the highest it can satisfy, assuming 1NF?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "correct_answer": "A",
+    "explanation": "C is a non-prime attribute depending on only A, a proper subset of the composite key AB, so 2NF is violated.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has candidate key A and FD B→C. If B is not a superkey and C is non-prime, which normal form is violated?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "None"
+    },
+    "correct_answer": "C",
+    "explanation": "B→C is a dependency whose determinant is not a superkey and whose dependent attribute is non-prime, violating 3NF.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Which statement distinguishes 3NF from BCNF?",
+    "options": {
+      "A": "3NF allows certain dependencies whose determinant is not a superkey when the dependent attribute is prime",
+      "B": "BCNF allows more violations than 3NF",
+      "C": "3NF requires no functional dependencies",
+      "D": "They are always identical"
+    },
+    "correct_answer": "A",
+    "explanation": "BCNF requires every nontrivial FD to have a superkey determinant; 3NF has an additional prime-attribute exception.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "BCNF",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A relation R is decomposed into R1 and R2. If the common attributes functionally determine all attributes of R1 or all attributes of R2, what property can this support?",
+    "options": {
+      "A": "Lossless join",
+      "B": "Dirty read",
+      "C": "Durability",
+      "D": "Deadlock"
+    },
+    "correct_answer": "A",
+    "explanation": "For a binary decomposition, a standard lossless-join test is satisfied when the common attributes functionally determine all attributes of at least one component.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Lossless Join",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A decomposition preserves all functional dependencies but creates spurious tuples when relations are joined. Which statement is correct?",
+    "options": {
+      "A": "It is dependency-preserving but lossy",
+      "B": "It is lossless and dependency-preserving",
+      "C": "It is neither necessarily",
+      "D": "It cannot preserve dependencies"
+    },
+    "correct_answer": "A",
+    "explanation": "Dependency preservation and losslessness are separate properties. A decomposition may preserve dependencies while still being lossy.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Schedule S has T1: r(X), w(X) followed by T2: r(X), w(X). Which serialization order is indicated by the conflicts?",
+    "options": {
+      "A": "T1 then T2",
+      "B": "T2 then T1",
+      "C": "Both necessarily",
+      "D": "Neither; a cycle exists"
+    },
+    "correct_answer": "A",
+    "explanation": "T1's conflicting operations occur before T2's operations on X, producing an edge T1→T2 with no reverse edge.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Conflict Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A precedence graph has edges T1→T2 and T2→T3 but no path back to T1. What can be concluded?",
+    "options": {
+      "A": "The schedule is conflict-serializable",
+      "B": "The schedule necessarily has a deadlock",
+      "C": "The schedule is non-recoverable",
+      "D": "The schedule contains a phantom read"
+    },
+    "correct_answer": "A",
+    "explanation": "The graph is acyclic, so the schedule is conflict-serializable and has an equivalent serial order represented by a topological ordering.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Conflict Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A schedule is conflict-serializable. What does that guarantee?",
+    "options": {
+      "A": "It is conflict-equivalent to some serial schedule",
+      "B": "It contains no transactions",
+      "C": "It is automatically deadlock-free",
+      "D": "It is automatically durable"
+    },
+    "correct_answer": "A",
+    "explanation": "Conflict serializability means the schedule can be transformed into an equivalent serial schedule by preserving the order of conflicting operations.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Serializability",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Under strict 2PL, a transaction releases an exclusive lock before committing. Why is this disallowed?",
+    "options": {
+      "A": "It could expose uncommitted writes to other transactions",
+      "B": "It violates 1NF",
+      "C": "It changes the primary key",
+      "D": "It prevents all reads"
+    },
+    "correct_answer": "A",
+    "explanation": "Holding exclusive locks until commit or abort prevents other transactions from accessing uncommitted writes and supports strict schedules.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Two-Phase Locking",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Two transactions each hold one lock and wait for the other's lock. Which prevention strategy can break the circular wait?",
+    "options": {
+      "A": "Impose a consistent lock-ordering rule",
+      "B": "Remove all primary keys",
+      "C": "Use DISTINCT",
+      "D": "Normalize to 1NF"
+    },
+    "correct_answer": "A",
+    "explanation": "A global ordering of resources can prevent transactions from acquiring locks in conflicting cyclic orders, eliminating circular wait.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Deadlocks",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction obtains all required locks before releasing any. Which two-phase-locking phase is being exercised?",
+    "options": {
+      "A": "Growing phase",
+      "B": "Shrinking phase",
+      "C": "Recovery phase",
+      "D": "Commit phase"
+    },
+    "correct_answer": "A",
+    "explanation": "During the growing phase, locks may be acquired but not released.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Two-Phase Locking",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction has begun releasing locks and then requests a new lock. Under 2PL, what happens conceptually?",
+    "options": {
+      "A": "It violates the two-phase locking protocol",
+      "B": "It starts a new transaction automatically",
+      "C": "It commits automatically",
+      "D": "It creates a foreign key"
+    },
+    "correct_answer": "A",
+    "explanation": "Once the shrinking phase begins, no new locks may be acquired under 2PL.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Two-Phase Locking",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A system must ensure a transaction sees a consistent database state and preserves integrity constraints after completion. Which ACID property is most directly concerned?",
+    "options": {
+      "A": "Consistency",
+      "B": "Atomicity",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "correct_answer": "A",
+    "explanation": "Consistency requires successful transactions to preserve defined database integrity constraints and rules.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ACID",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction performs ten operations and fails on the eighth. Which ACID property requires the successful earlier operations to be undone as part of the failed transaction?",
+    "options": {
+      "A": "Atomicity",
+      "B": "Isolation",
+      "C": "Durability",
+      "D": "Cardinality"
+    },
+    "correct_answer": "A",
+    "explanation": "Atomicity treats the transaction as one indivisible unit, so partial effects of a failed transaction must not remain committed.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "ACID",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A database crash occurs after some transactions committed and others were still active. Which recovery approach distinguishes their states using transaction records and log information?",
+    "options": {
+      "A": "Redo committed work and undo incomplete work as required",
+      "B": "Delete the entire database",
+      "C": "Run SELECT on every table only",
+      "D": "Rebuild all foreign keys randomly"
+    },
+    "correct_answer": "A",
+    "explanation": "Recovery determines which transactions committed and restores the correct state by reapplying committed effects and removing incomplete effects where necessary.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Why are write-ahead logging rules important in crash recovery?",
+    "options": {
+      "A": "Required log information is recorded before the corresponding database page is written",
+      "B": "They prevent every SELECT",
+      "C": "They eliminate indexes",
+      "D": "They make every query serial"
+    },
+    "correct_answer": "A",
+    "explanation": "Write-ahead logging requires relevant log records to reach stable storage before the associated data changes are written, enabling recovery.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A database administrator changes an index structure while keeping tables and logical relationships unchanged. Which independence is the goal?",
+    "options": {
+      "A": "Physical data independence",
+      "B": "Logical data independence",
+      "C": "Entity independence",
+      "D": "Transaction independence"
+    },
+    "correct_answer": "A",
+    "explanation": "Changing physical access structures without changing the logical schema is the goal of physical data independence.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Data Independence",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A user application should continue working after adding a new attribute to the conceptual schema, provided its external view is unchanged. Which concept is relevant?",
+    "options": {
+      "A": "Logical data independence",
+      "B": "Physical data independence",
+      "C": "Deadlock prevention",
+      "D": "Index selectivity"
+    },
+    "correct_answer": "A",
+    "explanation": "Logical data independence shields external views and applications from suitable changes in the conceptual schema.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Data Independence",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A B+ tree index has a root and multiple levels of internal nodes before leaf nodes. What is the main design advantage of keeping it balanced?",
+    "options": {
+      "A": "Search paths have comparable length",
+      "B": "Every row is duplicated",
+      "C": "All queries become O(1)",
+      "D": "Updates never require maintenance"
+    },
+    "correct_answer": "A",
+    "explanation": "Balanced tree height keeps search paths relatively uniform, providing predictable logarithmic access behavior.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "B+ Tree Indexing",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A composite index is defined on (A,B,C). Which predicate most directly matches the leftmost-prefix principle?",
+    "options": {
+      "A": "A=5 AND B=10",
+      "B": "B=10 AND C=20 only",
+      "C": "C=20 only",
+      "D": "C=20 AND B=10 without A"
+    },
+    "correct_answer": "A",
+    "explanation": "The index is ordered first by A and then B and C, so predicates constraining the leading columns can use the index most directly.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Composite Indexes",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query selects 80% of a table's rows using an indexed column. Why might a full table scan be cheaper?",
+    "options": {
+      "A": "The predicate has low selectivity and scanning may require less random access",
+      "B": "Indexes cannot return 80%",
+      "C": "The index becomes invalid",
+      "D": "SQL prohibits indexed columns"
+    },
+    "correct_answer": "A",
+    "explanation": "When most rows qualify, using the index can require many row accesses and may cost more than a sequential scan.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Query Optimization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query has WHERE A=10 AND B=20 and an index on (A,B). Why is this index often useful?",
+    "options": {
+      "A": "The predicate constrains the leading A column and then B",
+      "B": "Only B is indexed",
+      "C": "The index contains no A values",
+      "D": "Composite indexes cannot support equality predicates"
+    },
+    "correct_answer": "A",
+    "explanation": "The query matches the leading column and can use the subsequent indexed column to narrow the search further.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Composite Indexes",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Why can checkpoints reduce recovery work?",
+    "options": {
+      "A": "They establish a recovery point so the system need not process the entire log from the beginning",
+      "B": "They permanently delete all committed data",
+      "C": "They remove primary keys",
+      "D": "They eliminate transactions"
+    },
+    "correct_answer": "A",
+    "explanation": "A checkpoint records a known recovery state, allowing recovery algorithms to limit the portion of the log they must inspect or process.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Recovery",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A transaction writes X, then crashes before commit. Another transaction must not see the uncommitted X. Which combination of mechanisms is most relevant?",
+    "options": {
+      "A": "Isolation/concurrency control and appropriate locking or isolation level",
+      "B": "Normalization and projection",
+      "C": "Indexing only",
+      "D": "DDL and views"
+    },
+    "correct_answer": "A",
+    "explanation": "Concurrency-control mechanisms prevent inappropriate visibility of uncommitted writes and help maintain isolation.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Concurrency Control",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A database must ensure that no two accounts have the same AccountNo and every AccountNo is present. Which constraints together express this most directly?",
+    "options": {
+      "A": "PRIMARY KEY",
+      "B": "FOREIGN KEY only",
+      "C": "CHECK only",
+      "D": "DEFAULT only"
+    },
+    "correct_answer": "A",
+    "explanation": "A primary key enforces uniqueness and non-NULL identification for the key.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Constraints",
+    "difficulty": "L3"
+  },
+  {
+    "question": "An Orders table contains CustomerID values that do not exist in Customers. Which constraint should have prevented these invalid references?",
+    "options": {
+      "A": "FOREIGN KEY",
+      "B": "UNIQUE",
+      "C": "CHECK on OrderDate",
+      "D": "DEFAULT"
+    },
+    "correct_answer": "A",
+    "explanation": "A foreign key referencing Customers(CustomerID) enforces referential integrity for non-NULL references.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Referential Integrity",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A foreign key is defined with ON DELETE CASCADE. A parent customer row is deleted. What is the intended effect on matching child rows?",
+    "options": {
+      "A": "Matching child rows are automatically deleted",
+      "B": "The parent deletion is always rejected",
+      "C": "Child rows become primary keys",
+      "D": "All unrelated tables are deleted"
+    },
+    "correct_answer": "A",
+    "explanation": "ON DELETE CASCADE propagates deletion of the referenced parent row to matching child rows.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Referential Actions",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A foreign key is defined with ON DELETE SET NULL, but the foreign-key column is NOT NULL. What design conflict exists?",
+    "options": {
+      "A": "The requested SET NULL action conflicts with the NOT NULL requirement",
+      "B": "There is no conflict",
+      "C": "The primary key becomes NULL",
+      "D": "The table becomes 1NF"
+    },
+    "correct_answer": "A",
+    "explanation": "SET NULL requires the child foreign-key column to accept NULL when the parent is deleted, so NOT NULL is incompatible with that action.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Referential Actions",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given R(A,B,C,D) with candidate key A and FD A→B, B→C, C→D, which decomposition is most aligned with removing the transitive dependencies?",
+    "options": {
+      "A": "Keep R unchanged",
+      "B": "Create relations for A,B; B,C; and C,D",
+      "C": "Create only B,D",
+      "D": "Remove A"
+    },
+    "correct_answer": "B",
+    "explanation": "Decomposing along the functional dependencies separates the chains of determination and removes the transitive redundancy, subject to dependency-preservation/lossless-join analysis.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A relation is in 3NF but not BCNF. What must be possible?",
+    "options": {
+      "A": "There is an FD X→A where X is not a superkey and A is a prime attribute",
+      "B": "There are no functional dependencies",
+      "C": "Every attribute is multivalued",
+      "D": "The relation violates 1NF"
+    },
+    "correct_answer": "A",
+    "explanation": "3NF permits an FD whose determinant is not a superkey when the dependent attribute is prime; BCNF does not permit this exception.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "BCNF",
+    "difficulty": "L3"
+  },
+  {
+    "question": "R(A,B,C) has F={AB→C, C→B}. Candidate keys are AB and AC. Is the relation in BCNF?",
+    "options": {
+      "A": "Yes, because AB and AC are keys",
+      "B": "No, because C→B and C is not a superkey",
+      "C": "No, because AB→C is invalid",
+      "D": "Yes, because B is prime"
+    },
+    "correct_answer": "B",
+    "explanation": "C→B violates BCNF because C is not a superkey, even though B is prime and the relation may satisfy 3NF.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "BCNF",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A decomposition is dependency-preserving when:",
+    "options": {
+      "A": "The original functional dependencies can be enforced using dependencies projected onto the decomposed relations",
+      "B": "Every table has the same number of rows",
+      "C": "All attributes are duplicated",
+      "D": "The database has no foreign keys"
+    },
+    "correct_answer": "A",
+    "explanation": "Dependency preservation means the constraints can be checked without reconstructing the original relation, using the dependencies available in the decomposed schemas.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A decomposition is lossless when:",
+    "options": {
+      "A": "Joining the decomposed relations recreates exactly the original relation without spurious tuples",
+      "B": "Every relation has a primary key",
+      "C": "All data is duplicated",
+      "D": "Every join is a CROSS JOIN"
+    },
+    "correct_answer": "A",
+    "explanation": "A lossless decomposition preserves the original relation under natural join without introducing or losing tuples.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Normalization",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A relation R(A,B,C) is decomposed into R1(A,B) and R2(B,C). A tuple combination appears after joining R1 and R2 that never existed in R. What has occurred?",
+    "options": {
+      "A": "Spurious tuple generation due to a lossy decomposition",
+      "B": "Atomicity",
+      "C": "Durability",
+      "D": "Deadlock"
+    },
+    "correct_answer": "A",
+    "explanation": "A lossy decomposition can create spurious tuples when the decomposed relations are joined.",
+    "category": "Core",
+    "subject": "DBMS",
+    "topic": "Lossless Join",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Student(Sid, Name), Enrollment(Sid, Cid), Course(Cid, Title), which query returns students enrolled in at least one course titled 'DBMS'?",
+    "options": {
+      "A": "SELECT s.* FROM Student s JOIN Enrollment e ON s.Sid=e.Sid JOIN Course c ON e.Cid=c.Cid WHERE c.Title='DBMS'",
+      "B": "SELECT s.* FROM Student s WHERE s.Name='DBMS'",
+      "C": "SELECT s.* FROM Student s JOIN Course c ON s.Sid=c.Cid WHERE c.Title='DBMS'",
+      "D": "SELECT * FROM Enrollment WHERE Cid='DBMS'"
+    },
+    "correct_answer": "A",
+    "explanation": "The query follows the relationship Student→Enrollment→Course and filters Course.Title to DBMS.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Multi-Table SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Student(Sid) and Enrollment(Sid,Cid), which SQL formulation is best for students enrolled in every course listed in Course(Cid)?",
+    "options": {
+      "A": "Use double NOT EXISTS: no course exists for which the student lacks an enrollment",
+      "B": "Use only ORDER BY",
+      "C": "Use CROSS JOIN without a condition",
+      "D": "Use COUNT(Sid) without grouping"
+    },
+    "correct_answer": "A",
+    "explanation": "Universal conditions such as 'enrolled in every course' are naturally expressed with double NOT EXISTS: there must not exist a course for which no corresponding enrollment exists.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Relational Division",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, ManagerID), where ManagerID references Employee(Eid), which SQL technique is commonly used to display an employee together with their manager's name?",
+    "options": {
+      "A": "Self join",
+      "B": "CROSS JOIN only",
+      "C": "UNION only",
+      "D": "TRUNCATE"
+    },
+    "correct_answer": "A",
+    "explanation": "A self join treats the Employee table as two logical instances, one for employees and one for managers.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Self Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Employee(Eid, ManagerID, Name) contains (1,NULL,'A'), (2,1,'B'), (3,1,'C'). Which relationship is represented?",
+    "options": {
+      "A": "Employee 1 manages employees 2 and 3",
+      "B": "Employees 2 and 3 manage employee 1",
+      "C": "Employee 1 is managed by 2 and 3",
+      "D": "No relationship is represented"
+    },
+    "correct_answer": "A",
+    "explanation": "Rows 2 and 3 contain ManagerID=1, so employee 1 is their manager.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Self Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query uses SELECT DISTINCT CustomerID FROM Orders WHERE OrderDate >= '2026-01-01'. Why is DISTINCT needed if a customer can place multiple qualifying orders?",
+    "options": {
+      "A": "It removes repeated CustomerID values from the result",
+      "B": "It removes rows from Orders",
+      "C": "It sorts dates",
+      "D": "It aggregates order amounts"
+    },
+    "correct_answer": "A",
+    "explanation": "Multiple qualifying orders can produce the same CustomerID multiple times; DISTINCT returns each customer once.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A table Sales(Region, Amount) has 10 rows. A query uses GROUP BY Region and SUM(Amount). What does each output row represent?",
+    "options": {
+      "A": "One region and its total amount",
+      "B": "One original sale only",
+      "C": "The global maximum",
+      "D": "One column from each row"
+    },
+    "correct_answer": "A",
+    "explanation": "GROUP BY forms one group per region, and SUM calculates the total Amount within that group.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Orders(OrderID, CustomerID, Amount), which query finds customers whose total order amount exceeds 100000?",
+    "options": {
+      "A": "SELECT CustomerID FROM Orders GROUP BY CustomerID HAVING SUM(Amount)>100000",
+      "B": "SELECT CustomerID FROM Orders WHERE SUM(Amount)>100000",
+      "C": "SELECT CustomerID FROM Orders ORDER BY SUM(Amount)>100000",
+      "D": "SELECT DISTINCT CustomerID FROM Orders WHERE Amount>100000"
+    },
+    "correct_answer": "A",
+    "explanation": "The total must be computed per customer, so GROUP BY is followed by HAVING SUM(Amount)>100000.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query returns the department with the maximum average salary while handling ties?",
+    "options": {
+      "A": "SELECT DeptID FROM Employee GROUP BY DeptID HAVING AVG(Salary) >= ALL (SELECT AVG(Salary) FROM Employee GROUP BY DeptID)",
+      "B": "SELECT DeptID FROM Employee WHERE Salary=MAX(Salary)",
+      "C": "SELECT DeptID FROM Employee ORDER BY AVG(Salary) LIMIT 1 without grouping",
+      "D": "SELECT MAX(DeptID) FROM Employee"
+    },
+    "correct_answer": "A",
+    "explanation": "The grouped outer query compares each department's average with all department averages, so every department tied at the maximum is retained.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query finds employees whose salary is greater than their department's average?",
+    "options": {
+      "A": "SELECT e.* FROM Employee e WHERE e.Salary > (SELECT AVG(e2.Salary) FROM Employee e2 WHERE e2.DeptID=e.DeptID)",
+      "B": "SELECT * FROM Employee WHERE Salary > AVG(Salary)",
+      "C": "SELECT * FROM Employee GROUP BY DeptID HAVING Salary>AVG(Salary)",
+      "D": "SELECT * FROM Employee WHERE Salary > MAX(Salary)"
+    },
+    "correct_answer": "A",
+    "explanation": "The correlated subquery computes the average salary for the same department as the outer employee, then compares the employee's salary with it.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Correlated Subqueries",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Course(Cid, Title) and Enrollment(Sid,Cid), which query finds courses with zero enrollments?",
+    "options": {
+      "A": "SELECT c.* FROM Course c LEFT JOIN Enrollment e ON c.Cid=e.Cid WHERE e.Cid IS NULL",
+      "B": "SELECT c.* FROM Course c INNER JOIN Enrollment e ON c.Cid=e.Cid WHERE e.Cid IS NULL",
+      "C": "SELECT Cid FROM Enrollment GROUP BY Cid HAVING COUNT(*)>0",
+      "D": "SELECT * FROM Course WHERE Cid IN (SELECT Cid FROM Enrollment)"
+    },
+    "correct_answer": "A",
+    "explanation": "LEFT JOIN preserves every course; courses without matching enrollment rows have NULL on the Enrollment side and are selected.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query joining Customer and Orders unexpectedly returns duplicate customers. What is a likely reason?",
+    "options": {
+      "A": "A customer has multiple matching order rows",
+      "B": "CustomerID must be NULL",
+      "C": "INNER JOIN always removes duplicates",
+      "D": "PRIMARY KEY values are duplicated"
+    },
+    "correct_answer": "A",
+    "explanation": "A one-to-many join produces one output row per matching pair, so a customer with several orders appears multiple times unless the result is aggregated or DISTINCT is used.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Employee(Eid, DeptID, Salary), which query returns the third-highest distinct salary?",
+    "options": {
+      "A": "SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee WHERE Salary < (SELECT MAX(Salary) FROM Employee))",
+      "B": "SELECT MIN(Salary) FROM Employee",
+      "C": "SELECT MAX(Salary) FROM Employee",
+      "D": "SELECT Salary FROM Employee WHERE Salary<MAX(Salary)"
+    },
+    "correct_answer": "A",
+    "explanation": "The nested MAX operations successively exclude the highest and second-highest distinct salaries, leaving the third-highest distinct value.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Advanced SQL",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Given Student(Sid, Name, Marks), which query returns students whose marks equal the maximum marks in their own department, assuming Student also has DeptID?",
+    "options": {
+      "A": "SELECT s.* FROM Student s WHERE s.Marks=(SELECT MAX(s2.Marks) FROM Student s2 WHERE s2.DeptID=s.DeptID)",
+      "B": "SELECT * FROM Student WHERE Marks=MAX(Marks)",
+      "C": "SELECT * FROM Student GROUP BY DeptID WHERE Marks=MAX(Marks)",
+      "D": "SELECT * FROM Student WHERE Marks>(SELECT MAX(Marks) FROM Student)"
+    },
+    "correct_answer": "A",
+    "explanation": "The correlated subquery finds the maximum marks for the outer student's department and the outer query returns all students tied at that maximum.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "Correlated Subqueries",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A table Employee(Eid, DeptID, Salary) has one department with no employees represented by any row. Can a simple GROUP BY Employee.DeptID return that empty department?",
+    "options": {
+      "A": "No; GROUP BY can only form groups from rows present in its input",
+      "B": "Yes, always",
+      "C": "Only with DISTINCT",
+      "D": "Only with ORDER BY"
+    },
+    "correct_answer": "A",
+    "explanation": "An empty department has no Employee row to group, so it cannot appear unless a separate Department table is joined and preserved.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Aggregation",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Department(DeptID) contains 10,20,30. Employee(DeptID) contains 10,10,20. Which query correctly lists all departments including 30 with employee count zero?",
+    "options": {
+      "A": "SELECT d.DeptID, COUNT(e.DeptID) FROM Department d LEFT JOIN Employee e ON d.DeptID=e.DeptID GROUP BY d.DeptID",
+      "B": "SELECT e.DeptID, COUNT(*) FROM Employee e GROUP BY e.DeptID",
+      "C": "SELECT d.DeptID, COUNT(*) FROM Department d INNER JOIN Employee e ON d.DeptID=e.DeptID GROUP BY d.DeptID",
+      "D": "SELECT DeptID FROM Employee GROUP BY DeptID"
+    },
+    "correct_answer": "A",
+    "explanation": "The LEFT JOIN preserves all departments. COUNT(e.DeptID) counts matching employees, yielding zero for department 30.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A Student table contains two students with the same Name but different IDs. Which query returns both names but only one occurrence of each name?",
+    "options": {
+      "A": "SELECT DISTINCT Name FROM Student",
+      "B": "SELECT UNIQUE StudentID FROM Student",
+      "C": "SELECT DISTINCT StudentID, Name FROM Student",
+      "D": "SELECT Name FROM Student GROUP BY StudentID"
+    },
+    "correct_answer": "A",
+    "explanation": "DISTINCT applies to the selected Name column, so repeated identical names are collapsed in the result.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Basics",
+    "difficulty": "L3"
+  },
+  {
+    "question": "A query uses LEFT JOIN but places a condition on the right table in WHERE, such as WHERE Department.DeptName='CSE'. What can happen to unmatched left rows?",
+    "options": {
+      "A": "They can be removed, making the result behave like an inner join for that condition",
+      "B": "They are always preserved",
+      "C": "They are duplicated",
+      "D": "The join becomes a CROSS JOIN"
+    },
+    "correct_answer": "A",
+    "explanation": "Unmatched right-side values are NULL, so the WHERE predicate fails for them and removes those rows, effectively turning the filtered result into inner-join behavior.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  },
+  {
+    "question": "Which query correctly preserves all departments while counting only employees whose salary exceeds 50000?",
+    "options": {
+      "A": "SELECT d.DeptID, COUNT(e.Eid) FROM Department d LEFT JOIN Employee e ON d.DeptID=e.DeptID AND e.Salary>50000 GROUP BY d.DeptID",
+      "B": "SELECT d.DeptID, COUNT(e.Eid) FROM Department d LEFT JOIN Employee e ON d.DeptID=e.DeptID WHERE e.Salary>50000 GROUP BY d.DeptID",
+      "C": "SELECT DeptID, COUNT(*) FROM Employee WHERE Salary>50000 GROUP BY DeptID",
+      "D": "SELECT d.DeptID FROM Department d INNER JOIN Employee e ON d.DeptID=e.DeptID WHERE e.Salary>50000"
+    },
+    "correct_answer": "A",
+    "explanation": "Putting the salary condition in the JOIN predicate filters matching employee rows while the LEFT JOIN still preserves departments with no qualifying employees.",
+    "category": "Database",
+    "subject": "DBMS",
+    "topic": "SQL Joins",
+    "difficulty": "L3"
+  }
+]
