@@ -1,5 +1,11 @@
 from typing import Any
 
+from backend.app.agents.question_agent.question_bank_loader import (
+    QuestionBankLoader,
+)
+
+
+question_bank_loader = QuestionBankLoader()
 
 # ============================================================
 # QUESTION BANK TOOLS
@@ -14,22 +20,72 @@ def get_question_bank(
     """
     Retrieve questions from the examination question bank.
 
-    This is the MCP tool that will later be called by
-    the OpenClaw/LangGraph agent.
+    Questions are loaded from the project's JSON question banks
+    through QuestionBankLoader.
     """
 
-    # Temporary implementation.
-    # Later this will read your actual JSON question banks.
+    if count < 1:
+        return {
+            "success": False,
+            "subject": subject,
+            "topic": topic,
+            "difficulty": difficulty,
+            "count": count,
+            "questions": [],
+            "source": "question_bank",
+            "error": "Count must be at least 1.",
+        }
 
-    return {
-        "success": True,
-        "subject": subject,
-        "topic": topic,
-        "difficulty": difficulty,
-        "count": count,
-        "questions": [],
-        "source": "question_bank",
-    }
+    try:
+        # If difficulty is specified, load only that level.
+        if difficulty:
+            questions = question_bank_loader.load_questions(
+                subject=subject,
+                difficulty=difficulty,
+                topic=topic,
+                count=count,
+            )
+
+        # If difficulty is not specified, search all three levels.
+        else:
+            questions = []
+
+            for level in ["L1", "L2", "L3"]:
+                remaining = count - len(questions)
+
+                if remaining <= 0:
+                    break
+
+                level_questions = question_bank_loader.load_questions(
+                    subject=subject,
+                    difficulty=level,
+                    topic=topic,
+                    count=remaining,
+                )
+
+                questions.extend(level_questions)
+
+        return {
+            "success": True,
+            "subject": subject,
+            "topic": topic,
+            "difficulty": difficulty,
+            "count": len(questions),
+            "questions": questions,
+            "source": "question_bank",
+        }
+
+    except FileNotFoundError as error:
+        return {
+            "success": False,
+            "subject": subject,
+            "topic": topic,
+            "difficulty": difficulty,
+            "count": 0,
+            "questions": [],
+            "source": "question_bank",
+            "error": str(error),
+        }
 
 
 # ============================================================
@@ -38,13 +94,14 @@ def get_question_bank(
 
 def validate_question(question: dict[str, Any]) -> dict[str, Any]:
     """
-    Validate the basic structure of an examination question.
+    Validate the structure of an examination question
+    using the project's actual JSON question format.
     """
 
     required_fields = [
         "question",
         "options",
-        "correct",
+        "correct_answer",
         "explanation",
     ]
 
@@ -61,17 +118,38 @@ def validate_question(question: dict[str, Any]) -> dict[str, Any]:
         }
 
     options = question.get("options")
+    correct_answer = question.get("correct_answer")
 
-    if not isinstance(options, list) or len(options) < 2:
+    # The question bank stores options as:
+    # {"A": "...", "B": "...", "C": "...", "D": "..."}
+    if not isinstance(options, dict):
+        return {
+            "valid": False,
+            "reason": "Options must be a dictionary containing answer choices.",
+        }
+
+    if len(options) < 2:
         return {
             "valid": False,
             "reason": "Question must contain at least two options.",
         }
 
-    if question["correct"] not in options:
+    if correct_answer not in options:
         return {
             "valid": False,
-            "reason": "Correct answer must exist in options.",
+            "reason": "Correct answer must match one of the option keys.",
+        }
+
+    if not isinstance(question.get("question"), str) or not question["question"].strip():
+        return {
+            "valid": False,
+            "reason": "Question text cannot be empty.",
+        }
+
+    if not isinstance(question.get("explanation"), str) or not question["explanation"].strip():
+        return {
+            "valid": False,
+            "reason": "Explanation cannot be empty.",
         }
 
     return {

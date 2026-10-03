@@ -29,12 +29,13 @@ async def main():
             for tool in tools.tools:
                 print("-", tool.name)
 
+
             result = await session.call_tool(
-                "validate_exam_requirement",
+                "get_question_bank",
                 arguments={
-                    "subject": "Computer Networks",
+                    "subject": "DBMS",
                     "difficulty": "L1",
-                    "question_count": 5,
+                    "count": 3,
                 },
             )
 
