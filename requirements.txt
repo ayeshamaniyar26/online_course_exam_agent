@@ -1,0 +1,8 @@
+mcp==2.2.0
+langgraph==1.2.12
+langchain
+langchain-core
+google-genai
+pydantic
+typing-extensions
+python-dotenv
