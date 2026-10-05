@@ -10,6 +10,7 @@ class AgentState(TypedDict, total=False):
 
     # Examination information
     exam_id: str
+    exam_session: Dict[str, Any]
 
     # Overall requirement/goal
     goal: str
@@ -20,10 +21,24 @@ class AgentState(TypedDict, total=False):
     current_agent: str
 
     # Question-related data
+    # Original validated questions are kept here.
+    # These may contain answer keys for downstream evaluation.
     questions: List[Dict[str, Any]]
 
-    # Student answers
+    # Student-facing questions.
+    # Sensitive fields such as correct_answer,
+    # expected_answer, explanation, source and metadata
+    # are removed before storing here.
+    student_questions: List[Dict[str, Any]]
+
+    # Student answers already stored in the exam session.
     answers: List[Dict[str, Any]]
+
+    # Answers waiting to be submitted by the student.
+    pending_answers: List[Dict[str, Any]]
+
+    # Request to submit/lock the current exam session.
+    submit_exam: bool
 
     # Validation information
     validation_results: List[Dict[str, Any]]

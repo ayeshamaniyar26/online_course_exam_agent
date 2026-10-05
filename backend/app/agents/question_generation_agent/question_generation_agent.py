@@ -2,7 +2,10 @@ import json
 import os
 from typing import Any, Dict
 
+from dotenv import load_dotenv
 from google import genai
+
+load_dotenv()
 
 from backend.app.schemas.agent_state import AgentState
 
