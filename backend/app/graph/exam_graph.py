@@ -213,7 +213,7 @@ def exam_session_node(state: AgentState) -> dict:
     # --------------------------------------------------------
 
     student = state.get("student", {})
-    student_id = student.get("student_id")
+    student_id = student.get("usn")
 
     if not student_id:
         return {
