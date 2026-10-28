@@ -14,7 +14,7 @@ def main():
 
     session = agent.create_session(
         exam_id="exam-expiry-test",
-        student_id="student-001",
+        student_id="01FE23BCI001",
         questions=questions,
         duration_minutes=30,
     )

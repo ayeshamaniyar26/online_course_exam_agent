@@ -4,7 +4,7 @@ from backend.app.schemas.student import Student
 
 
 student = Student(
-    student_id="TEST001",
+    student_id="01FE23BCI001",
     name="Test Student",
     email="test@example.com",
     roll_number="001",

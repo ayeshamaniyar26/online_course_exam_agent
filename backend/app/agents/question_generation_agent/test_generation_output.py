@@ -22,6 +22,25 @@ result = agent.run(state)
 
 questions = result.get("questions", [])
 
+result = agent.run(state)
+
+questions = result.get("questions", [])
+
+# Verify that every generated question has a question_id.
+assert all(q.get("question_id") for q in questions), \
+    "Some generated questions are missing question_id."
+
+# Verify that all question IDs are unique.
+question_ids = [q["question_id"] for q in questions]
+
+assert len(question_ids) == len(set(question_ids)), \
+    "Duplicate question IDs found."
+
+print("PASS: All generated questions have unique IDs.")
+
+print("\nGENERATED QUESTIONS")
+print("=" * 70)
+
 print("\nGENERATED QUESTIONS")
 print("=" * 70)
 

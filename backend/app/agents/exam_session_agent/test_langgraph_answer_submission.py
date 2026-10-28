@@ -47,7 +47,7 @@ def main():
 
     session = agent.create_session(
         exam_id="exam-langgraph-answer-test",
-        student_id="student-001",
+        student_id="01FE23BCI001",
         questions=questions,
         duration_minutes=30,
     )
@@ -57,7 +57,7 @@ def main():
     state: AgentState = {
         "run_id": "run-langgraph-answer-test",
         "student": {
-            "student_id": "student-001",
+            "student_id": "01FE23BCI001",
         },
         "exam_id": session.exam_id,
         "exam_session": session.model_dump(mode="json"),
